@@ -2,6 +2,9 @@
 .tooltip-content .toc-level-2 li:hover {background:#C1FFC1;}
 .tooltip-content a {font-family:Consolas,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;}
 
+#ds-reset .ds-avatar img { width: 124px; height: 124px; border: 5px solid #fff; border-radius: 62px;}
+#ds-reset .ds-avatar img { width: 124px; height: 124px; border-radius: 62px;}
+
 .article-header a:hover {
   text-decoration: none;
   margin-left: 20px;
