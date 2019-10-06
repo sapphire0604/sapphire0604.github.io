@@ -1,0 +1,3 @@
+#ds-reset .ds-avatar img:hover,
+#ds-reset div:hover { transform: rotateZ(360deg); -webkit-transform: rotateZ(360deg); -moz-transform: rotateZ(360deg) }
+.ds-post-self:hover { opacity: 1 }

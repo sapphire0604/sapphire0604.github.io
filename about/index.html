@@ -66,6 +66,16 @@ var left_url = "url(/./img/carousel/4.jpg)";
 bkg.style.background = left_url + "no-repeat top center";
 
 
+
+window.onload=function(){
+var link = document.createElement('link');
+link.setAttribute('type','text/css');
+link.setAttribute('rel','stylesheet');
+var css_url = "/lib/avatar.css";
+link.setAttribute('href', css_url);
+document.head.appendChild(link);
+}
+
 }
 
 </script>
@@ -530,6 +540,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
@@ -538,19 +552,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Practice</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MathJax</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">GitHub Pages</a>
+                <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -567,6 +573,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">GitHub Pages</a>
               </li>
              
               <li class="article-tag-list-item">
