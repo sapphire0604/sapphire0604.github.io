@@ -77,9 +77,11 @@ bkg.style.background = left_url + "no-repeat top center";
 	    
 	    <!--自动旋转头像-->
 	    <script>
-	    <!-- 手机端 left-col 不显示，且给头像上方设置背景色 -->
+	    <!-- 手机端删除 div.left-col ，且给头像上方设置背景色 -->
 		if(window.screen.width<800){
-			document.getElementById('ds-reset').style.display='none';
+			var dsreset = document.getElementsByClassName('left-col')[0];
+			if (dsreset != null)
+				dsreset.parentNode.removeChild(dsreset);
 			window.onload = function(){
 				document.getElementsByClassName('js-overlay')[0].style.backgroundColor='#005a87';
 			}
@@ -549,6 +551,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
@@ -561,19 +571,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MathJax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
               <li class="article-tag-list-item">
