@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://galaxias-sapphi-ren.github.io/2012/07/zone/</loc>
+    <loc>https://galaxias-sapphi-ren.github.io/2017/06/practice/</loc>
     
-    <lastmod>2019-10-06T16:20:43.249Z</lastmod>
+    <lastmod>2019-10-08T11:18:20.900Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://galaxias-sapphi-ren.github.io/2014/07/zone/</loc>
+    
+    <lastmod>2019-10-08T11:16:47.580Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://galaxias-sapphi-ren.github.io/2017/03/recsysGuide/</loc>
+    
+    <lastmod>2019-10-07T01:31:00.524Z</lastmod>
     
   </url>
   
@@ -30,13 +44,6 @@
   </url>
   
   <url>
-    <loc>https://galaxias-sapphi-ren.github.io/2017/03/recsysGuide/</loc>
-    
-    <lastmod>2019-10-06T14:33:23.343Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://galaxias-sapphi-ren.github.io/2017/03/hexoMeetMathjax/</loc>
     
     <lastmod>2019-10-06T14:32:53.543Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>https://galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/</loc>
     
     <lastmod>2019-10-06T13:22:34.617Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://galaxias-sapphi-ren.github.io/2017/06/practice/</loc>
-    
-    <lastmod>2019-10-06T13:16:00.684Z</lastmod>
     
   </url>
   
