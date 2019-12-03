@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/3_api.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/4_debug.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/4_idea.png">
-<meta property="og:updated_time" content="2019-12-03T20:41:16.776Z">
+<meta property="og:updated_time" content="2019-12-03T20:46:09.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javac编译器的源码分析">
 <meta name="twitter:description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8  前言  java程序的编译工作通常使用IDE或Maven，Gradle等工具完成，容易忽视java编译期隐藏的细节，深入理解javac、编译等相关概念。 javac是JDK的Java语言编译器">
@@ -767,10 +767,8 @@ public class testCHECK {
 </tbody></table>
 <p>🗣 <strong>Tips</strong> :</p>
 <ol>
-<li><p><code>clinit</code>类构造器，在jvm进行类加载—验证—解析—初始化中的初始化阶段调用，对静态变量，静态代码块进行初始化。</p>
-</li>
-<li><p><code>init</code>实例构造器，类实例化阶段（new 反射 克隆 反序列化），对非静态变量解析初始化。</p>
-</li>
+<li><code>clinit</code>类构造器，在jvm进行类加载—验证—解析—初始化中的初始化阶段调用，对静态变量，静态代码块进行初始化。</li>
+<li><code>init</code>实例构造器，类实例化阶段（new 反射 克隆 反序列化），对非静态变量解析初始化。</li>
 </ol>
 <pre><code class="java">static class Parent{
       public int C=1;//init
@@ -1213,6 +1211,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">npm</a>
               </li>
              
@@ -1221,15 +1223,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1242,10 +1244,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ToolKits</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
