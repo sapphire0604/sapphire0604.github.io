@@ -112,7 +112,7 @@ bkg.style.background = left_url + "no-repeat top center";
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部
     			<!--文章统计-->
 				
-    				[ 13 ]
+    				[ 14 ]
     			
     			<!--文章统计-->
     			</a>
@@ -407,6 +407,103 @@ bkg.style.background = left_url + "no-repeat top center";
 
 
   
+    <article id="post-javac" class="article article-type-post
+   article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/javac/">javac编译器的源码分析</a>
+    </h1>
+  
+
+      
+    </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/cover.jpg" alt></p>
+<blockquote>
+<p>Reads Java class and interface definitions and compiles them into bytecode and class files.</p>
+<p>—— <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javac.html" target="_blank" rel="noopener">java8</a></p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<blockquote>
+<p>java程序的编译工作通常使用IDE或Maven，Gradle等工具完成，容易忽视java编译期隐藏的细节，深入理解javac、编译等相关概念。</p>
+<p>javac是<a href="https://zh.wikipedia.org/wiki/JDK" target="_blank" rel="noopener">JDK</a>的Java语言编译器工具，将满足Java语言规范（The Java Language Specification）的.java源文件编译成为满足JVM规范（The Java Virtual Machine Specification）的.class字节码文件。可以更准确、直观地理解Java语言中更深层次的东西。如关键字的实现，<a href="https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html" target="_blank" rel="noopener">字节码增强</a>，实现语法糖等。</p>
+<p>一般而言，javac扫描源文件，生成Token流，构建抽象语法树，填充符号表，生成插入式注解语法树，语义分析后生成字节码。是java的前端编译器。</p>
+<p>javac由java语言编写，支持JSR 269（Pluggable Annotation Processing API）和JSR 199（the Java Compiler API），方便调试学习。</p>
+</blockquote>
+      
+      
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Javac</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ToolKits</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Blog//" class="article-tag-list-link color5">Blog</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2017/03/javac/">Know More >></a>
+      </p>
+      
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-recsysGuide" class="article article-type-post
    article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -607,93 +704,6 @@ bkg.style.background = left_url + "no-repeat top center";
 
 
   
-    <article id="post-recsystechToutiao" class="article article-type-post
-   article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/recsystechToutiao/">Machine Learning | 今日头条又推荐美女图片了，扒扒它的技术架构吧</a>
-    </h1>
-  
-
-      
-    </header>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      <p><img src="//galaxias-sapphi-ren.github.io/2017/02/recsystechToutiao/%E4%BB%8A%E6%97%A5%E5%A4%B4%E6%9D%A1.jpeg" alt="cover"></p>
-<p>信了推荐算法的邪，入了深度学习的坑。</p>
-      
-      
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Blog//" class="article-tag-list-link color5">Blog</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Blog/Artificial-Intelligence//" class="article-tag-list-link color4">Artificial Intelligence</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2017/02/recsystechToutiao/">Know More >></a>
-      </p>
-      
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -857,10 +867,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Practice</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
@@ -869,11 +875,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">GitHub Pages</a>
+                <a href="javascript:void(0)" class="js-tag color1">Javac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ToolKits</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">GitHub Pages</a>
               </li>
              
               <li class="article-tag-list-item">
