@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/3_api.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/4_debug.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/4_idea.png">
-<meta property="og:updated_time" content="2019-12-03T20:36:51.356Z">
+<meta property="og:updated_time" content="2019-12-03T20:41:16.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javac编译器的源码分析">
 <meta name="twitter:description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8  前言  java程序的编译工作通常使用IDE或Maven，Gradle等工具完成，容易忽视java编译期隐藏的细节，深入理解javac、编译等相关概念。 javac是JDK的Java语言编译器">
@@ -560,16 +560,12 @@ public class Example{
 <p>通过声明一个注解，实现一个注解处理器。注册服务后</p>
 <p>在编译期由<code>com.sun.tools.javac.processing.JavacProcessingEnvironment类</code>处理注解。读取、修改、添加抽象语法树中的任意元素。像反射一样访问类、字段、方法和注解等元素，创建新的源文件。每一个插入式注解处理器操作语法树，编译器将回到解析及填充符号表的过程循环。</p>
 <p>减少编写配置文件的劳动量，提高代码可读性。</p>
-<h3 id="2-2-1-javac-命令编译过程"><a href="#2-2-1-javac-命令编译过程" class="headerlink" title="2.2.1 javac 命令编译过程"></a>2.2.1 javac 命令编译过程</h3><p><strong>测试使用时，测试类和实现类写在不同子模块下！！！否则编译不通过！！！</strong></p>
-<ol>
-<li><p>声明一个注解</p>
-</li>
-<li><p>创建一个注解处理器，注解处理器需实现<code>javax.annotation.processing.Processor</code>接口或继承<code>javax.annotation.processing.AbstractProcessor</code>类。重写process方法。</p>
-</li>
-<li><p>为注解处理器注册服务。在<code>META-INF.services</code>文件夹下创建 <code>javax.annotation.processing.Processor</code>文件。写入注解处理器的全称。</p>
-</li>
-<li><p>为了能够让项目能够通过编译，我们需要为Java编译器添加一个不进行注解处理的参数</p>
-</li>
+<p><strong>测试使用时，测试类和实现类写在不同子模块下！！！否则编译不通过！！！</strong></p>
+<h3 id="2-2-1-javac-命令编译过程"><a href="#2-2-1-javac-命令编译过程" class="headerlink" title="2.2.1 javac 命令编译过程"></a>2.2.1 javac 命令编译过程</h3><ol>
+<li>声明一个注解</li>
+<li>创建一个注解处理器，注解处理器需实现 <code>javax.annotation.processing.Processor</code> 接口或继承 <code>javax.annotation.processing.AbstractProcessor</code> 类。重写process方法。</li>
+<li>为注解处理器注册服务。在<code>META-INF.services</code>文件夹下创建 <code>javax.annotation.processing.Processor</code>文件。写入注解处理器的全称。</li>
+<li>为了能够让项目能够通过编译，我们需要为Java编译器添加一个不进行注解处理的参数</li>
 </ol>
 <pre><code class="xml">   &lt;plugin&gt;
            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
@@ -771,9 +767,9 @@ public class testCHECK {
 </tbody></table>
 <p>🗣 <strong>Tips</strong> :</p>
 <ol>
-<li><p>clinit类构造器，在jvm进行类加载—验证—解析—初始化中的初始化阶段调用，对静态变量，静态代码块进行初始化。</p>
+<li><p><code>clinit</code>类构造器，在jvm进行类加载—验证—解析—初始化中的初始化阶段调用，对静态变量，静态代码块进行初始化。</p>
 </li>
-<li><p>init实例构造器，类实例化阶段（new 反射 克隆 反序列化），对非静态变量解析初始化。</p>
+<li><p><code>init</code>实例构造器，类实例化阶段（new 反射 克隆 反序列化），对非静态变量解析初始化。</p>
 </li>
 </ol>
 <pre><code class="java">static class Parent{
@@ -1217,6 +1213,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">npm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Yeoman</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
@@ -1229,23 +1233,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">npm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Yeoman</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MathJax</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1257,11 +1245,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">GitHub Pages</a>
+                <a href="javascript:void(0)" class="js-tag color4">Practice</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1270,6 +1262,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">GitHub Pages</a>
               </li>
              
               <li class="article-tag-list-item">
