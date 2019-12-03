@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/7_3_domain.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/7_4_chome.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/7_5_testdns.png">
-<meta property="og:updated_time" content="2019-12-02T02:39:09.990Z">
+<meta property="og:updated_time" content="2019-12-03T20:23:46.159Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 与 GitHubPages 搭建个人博客">
 <meta name="twitter:description" content="Hexo is a fast, simple and powerful blog framework. You write posts in Markdown and Hexo generates static files with a beautiful theme in seconds.  – hexo.io  前言  博客是一个可以集中思考，解构思维、技巧、客观存在的地方。写博客需要内驱">
@@ -124,7 +124,7 @@ bkg.style.background = left_url + "no-repeat top center";
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部
     			<!--文章统计-->
 				
-    				[ 14 ]
+    				[ 13 ]
     			
     			<!--文章统计-->
     			</a>
@@ -260,7 +260,7 @@ bkg.style.background = left_url + "no-repeat top center";
     <span class="post-meta-item-icon">
       <i class="fa fa-keyboard-o"></i>
       <span class="post-meta-item-text">  总字数: </span>
-      <span class="post-count" >3.6k字</span>
+      <span class="post-count" >3.5k字</span>
     </span>
   </span>
   <span class="post-time">
@@ -268,7 +268,7 @@ bkg.style.background = left_url + "no-repeat top center";
     <span class="post-meta-item-icon">
       <i class="fa fa-hourglass-half"></i>
       <span class="post-meta-item-text" >  阅读时长: </span>
-      <span class="post-count">15分</span>
+      <span class="post-count">14分</span>
     </span>
   </span>
 </div>
@@ -348,11 +348,10 @@ bkg.style.background = left_url + "no-repeat top center";
 <li>Mac 用户需要 Xcode</li>
 </ul>
 <h4 id="3-2-2-安装及基础组件"><a href="#3-2-2-安装及基础组件" class="headerlink" title="3.2.2 安装及基础组件"></a>3.2.2 安装及基础组件</h4><p><strong>命令行</strong></p>
-<pre><code>&#39;&#39;&#39;bash
-$ npm install -g hexo-cli
-$ hexo init &lt;folder&gt;
-$ cd &lt;folder&gt; &amp;&amp; npm install
-&#39;&#39;&#39;</code></pre><p><strong>目录结构</strong></p>
+<pre><code class="bash">    $ npm install -g hexo-cli
+    $ hexo init &lt;folder&gt;
+    $ cd &lt;folder&gt; &amp;&amp; npm install</code></pre>
+<p><strong>目录结构</strong></p>
 <pre><code>blog
 ├── _config.yml # 网站配置信息。配置博客相关的参数。初始化时自动创建。
 ├── db.json：# source解析缓存文件。
@@ -406,11 +405,10 @@ $ cd &lt;folder&gt; &amp;&amp; npm install
 <li>…</li>
 </ul>
 <p><strong>命令行</strong></p>
-<pre><code>&#39;&#39;&#39;bash
-$ npm install &lt;module name&gt; --save
+<pre><code class="bash">$ npm install &lt;module name&gt; --save
 $ hexo init &lt;folder&gt;
-$ cd &lt;folder&gt; &amp;&amp; npm install
-&#39;&#39;&#39;</code></pre><h3 id="3-3-Work"><a href="#3-3-Work" class="headerlink" title="3.3 Work"></a>3.3 Work</h3><p><strong>Hexo工作流程</strong></p>
+$ cd &lt;folder&gt; &amp;&amp; npm install</code></pre>
+<h3 id="3-3-Work"><a href="#3-3-Work" class="headerlink" title="3.3 Work"></a>3.3 Work</h3><p><strong>Hexo工作流程</strong></p>
 <p>Hexo模板引擎生成工具将界面同数据分离，模板内容替换指定地方数据，实现业务和逻辑代码分离。Hexo默认用ejs模板，根据模板文件后缀名解析：md文件、layout布局调用其他文件。具有高代码复用性，最终生成html页面。</p>
 <blockquote>
 <p>“hexo init” -&gt; “node-module | hexo | hexo-cli | lib | init.js”</p>
@@ -418,8 +416,7 @@ $ cd &lt;folder&gt; &amp;&amp; npm install
 <p>“hexo s” -&gt; “node-module | hexo-server | middlewares | server.js”</p>
 </blockquote>
 <h2 id="4-使用-Hexo-书写文章"><a href="#4-使用-Hexo-书写文章" class="headerlink" title="4 使用 Hexo 书写文章"></a>4 使用 Hexo 书写文章</h2><p>自建脚本：</p>
-<pre><code>&#39;&#39;&#39;vim
-#! ~/.blog.sh
+<pre><code class="bash">#! ~/.blog.sh
 export BLOG_FOLDER=&lt;default_blog_folder&gt;
 
 #! ~/.zshrc
@@ -433,55 +430,36 @@ alias blogi=&#39;blog. &amp;&amp; hexo init $BLOG_FOLDER &amp;&amp; cd $BLOG_FOL
 # 根据自定义配置新建md博客文件
 alias blogn=&#39;cd $BLOG_FOLDER &amp;&amp; hexo new myphoto&#39;
 alias blogs=&#39;cd $BLOG_FOLDER &amp;&amp; hexo clean &amp;&amp; hexo g &amp;&amp; hexo s&#39;
-alias blogd=&#39;cd $BLOG_FOLDER &amp;&amp; hexo d -g&#39;
-&#39;&#39;&#39;</code></pre><h3 id="4-1-更换主题"><a href="#4-1-更换主题" class="headerlink" title="4.1 更换主题"></a>4.1 更换主题</h3><h4 id="4-1-1-选择主题-yilia"><a href="#4-1-1-选择主题-yilia" class="headerlink" title="4.1.1 选择主题 yilia"></a>4.1.1 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">选择主题</a> yilia</h4><pre><code>&#39;&#39;&#39;bash
-$ cd $BLOG_FOLDER
-$ git clone https://github.com/fan-haobai/hexo-theme-yilia.git themes/hexo-theme-yilia
-&#39;&#39;&#39;</code></pre><h4 id="4-1-2-修改配置文件"><a href="#4-1-2-修改配置文件" class="headerlink" title="4.1.2 修改配置文件"></a>4.1.2 修改配置文件</h4><p><a href="https://github.com/litten/BlogBackup/blob/master/themes/yilia/_config.yml" target="_blank" rel="noopener">config.yml配置文件参考</a></p>
-<h3 id="4-2-新建-Markdown-文档"><a href="#4-2-新建-Markdown-文档" class="headerlink" title="4.2 新建 Markdown 文档"></a>4.2 新建 Markdown 文档</h3><pre><code>&#39;&#39;&#39;bash 
-# 在 $BLOG_FOLDER/source/post/ 中新建 Markdown 文件
-$ hexo new [layout] &lt;title&gt;
-&#39;&#39;&#39;</code></pre><p>根据 [layout] 生成 Markdown 文件，默认post，使用 scaffolds/post.md 作为默认模板。可以定制想要的 Front-matter 和基础 Markdown 格式。</p>
+alias blogd=&#39;cd $BLOG_FOLDER &amp;&amp; hexo d -g&#39;</code></pre>
+<h3 id="4-1-更换主题"><a href="#4-1-更换主题" class="headerlink" title="4.1 更换主题"></a>4.1 更换主题</h3><h4 id="4-1-1-选择主题-yilia"><a href="#4-1-1-选择主题-yilia" class="headerlink" title="4.1.1 选择主题 yilia"></a>4.1.1 <a href="https://hexo.io/themes/" target="_blank" rel="noopener">选择主题</a> yilia</h4><pre><code class="bash">$ cd $BLOG_FOLDER
+$ git clone https://github.com/fan-haobai/hexo-theme-yilia.git themes/hexo-theme-yilia</code></pre>
+<h4 id="4-1-2-修改配置文件"><a href="#4-1-2-修改配置文件" class="headerlink" title="4.1.2 修改配置文件"></a>4.1.2 修改配置文件</h4><p><a href="https://github.com/litten/BlogBackup/blob/master/themes/yilia/_config.yml" target="_blank" rel="noopener">config.yml配置文件参考</a></p>
+<h3 id="4-2-新建-Markdown-文档"><a href="#4-2-新建-Markdown-文档" class="headerlink" title="4.2 新建 Markdown 文档"></a>4.2 新建 Markdown 文档</h3><pre><code class="bash"># 在 $BLOG_FOLDER/source/post/ 中新建 Markdown 文件
+$ hexo new [layout] &lt;title&gt;</code></pre>
+<p>根据 [layout] 生成 Markdown 文件，默认post，使用 scaffolds/post.md 作为默认模板。可以定制想要的 Front-matter 和基础 Markdown 格式。</p>
 <h3 id="4-3-Markdown-写博客"><a href="#4-3-Markdown-写博客" class="headerlink" title="4.3 Markdown 写博客"></a>4.3 Markdown 写博客</h3><p><a href="https://hexo.io/zh-cn/docs/front-matter" target="_blank" rel="noopener">Front-matter</a> 指生成的 Markdown 文档上方的标识，使 Hexo 在解析过程中正常工作。</p>
-<pre><code>&#39;&#39;&#39;markdown
----
+<pre><code class="markdown">---
 title: Hello World!
 date: 2018-08-06 20:34:06
----
-&#39;&#39;&#39;</code></pre><p><a href="https://daringfireball.net/projects/markdown/basics" target="_blank" rel="noopener">markdown</a> 是面向Web作家的文本到HTML转换工具。Markdown 允许您使用易于阅读，易于编写的纯文本格式进行编写，然后将其转换为结构上有效的XHTML（或HTML）。Markdown 格式化语法的首要设计目标是使其更具可读性。</p>
+---</code></pre>
+<p><a href="https://daringfireball.net/projects/markdown/basics" target="_blank" rel="noopener">markdown</a> 是面向Web作家的文本到HTML转换工具。Markdown 允许您使用易于阅读，易于编写的纯文本格式进行编写，然后将其转换为结构上有效的XHTML（或HTML）。Markdown 格式化语法的首要设计目标是使其更具可读性。</p>
 <p>使用<strong>数据文件夹</strong></p>
 <p>在 source/_data 放入YAML 或 JSON 文件，如 menu.yml<br>在模板中使用</p>
-<pre><code>&#39;&#39;&#39;
-&lt;% for (var link in site.data.menu) { %&gt;
-      &lt;a href=&quot;&lt;%= site.data.menu[link] %&gt;&quot;&gt; &lt;%= link %&gt; &lt;/a&gt;
-&lt;% } %&gt;
-&#39;&#39;&#39;</code></pre><h3 id="4-4-生成博客资源文件"><a href="#4-4-生成博客资源文件" class="headerlink" title="4.4 生成博客资源文件"></a>4.4 生成博客资源文件</h3><pre><code>&#39;&#39;&#39;bash 
-$ hexo g
-&#39;&#39;&#39;</code></pre><table>
-<thead>
-<tr>
-<th align="center">渲染过程</th>
-<th align="center">输入</th>
-<th align="center">模板引擎</th>
-<th align="center">输出</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">source目录文件</td>
-<td align="center">yml 和 markdown</td>
-<td align="center">article对象</td>
-</tr>
-<tr>
-<td align="center">2</td>
-<td align="center">themes目录文件 article对象</td>
-<td align="center">ejs，取决于themes/layouts文件格式</td>
-<td align="center">public目录文件</td>
-</tr>
-</tbody></table>
-<h3 id="4-5-生成本地服务"><a href="#4-5-生成本地服务" class="headerlink" title="4.5 生成本地服务"></a>4.5 生成本地服务</h3><pre><code>&#39;&#39;&#39;bash 
-$ hexo s
-&#39;&#39;&#39;</code></pre><p>启动服务器，网站会在 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，无须重启服务器。</p>
+<pre><code class="xml">    &lt;% for (var link in site.data.menu) { %&gt;
+          &lt;a href=&quot;&lt;%= site.data.menu[link] %&gt;&quot;&gt; &lt;%= link %&gt; &lt;/a&gt;
+    &lt;% } %&gt;</code></pre>
+<h3 id="4-4-生成博客资源文件"><a href="#4-4-生成博客资源文件" class="headerlink" title="4.4 生成博客资源文件"></a>4.4 生成博客资源文件</h3><pre><code class="bash">$ hexo g</code></pre>
+<pre><code>
+| 渲染过程 | 输入 | 模板引擎 | 输出 |
+|:-:|:-:|:-:|:-:|
+| 1 | source目录文件 | yml 和 markdown | article对象 |
+| 2 | themes目录文件 article对象 | ejs，取决于themes/layouts文件格式 | public目录文件 |
+
+
+### 4.5 生成本地服务
+
+​```bash
+$ hexo s</code></pre><p>启动服务器，网站会在 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 下启动。在服务器启动期间，Hexo 会监视文件变动并自动更新，无须重启服务器。</p>
 <h2 id="5-部署到-GitHub-资源库生成-GitHubPages-服务"><a href="#5-部署到-GitHub-资源库生成-GitHubPages-服务" class="headerlink" title="5 部署到 GitHub 资源库生成 GitHubPages 服务"></a>5 部署到 GitHub 资源库生成 GitHubPages 服务</h2><p><a href="https://help.github.com/en#dotcom" target="_blank" rel="noopener">GitHub</a></p>
 <p><a href="https://help.github.com/en/categories/working-with-github-pages" target="_blank" rel="noopener">Github Pages</a> 是静态站点托管服务，可直接从GitHub上的存储库中获取HTML，CSS和JavaScript文件，还可以选择在构建过程中运行这些文件并发布网站。</p>
 <p>注册 <a href="https://github.com/" target="_blank" rel="noopener">GitHub帐号</a> New repository 创建新仓库：[GitHub UserName].github.io，即将站点托管在GitHub的github.io域上，也可以绑定到自定义域上。</p>
@@ -490,100 +468,91 @@ $ hexo s
 </blockquote>
 <p><a href="https://help.github.com/en/articles/connecting-to-github-with-ssh" target="_blank" rel="noopener">如何生成密钥并将其添加到GitHub</a></p>
 <p>测试SSH连接</p>
-<pre><code>&#39;&#39;&#39;bash
-ssh -T git@GitHub.com
-&#39;&#39;&#39;</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/5_1_sshSucess.png" alt></p>
-<h3 id="5-2-Hexo部署"><a href="#5-2-Hexo部署" class="headerlink" title="5.2 Hexo部署"></a>5.2 Hexo部署</h3><h4 id="修改config-yml配置文件信息"><a href="#修改config-yml配置文件信息" class="headerlink" title="修改config.yml配置文件信息"></a>修改config.yml配置文件信息</h4><pre><code>&#39;&#39;&#39;bash 
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repository: git@github.com:Galaxias-Sapphi-REN/Galaxias-Sapphi-REN.github.io.git
-  branch: master
-&#39;&#39;&#39;</code></pre><h4 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title="Hexo部署"></a>Hexo部署</h4><pre><code>&#39;&#39;&#39;bash 
-$ hexo d -g
-&#39;&#39;&#39;</code></pre><h2 id="6-个性化定制"><a href="#6-个性化定制" class="headerlink" title="6 个性化定制"></a>6 个性化定制</h2><h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p><strong>个性化定制</strong> 主要是对页面功能的拓展和对样式的调整，对页面局部结构的修改。而对页面功能的拓展包括本地模块支持和导入第三库支持。个性化定制首先要了解主要修改的文件目录结构：</p>
-<pre><code>&#39;&#39;&#39;
-custumer_theme 使用的主题
-├─ _config.yml 配置文件，自定义属性后和ejs模板文件协同工作
-├─ source
-|    ├─    main.[trunk].css 主要修改的样式文件！！！
-|    ├─    main.[trunk].js 打包后的js，一般只在其他js中extends，而不做修改。
-|    └──    &lt;custumer&gt;.js 自己写的js或本地下载的js
-└──    layout 
-    ├─    layout.ejs 首页展示入口
-     ├─    index.ejs 点击文章引导入口
-     └──    _partial 页面部分结构
-          ├─    left-col.ejs 左侧站点信息
-          ├─    css.ejs 导入结构layout|head|css，需要导入的css文件添加到这里
-          ├─    script.ejs 导入结构layout|after-footer|script，需要导入的js文件添加在这里
-          ├─    archive.ejs 归档页面
-          ├─    article.ejs 文章页面，文章内修改主要在这里
-          └──    post 更小的模块功能结构，如第三方评论，分享等。一般由article.ejs调用
-&#39;&#39;&#39;    </code></pre><p>在不调整页面主题结构的情况下，一般选择</p>
+<pre><code class="bash">ssh -T git@GitHub.com</code></pre>
+<p><img src="//galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/5_1_sshSucess.png" alt></p>
+<h3 id="5-2-Hexo部署"><a href="#5-2-Hexo部署" class="headerlink" title="5.2 Hexo部署"></a>5.2 Hexo部署</h3><h4 id="修改config-yml配置文件信息"><a href="#修改config-yml配置文件信息" class="headerlink" title="修改config.yml配置文件信息"></a>修改config.yml配置文件信息</h4><pre><code class="bash">    ## Docs: https://hexo.io/docs/deployment.html
+    deploy:
+      type: git
+      repository: git@github.com:Galaxias-Sapphi-REN/Galaxias-Sapphi-REN.github.io.git
+      branch: master</code></pre>
+<h4 id="Hexo部署"><a href="#Hexo部署" class="headerlink" title="Hexo部署"></a>Hexo部署</h4><pre><code class="bash">    $ hexo d -g</code></pre>
+<h2 id="6-个性化定制"><a href="#6-个性化定制" class="headerlink" title="6 个性化定制"></a>6 个性化定制</h2><h3 id="基本原理"><a href="#基本原理" class="headerlink" title="基本原理"></a>基本原理</h3><p><strong>个性化定制</strong> 主要是对页面功能的拓展和对样式的调整，对页面局部结构的修改。而对页面功能的拓展包括本地模块支持和导入第三库支持。个性化定制首先要了解主要修改的文件目录结构：</p>
+<pre><code>    custumer_theme 使用的主题
+    ├─ _config.yml 配置文件，自定义属性后和ejs模板文件协同工作
+    ├─ source
+    |    ├─    main.[trunk].css 主要修改的样式文件！！！
+    |    ├─    main.[trunk].js 打包后的js，一般只在其他js中extends，而不做修改。
+    |    └──    &lt;custumer&gt;.js 自己写的js或本地下载的js
+    └──    layout 
+        ├─    layout.ejs 首页展示入口
+         ├─    index.ejs 点击文章引导入口
+         └──    _partial 页面部分结构
+              ├─    left-col.ejs 左侧站点信息
+              ├─    css.ejs 导入结构layout|head|css，需要导入的css文件添加到这里
+              ├─    script.ejs 导入结构layout|after-footer|script，需要导入的js文件添加在这里
+              ├─    archive.ejs 归档页面
+              ├─    article.ejs 文章页面，文章内修改主要在这里
+              └──    post 更小的模块功能结构，如第三方评论，分享等。一般由article.ejs调用</code></pre><p>在不调整页面主题结构的情况下，一般选择</p>
 <ol>
 <li><p>页面样式调整 -&gt; 修改 mytheme|source|main.[trunk].css，看别人的博客喜欢谁的样式果断F12选取喜欢部分，查看计算出的styles，在这里修改样式。或者自定义css。</p>
 <p> <img src="//galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/6_codestyle.png" alt></p>
 </li>
 <li><p>喜欢的组件 -&gt; 如果CDN，直接引用到css.ejs script.ejs文件中。如：</p>
-<pre><code> &#39;&#39;&#39;html
- &lt;!-- jquery 看板娘依赖 css.ejs --&gt;
- &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;&gt;
+</li>
+</ol>
+<pre><code class="html">        &lt;!-- jquery 看板娘依赖 css.ejs --&gt;
+        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css&quot;&gt;
 
- &lt;!-- 卜蒜子统计 script.ejs 依赖第三方js --&gt;
- &lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;
- &lt;!-- 点击爱心 script.ejs 依赖本地js --&gt;
- &lt;script src=&quot;&lt;%=config.root%&gt;./love.js&quot;&gt;&lt;/script&gt;
- &#39;&#39;&#39;</code></pre></li>
+        &lt;!-- 卜蒜子统计 script.ejs 依赖第三方js --&gt;
+        &lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;
+        &lt;!-- 点击爱心 script.ejs 依赖本地js --&gt;
+        &lt;script src=&quot;&lt;%=config.root%&gt;./love.js&quot;&gt;&lt;/script&gt;</code></pre>
+<ol start="3">
 <li><p>需要添加dom元素，主要在left-col.ejs article.ejs archive.ejs中适合的dom位置添加，添加css文件。如需配合配置文件，在_config.yml自定义属性后，在ejs文件中按ejs结构书写。如：</p>
 <p> <strong>left-col.ejs</strong> 替换原来的头像dom元素</p>
-<pre><code> &#39;&#39;&#39;html
- &lt;!--自动旋转头像 --&gt;
- &lt;% if(theme.Rotate == true){ %&gt;
- &lt;div id=&quot;ds-reset&quot; class=&quot;ds-post-self&quot;&gt;
- &lt;div class=&quot;ds-avatar&quot; &gt;
- &lt;img src=&quot;&lt;%=theme.avatar%&gt;&quot;&gt;
- &lt;% } %&gt;
- &lt;!--自动旋转头像 --&gt;
- &#39;&#39;&#39;</code></pre><p> <strong>main.[trunk].css</strong> 添加样式 </p>
-<pre><code> &#39;&#39;&#39;css
- /*头像旋转*/
- #ds-reset .ds-avatar img {
-     width: 124px;
-     height: 124px; /*设置图像的长和宽*/
-     border: 5px solid #fff;
-     border-radius: 62px;/*设置图像圆角效果,在这里我直接设置了超过width/2的像素，即为圆形了*/
-     -webkit-border-radius: 62px;/*圆角效果：兼容webkit浏览器*/
-     -moz-border-radius: 62px;
-     box-shadow: inset 0 -1px 0 #3333sf;/*设置图像阴影效果*/
-     -webkit-box-shadow: inset 0 -1px 0 #3333sf;
-     -webkit-transition: 0.8s;
-     -webkit-transition: -webkit-transform 0.8s ease-out;
-     transition: transform 0.8s ease-out;/*变化时间设置为0.8秒(变化动作即为下面的图像旋转360读）*/
-     -moz-transition: -moz-transform 0.8s ease-out;
- }
-
- #ds-reset .ds-avatar img:hover,
- #ds-reset div:hover {
-
-     /*设置鼠标悬浮在头像时的CSS样式*/
-     transform: rotateZ(360deg);/*图像旋转360度*/
-     -webkit-transform: rotateZ(360deg);
-     -moz-transform: rotateZ(360deg);
- }
- &#39;&#39;&#39;</code></pre><p> <strong>_config.yml</strong> 配置文件设置属性配合ejs模板使用</p>
-<pre><code> &#39;&#39;&#39;xml
- # 自动旋转头像
- Rotate: true
- &#39;&#39;&#39;</code></pre></li>
-<li><p>修改node_modules依赖，如修改依赖的highlight.js源码。</p>
 </li>
+</ol>
+<pre><code class="html">        &lt;!--自动旋转头像 --&gt;
+        &lt;% if(theme.Rotate == true){ %&gt;
+        &lt;div id=&quot;ds-reset&quot; class=&quot;ds-post-self&quot;&gt;
+        &lt;div class=&quot;ds-avatar&quot; &gt;
+        &lt;img src=&quot;&lt;%=theme.avatar%&gt;&quot;&gt;
+        &lt;% } %&gt;
+        &lt;!--自动旋转头像 --&gt;</code></pre>
+<pre><code>**main.[trunk].css** 添加样式 </code></pre><pre><code class="css">        /*头像旋转*/
+        #ds-reset .ds-avatar img {
+            width: 124px;
+            height: 124px; /*设置图像的长和宽*/
+            border: 5px solid #fff;
+            border-radius: 62px;/*设置图像圆角效果,在这里我直接设置了超过width/2的像素，即为圆形了*/
+            -webkit-border-radius: 62px;/*圆角效果：兼容webkit浏览器*/
+            -moz-border-radius: 62px;
+            box-shadow: inset 0 -1px 0 #3333sf;/*设置图像阴影效果*/
+            -webkit-box-shadow: inset 0 -1px 0 #3333sf;
+            -webkit-transition: 0.8s;
+            -webkit-transition: -webkit-transform 0.8s ease-out;
+            transition: transform 0.8s ease-out;/*变化时间设置为0.8秒(变化动作即为下面的图像旋转360读）*/
+            -moz-transition: -moz-transform 0.8s ease-out;
+        }
+
+        #ds-reset .ds-avatar img:hover,
+        #ds-reset div:hover {
+
+            /*设置鼠标悬浮在头像时的CSS样式*/
+            transform: rotateZ(360deg);/*图像旋转360度*/
+            -webkit-transform: rotateZ(360deg);
+            -moz-transform: rotateZ(360deg);
+        }</code></pre>
+<pre><code>**_config.yml** 配置文件设置属性配合ejs模板使用</code></pre><pre><code class="xml">        # 自动旋转头像
+        Rotate: true</code></pre>
+<ol start="4">
+<li>修改node_modules依赖，如修改依赖的highlight.js源码。</li>
 </ol>
 <h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>漂亮的呈现代码很重要，<a href="https://highlightjs.org/usage/" target="_blank" rel="noopener">在网页上使用Highlight.js</a> 能够满足我的需求。</p>
 <p>highlight.js 定制包装，可以下载仅包含所需语言的自定义捆绑包。Hexo 有 highlight.js 的依赖，但是表现不好。需要自定义样式。或者拓展 highlight 对象。</p>
 <p>highlight.js 将在 pre code 标签内找到并突出显示代码；它会尝试自动检测语言。如果自动检测对您不起作用，则可以在class属性中指定语言：</p>
-<pre><code>&#39;&#39;&#39;html
-&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;...&lt;/code&gt;&lt;/pre&gt;
-&#39;&#39;&#39;</code></pre><p><a href="http://jamling.github.io/2016/07/18/Web/Hexo-dev-highlight/" target="_blank" rel="noopener">Hexo 代码高亮</a></p>
+<pre><code class="html">    &lt;pre&gt;&lt;code class=&quot;html&quot;&gt;...&lt;/code&gt;&lt;/pre&gt;</code></pre>
+<p><a href="http://jamling.github.io/2016/07/18/Web/Hexo-dev-highlight/" target="_blank" rel="noopener">Hexo 代码高亮</a></p>
 <pre><code>&lt;link rel=&quot;stylesheet&quot; href=&quot;/path/to/styles/default.css&quot;&gt;
 &lt;script src=&quot;/path/to/highlight.pack.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;</code></pre><h3 id="一些其他简单的功能"><a href="#一些其他简单的功能" class="headerlink" title="一些其他简单的功能"></a>一些其他简单的功能</h3><p><a href="https://blog.csdn.net/qq_39610915/article/details/90679768" target="_blank" rel="noopener">看板娘</a><br><a href="https://www.qq.com/404/" target="_blank" rel="noopener">404公益</a><br><a href="https://blog.csdn.net/maosidiaoxian/article/details/98474197" target="_blank" rel="noopener">Hexo yilia 主题添加 valine 评论系统</a>    </p>
@@ -596,12 +565,10 @@ article-entry p code {background:#ddd;border:1px solid #ccc}
 <h3 id="7-3-CNAME"><a href="#7-3-CNAME" class="headerlink" title="7.3 CNAME"></a>7.3 CNAME</h3><p>登录GitHub，<username>.github.io | settings | Custom domain | save</username></p>
 <p><img src="//galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/7_3_domain.png" alt></p>
 <h3 id="7-4-CNAME"><a href="#7-4-CNAME" class="headerlink" title="7.4 CNAME"></a>7.4 CNAME</h3><p>在    blog/source 目录下创建 <a href="https://help.github.com/en/articles/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener">CNAME</a> 文件</p>
-<pre><code>&#39;&#39;&#39;bash
-$ echo &quot;rensifei.site&quot; &gt; $BLOG_FOLDER/source/CNAME
-&#39;&#39;&#39;</code></pre><p>绑定域名<br><img src="//galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/7_4_chome.png" alt></p>
-<h3 id="7-5-确认DNS记录配置正确"><a href="#7-5-确认DNS记录配置正确" class="headerlink" title="7.5 确认DNS记录配置正确"></a>7.5 确认DNS记录配置正确</h3><pre><code>&#39;&#39;&#39;bash
-$ dig galaxias-sapphi-ren.github.io +nostats +nocomments +nocmd
-&#39;&#39;&#39;</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/7_5_testdns.png" alt></p>
+<pre><code class="bash">    $ echo &quot;rensifei.site&quot; &gt; $BLOG_FOLDER/source/CNAME</code></pre>
+<p>绑定域名<br><img src="//galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/7_4_chome.png" alt></p>
+<h3 id="7-5-确认DNS记录配置正确"><a href="#7-5-确认DNS记录配置正确" class="headerlink" title="7.5 确认DNS记录配置正确"></a>7.5 确认DNS记录配置正确</h3><pre><code class="bash">    $ dig galaxias-sapphi-ren.github.io +nostats +nocomments +nocmd</code></pre>
+<p><img src="//galaxias-sapphi-ren.github.io/2018/08/useHexoBlog/7_5_testdns.png" alt></p>
 <h2 id="8-continue"><a href="#8-continue" class="headerlink" title="8 continue"></a>8 continue</h2><p>如果还想折腾：</p>
 <p>在Github上看issue或者提issue <a href="https://github.com/litten/hexo-theme-yilia/issues" target="_blank" rel="noopener">yilia/issues</a></p>
 <p>去Hexo的官方插件页面找插件很多：<a href="https://hexo.io/plugins/" target="_blank" rel="noopener">Hexo插件</a></p>
@@ -745,11 +712,11 @@ $ dig galaxias-sapphi-ren.github.io +nostats +nocomments +nocmd
 
 <nav id="article-nav">
   
-    <a href="/2019/04/jmm/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/04/jvmspecification/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          jvmspecification
+          jvm specification
         
       </div>
     </a>
@@ -783,7 +750,7 @@ $ dig galaxias-sapphi-ren.github.io +nostats +nocomments +nocmd
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于Hexo与GitHubPages搭建个人博客"><span class="toc-number">2.</span> <span class="toc-text">基于Hexo与GitHubPages搭建个人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-技术栈"><span class="toc-number">2.1.</span> <span class="toc-text">1 技术栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-流程协同示意图"><span class="toc-number">2.2.</span> <span class="toc-text">2 流程协同示意图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Hexo-的安装及功能"><span class="toc-number">2.3.</span> <span class="toc-text">3 Hexo 的安装及功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-What"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1 What</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Install"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2 Install</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-安装前提"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">3.2.1 安装前提</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-安装及基础组件"><span class="toc-number">2.3.2.2.</span> <span class="toc-text">3.2.2 安装及基础组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-插件"><span class="toc-number">2.3.2.3.</span> <span class="toc-text">3.2.3 插件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Work"><span class="toc-number">2.3.3.</span> <span class="toc-text">3.3 Work</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-使用-Hexo-书写文章"><span class="toc-number">2.4.</span> <span class="toc-text">4 使用 Hexo 书写文章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-更换主题"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1 更换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-选择主题-yilia"><span class="toc-number">2.4.1.1.</span> <span class="toc-text">4.1.1 选择主题 yilia</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-修改配置文件"><span class="toc-number">2.4.1.2.</span> <span class="toc-text">4.1.2 修改配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-新建-Markdown-文档"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2 新建 Markdown 文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Markdown-写博客"><span class="toc-number">2.4.3.</span> <span class="toc-text">4.3 Markdown 写博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-生成博客资源文件"><span class="toc-number">2.4.4.</span> <span class="toc-text">4.4 生成博客资源文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-生成本地服务"><span class="toc-number">2.4.5.</span> <span class="toc-text">4.5 生成本地服务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-部署到-GitHub-资源库生成-GitHubPages-服务"><span class="toc-number">2.5.</span> <span class="toc-text">5 部署到 GitHub 资源库生成 GitHubPages 服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-使用SSH连接到GitHub"><span class="toc-number">2.5.1.</span> <span class="toc-text">5.1 使用SSH连接到GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Hexo部署"><span class="toc-number">2.5.2.</span> <span class="toc-text">5.2 Hexo部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#修改config-yml配置文件信息"><span class="toc-number">2.5.2.1.</span> <span class="toc-text">修改config.yml配置文件信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hexo部署"><span class="toc-number">2.5.2.2.</span> <span class="toc-text">Hexo部署</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-个性化定制"><span class="toc-number">2.6.</span> <span class="toc-text">6 个性化定制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本原理"><span class="toc-number">2.6.1.</span> <span class="toc-text">基本原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码高亮"><span class="toc-number">2.6.2.</span> <span class="toc-text">代码高亮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些其他简单的功能"><span class="toc-number">2.6.3.</span> <span class="toc-text">一些其他简单的功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-DNS绑定个人网站域名"><span class="toc-number">2.7.</span> <span class="toc-text">7 DNS绑定个人网站域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-绑定个人网站域名-万网购买域名"><span class="toc-number">2.7.1.</span> <span class="toc-text">7.1 绑定个人网站域名 万网购买域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-解析配置"><span class="toc-number">2.7.2.</span> <span class="toc-text">7.2 解析配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-CNAME"><span class="toc-number">2.7.3.</span> <span class="toc-text">7.3 CNAME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-CNAME"><span class="toc-number">2.7.4.</span> <span class="toc-text">7.4 CNAME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-确认DNS记录配置正确"><span class="toc-number">2.7.5.</span> <span class="toc-text">7.5 确认DNS记录配置正确</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-continue"><span class="toc-number">2.8.</span> <span class="toc-text">8 continue</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于Hexo与GitHubPages搭建个人博客"><span class="toc-number">2.</span> <span class="toc-text">基于Hexo与GitHubPages搭建个人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-技术栈"><span class="toc-number">2.1.</span> <span class="toc-text">1 技术栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-流程协同示意图"><span class="toc-number">2.2.</span> <span class="toc-text">2 流程协同示意图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Hexo-的安装及功能"><span class="toc-number">2.3.</span> <span class="toc-text">3 Hexo 的安装及功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-What"><span class="toc-number">2.3.1.</span> <span class="toc-text">3.1 What</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-Install"><span class="toc-number">2.3.2.</span> <span class="toc-text">3.2 Install</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-1-安装前提"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">3.2.1 安装前提</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-2-安装及基础组件"><span class="toc-number">2.3.2.2.</span> <span class="toc-text">3.2.2 安装及基础组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-3-插件"><span class="toc-number">2.3.2.3.</span> <span class="toc-text">3.2.3 插件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Work"><span class="toc-number">2.3.3.</span> <span class="toc-text">3.3 Work</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-使用-Hexo-书写文章"><span class="toc-number">2.4.</span> <span class="toc-text">4 使用 Hexo 书写文章</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-更换主题"><span class="toc-number">2.4.1.</span> <span class="toc-text">4.1 更换主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-1-选择主题-yilia"><span class="toc-number">2.4.1.1.</span> <span class="toc-text">4.1.1 选择主题 yilia</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-修改配置文件"><span class="toc-number">2.4.1.2.</span> <span class="toc-text">4.1.2 修改配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-新建-Markdown-文档"><span class="toc-number">2.4.2.</span> <span class="toc-text">4.2 新建 Markdown 文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-Markdown-写博客"><span class="toc-number">2.4.3.</span> <span class="toc-text">4.3 Markdown 写博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-生成博客资源文件"><span class="toc-number">2.4.4.</span> <span class="toc-text">4.4 生成博客资源文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-部署到-GitHub-资源库生成-GitHubPages-服务"><span class="toc-number">2.5.</span> <span class="toc-text">5 部署到 GitHub 资源库生成 GitHubPages 服务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-使用SSH连接到GitHub"><span class="toc-number">2.5.1.</span> <span class="toc-text">5.1 使用SSH连接到GitHub</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-Hexo部署"><span class="toc-number">2.5.2.</span> <span class="toc-text">5.2 Hexo部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#修改config-yml配置文件信息"><span class="toc-number">2.5.2.1.</span> <span class="toc-text">修改config.yml配置文件信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Hexo部署"><span class="toc-number">2.5.2.2.</span> <span class="toc-text">Hexo部署</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-个性化定制"><span class="toc-number">2.6.</span> <span class="toc-text">6 个性化定制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本原理"><span class="toc-number">2.6.1.</span> <span class="toc-text">基本原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码高亮"><span class="toc-number">2.6.2.</span> <span class="toc-text">代码高亮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些其他简单的功能"><span class="toc-number">2.6.3.</span> <span class="toc-text">一些其他简单的功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-DNS绑定个人网站域名"><span class="toc-number">2.7.</span> <span class="toc-text">7 DNS绑定个人网站域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-绑定个人网站域名-万网购买域名"><span class="toc-number">2.7.1.</span> <span class="toc-text">7.1 绑定个人网站域名 万网购买域名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-解析配置"><span class="toc-number">2.7.2.</span> <span class="toc-text">7.2 解析配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-CNAME"><span class="toc-number">2.7.3.</span> <span class="toc-text">7.3 CNAME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-4-CNAME"><span class="toc-number">2.7.4.</span> <span class="toc-text">7.4 CNAME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-5-确认DNS记录配置正确"><span class="toc-number">2.7.5.</span> <span class="toc-text">7.5 确认DNS记录配置正确</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-continue"><span class="toc-number">2.8.</span> <span class="toc-text">8 continue</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
