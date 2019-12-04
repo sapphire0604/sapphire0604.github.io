@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/8_1_databaseconf.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/9_1_githubconf.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/10_1_installplugin.png">
-<meta property="og:updated_time" content="2019-12-04T22:40:48.770Z">
+<meta property="og:updated_time" content="2019-12-04T22:47:18.097Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac 上使用 IntelliJ IDEA">
 <meta name="twitter:description" content="the most intelligent java IDE IntelliJ Idea  前言  IntelliJ IDEA 是如今最好用的 java IDE 工具。这里比较系统的总结了 Idea IDE 的主要优势，模块化概念的转变，以及如何安装、新建工程、操作。便于学习 Java 项目。 介绍了IDE的组成，如个性化推荐配置、参数调优、修改热键、调试流程、常用视图（使用习惯）、常用命令、使">
@@ -664,13 +664,11 @@ bkg.style.background = left_url + "no-repeat top center";
 <h2 id="5-1-流程"><a href="#5-1-流程" class="headerlink" title="5.1 流程"></a>5.1 流程</h2><ol>
 <li><p><strong>Compile</strong>    </p>
 <pre><code>&quot;⌘ F9&quot; Make Project 或自动编译</code></pre></li>
-</ol>
-<ol start="2">
 <li><p><strong>Breakpoint</strong> </p>
 <pre><code> &quot;⌘ F8&quot; 设置断点，或者点击行号添加断点。
  &quot;⌘ 2&quot; Favorites视图查看断点
 &quot;⌘ ⇧ F8&quot; 断点视图查看断点</code></pre></li>
-<li><p><strong>Thread</strong> </p>
+<li><p>Thread** </p>
 <pre><code>右键断点 -&gt; &quot;Suspend - Thread&quot;设置多线程调试模式</code></pre></li>
 <li><p><strong>Run | Debug</strong> </p>
 <pre><code>&quot;⌃ ⌥ R|D&quot; #hold &quot;⇧&quot;改变 Run|Debug 模式，打开调试</code></pre></li>
@@ -681,10 +679,8 @@ bkg.style.background = left_url + "no-repeat top center";
  ”F9“ Resume Program  跳到下一个断点
  ”⌥ F9“ Run to cursor 跳到下一个断点或光标处</code></pre></li>
 <li><p><strong>Watches</strong></p>
-<pre><code> ```</code></pre><p> “⌥ F8” Evaluate expression 执行表达式动态窗口<br> 跳转至”Debugger | Threads”面板调试多线程</p>
-<pre><code>
-
-</code></pre></li>
+<pre><code> &quot;⌥ F8&quot; Evaluate expression 执行表达式动态窗口
+ 跳转至&quot;Debugger | Threads&quot;面板调试多线程</code></pre></li>
 </ol>
 <p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/5_1_debugthread.png" alt></p>
 <h1 id="6-View-amp-Actions"><a href="#6-View-amp-Actions" class="headerlink" title="6 View &amp; Actions"></a>6 View &amp; Actions</h1><hr>
@@ -808,34 +804,33 @@ bkg.style.background = left_url + "no-repeat top center";
 
 Preferences | Plugins | Install plug from disk - 下载好的插件</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/10_1_installplugin.png" alt></p>
 <h3 id="10-2-recommend"><a href="#10-2-recommend" class="headerlink" title="10.2 recommend"></a>10.2 recommend</h3><ul>
-<li>Maven Helper</li>
-</ul>
+<li><p><strong>Maven Helper</strong></p>
 <p>打开pom文件的Dependency Analyzer视图查看maven的依赖冲突、列表与树。</p>
-<ul>
-<li><p>Ali-CodeAnalysis</p>
-<p>   2017年10月14日杭州云栖大会Java代码规引发布。<a href="https://www.cntofu.com/book/78/readme.html" target="_blank" rel="noopener">阿里巴巴Java开发手册</a> 插件采用kotlin语言开发的，包含三个子菜单：编码规约扫描、关闭试试检测功能、切换语言至英文。</p>
 </li>
-<li><p>GsonFormat</p>
+<li><p><strong>Ali-CodeAnalysis</strong></p>
+<p>2017年10月14日杭州云栖大会Java代码规引发布。<a href="https://www.cntofu.com/book/78/readme.html" target="_blank" rel="noopener">阿里巴巴Java开发手册</a> 插件采用kotlin语言开发的，包含三个子菜单：编码规约扫描、关闭试试检测功能、切换语言至英文。</p>
+</li>
+<li><p><strong>GsonFormat</strong></p>
 <p>  Java开发中，经常有把json格式的内容转成Object的需求，GsonFormat这款插件可以实现该功能。</p>
 </li>
-<li><p>Free Mybatis plugin</p>
+<li><p><strong>Free Mybatis plugin</strong></p>
 <p>Mybatis的JavaMapper文件中会根据xml配置关联定位。（绿色箭头）</p>
 </li>
-<li><p>MyBatis Log Plugin</p>
+<li><p><strong>MyBatis Log Plugin</strong></p>
 <p>将Mybatis执行的sql脚本在日志中显示，清晰执行sql脚本。     </p>
 </li>
-<li><p>Lombok</p>
+<li><p><strong>Lombok</strong></p>
 <p>使用了lombok的注解(@Setter, @Getter, @ToString, @Data)后，不需编写或生成get/set等方法，减少了代码量与代码维护负担。    </p>
 <pre><code>&lt;dependency&gt;
         &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
         &lt;artifactId&gt;lombok&lt;/artifactId&gt;
 &lt;/dependency&gt;</code></pre></li>
-<li><p>RestfulToolkit</p>
+<li><p><strong>RestfulToolkit</strong></p>
 <pre><code>Spring MVC开发中通过URL地址定位controller，并根据controller生成默认的测试数据，解决了postman调试数据时，无需自己组装数据或在console找数据包。</code></pre></li>
-<li><p>Rainbow Brackets</p>
+<li><p><strong>Rainbow Brackets</strong></p>
 <p> 括号高亮插件     </p>
 </li>
-<li><p>VisualVM Launcher</p>
+<li><p><strong>VisualVM Launcher</strong></p>
 <p>jvm调优必备工具，查看某个对象占用了多大的内存。      </p>
 </li>
 </ul>
