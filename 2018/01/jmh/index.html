@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+  <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://galaxias-sapphi-ren.github.io">
-  <title>Tag: Mac | Ren&#39;s Time Overflow Skyline ^_^</title>
+  <title>jmh - 微秒级方法层微基准测试 | Ren&#39;s Time Overflow Skyline ^_^</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java JavaScript Python DeepLearning Programmer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ren&#39;s Time Overflow Skyline ^_^">
-<meta property="og:url" content="https://galaxias-sapphi-ren.github.io/tags/Mac/index.html">
+  <meta name="description" content="JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM. —— JMH If you cannot measure it, you cannot impro">
+<meta name="keywords" content="Microbenchmark,jmh,java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jmh - 微秒级方法层微基准测试">
+<meta property="og:url" content="https://galaxias-sapphi-ren.github.io/2018/01/jmh/index.html">
 <meta property="og:site_name" content="Ren&#39;s Time Overflow Skyline ^_^">
-<meta property="og:description" content="Java JavaScript Python DeepLearning Programmer">
+<meta property="og:description" content="JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM. —— JMH If you cannot measure it, you cannot impro">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg">
+<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2018/01/jmh/2_warmup.png">
+<meta property="og:updated_time" content="2019-12-04T22:02:26.748Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ren&#39;s Time Overflow Skyline ^_^">
-<meta name="twitter:description" content="Java JavaScript Python DeepLearning Programmer">
+<meta name="twitter:title" content="jmh - 微秒级方法层微基准测试">
+<meta name="twitter:description" content="JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM. —— JMH If you cannot measure it, you cannot impro">
+<meta name="twitter:image" content="https://galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -46,13 +51,13 @@ var _hmt = _hmt || [];
 	var s = document.getElementsByTagName("script")[0]; 
 	s.parentNode.insertBefore(hm, s);
 })();
-</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</script>
 
 
 </head>
 </html>
 <body>
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container" q-class="show:isCtnShow">
+  <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       <div class="overlay"></div>
@@ -215,58 +220,272 @@ bkg.style.background = left_url + "no-repeat top center";
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-jmh" class="article article-type-post
+  " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <header class="article-header">
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-          <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/ideaOnMac/" class="archive-article-date">
-	<time datetime="2019-09-20T01:23:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-
-1
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/ideaOnMac/">Mac 上使用 IntelliJ IDEA</a>
+    <h1 class="article-title" itemprop="name">
+      jmh - 微秒级方法层微基准测试
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      
+      <!-- 显示阅读和评论数 -->
+        <br/>
+        <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:#fff;font-size:14px;">
+          <span class="icon-sort"></span>
+          <span id="busuanzi_container_page_pv" style="color:#fff;font-size:14px;">
+          阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+          </span>
+        </a>
+        <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:#fff;font-size:14px;">
+          <span class="join-text" style="color:#fff;font-size:14px;">评论数:</span>
+          <span class="join-count">0</span>次
+        </a>
+        <!-- 显示阅读和评论数 -->
+        <!-- 字数统计-->
+        
+        <div style="margin-top:10px;color:#fff;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-keyboard-o"></i>
+      <span class="post-meta-item-text">  总字数: </span>
+      <span class="post-count" >1.1k字</span>
+    </span>
+  </span>
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="fa fa-hourglass-half"></i>
+      <span class="post-meta-item-text" >  阅读时长: </span>
+      <span class="post-count">5分</span>
+    </span>
+  </span>
+</div>
+        
+        <!-- 字数统计 -->
+      
+    </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p><img src="//galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg" alt></p>
+<blockquote>
+<p>JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM.</p>
+<p>—— <a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">JMH</a></p>
+<p>If you cannot measure it, you cannot improve it.</p>
+<p>—— Lord Kelvin</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<blockquote>
+<p><a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">jmh</a>（Java Microbenchmark Harness 2013）由 Oracle 实现 JIT 的开发人员开发的基准测试框架，作为Java9的一部分来发布。</p>
+<p>jmh 在方法级层面上进行基准（性能）测试，精度可以精确到微秒级。同时像 junit 一样具有 <a href="https://github.com/artyushov/idea-jmh-plugin" target="_blank" rel="noopener">idea 集成插件</a>。为应用提供数据支持，是评价和比较方法好坏的基准。</p>
+<p>Java 编程过程中，通常使用 jmh 对热点代码进行性能评估，或者对不同实现逻辑性能比较。是用来代替初级 System.currentTimeMillis() 更好的方法。jvm初始化或者JIT缓存热点代码，测试时需要对测试代码进行预热。jmh 会因为 JIT 的代码优化出现一些测试陷阱。</p>
+<p>可以在 <a href="http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/" target="_blank" rel="noopener">samples</a> 上查看使用方法，<a href="http://tutorials.jenkov.com/java-performance/jmh.html" target="_blank" rel="noopener">教程</a>。</p>
+</blockquote>
+<a id="more"></a>
+
+<h1 id="1-hello-benchmark"><a href="#1-hello-benchmark" class="headerlink" title="1 hello benchmark"></a>1 hello benchmark</h1><hr>
+<h2 id="1-1-maven-依赖"><a href="#1-1-maven-依赖" class="headerlink" title="1.1 maven 依赖"></a>1.1 <a href="https://mvnrepository.com/artifact/org.openjdk.jmh/jmh-core" target="_blank" rel="noopener">maven 依赖</a></h2><pre><code class="xml">&lt;dependency&gt;
+      &lt;groupId&gt;org.openjdk.jmh&lt;/groupId&gt;
+      &lt;artifactId&gt;jmh-core&lt;/artifactId&gt;
+      &lt;version&gt;${jmh.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+      &lt;groupId&gt;org.openjdk.jmh&lt;/groupId&gt;
+      &lt;artifactId&gt;jmh-generator-annprocess&lt;/artifactId&gt;
+      &lt;version&gt;${jmh.version}&lt;/version&gt;
+      &lt;scope&gt;provided&lt;/scope&gt;&lt;!--编译，测试，运行--&gt;
+&lt;/dependency&gt;</code></pre>
+<h2 id="1-2-简单的-sleep-性能测试实例（注解说明）"><a href="#1-2-简单的-sleep-性能测试实例（注解说明）" class="headerlink" title="1.2  简单的 sleep 性能测试实例（注解说明）"></a>1.2  简单的 sleep 性能测试实例（注解说明）</h2><pre><code class="java">// 类实例的可用范围 Benchmark：多线程共享实例 Thread：多线程不共享 Group：同组共享@Group
+@State(Scope.Thread)
+// 测量维度 Throughput：整体吞吐量 AverageTime：调用平均时间 SampleTime：随机取样 SingleShotTime：冷启动 All：所有模式都执行一次
+@BenchmarkMode(Mode.AverageTime)
+// 测试结果的时间类型
+@OutputTimeUnit(TimeUnit.MILLISECONDS)
+// 预热5次，每次3s
+@Warmup(iterations = 5, time = 3, timeUnit = TimeUnit.SECONDS)
+// 实际调用5次，每次3s
+@Measurement(iterations = 5, time = 3, timeUnit = TimeUnit.SECONDS)
+// 一个进程
+@Fork(1)
+// 一个线程
+@Threads(1)
+public class FirstBenchmark {
+
+    //字段级注解，测试一个函数在不同的参数输入的情况下的性能
+    @Param(value = {&quot;400&quot;, &quot;500&quot;, &quot;600&quot;})
+    private String time;
+
+    //方法级注解，测试前的初始化
+    @Setup
+    public void init() {
+    }
+
+    //方法级注解，测试完成后的垃圾回收 Trial-Iteration-Invocation：每次调用Benchmark方法的之前/之后执行。
+    @TearDown(Level.Trial)
+    public void check() {
+    }
+
+    //方法级注解，表示该方法是需要进行 benchmark 的对象
+    @Benchmark
+    public int sleepAWhile() {
+        try {
+            Thread.sleep(Integer.parseInt(time));
+        } catch (InterruptedException e) {
+            // ignore
+        }
+        return 0;
+    }
+
+    public static void main(String[] args) throws RunnerException {
+        Options opt = new OptionsBuilder()
+                .include(FirstBenchmark.class.getSimpleName())
+                .build();
+        new Runner(opt).run();
+    }
+}</code></pre>
+<h2 id="1-3-运行结果"><a href="#1-3-运行结果" class="headerlink" title="1.3 运行结果"></a>1.3 运行结果</h2><pre><code class="bash">Result &quot;per.rsf.study.jmh.FirstBenchmark.sleepAWhile&quot;:
+  603.117 ±(99.9%) 2.877 ms/op [Average]
+  (min, avg, max) = (602.262, 603.117, 604.238), stdev = 0.747
+  CI (99.9%): [600.239, 605.994] (assumes normal distribution)
+
+Benchmark                   (time)  Mode  Cnt    Score   Error  Units
+FirstBenchmark.sleepAWhile     400  avgt    5  402.859 ± 3.396  ms/op
+FirstBenchmark.sleepAWhile     500  avgt    5  502.924 ± 2.269  ms/op
+FirstBenchmark.sleepAWhile     600  avgt    5  603.117 ± 2.877  ms/op</code></pre>
+<h1 id="2-trap"><a href="#2-trap" class="headerlink" title="2 trap"></a>2 <a href="https://www.cnkirito.moe/java-jmh/" target="_blank" rel="noopener">trap</a></h1><p>测评程序随着迭代次数增多执行耗时变化的曲线，测评程序 <strong>预热</strong> warmup 若干次后，性能最终趋于稳定。（JVM 初始化时的一些准备工作以及 JIT 优化是主要原因，但不是唯一原因）</p>
+<p><img src="//galaxias-sapphi-ren.github.io/2018/01/jmh/2_warmup.png" alt></p>
+<h1 id="3-examples"><a href="#3-examples" class="headerlink" title="3 examples"></a>3 examples</h1><h2 id="3-1-比较-joda-DateTime-与-Calendar-性能"><a href="#3-1-比较-joda-DateTime-与-Calendar-性能" class="headerlink" title="3.1 比较 joda.DateTime 与 Calendar 性能"></a>3.1 比较 joda.DateTime 与 Calendar 性能</h2><pre><code class="bash">Benchmark                  Mode  Cnt    Score    Error  Units
+DateBenchMark.runCalendar  avgt    3  196.022 ± 65.980  ns/op
+DateBenchMark.runJoda      avgt    3   52.651 ± 62.046  ns/op
+DateBenchMark.runSystem    avgt    3   28.354 ±  1.515  ns/op</code></pre>
+<h2 id="3-2-比较并行与串行性能"><a href="#3-2-比较并行与串行性能" class="headerlink" title="3.2 比较并行与串行性能"></a>3.2 比较并行与串行性能</h2><pre><code class="bash">Benchmark                          (length)  Mode  Cnt    Score    Error  Units
+SecondBenchmark.multiThreadBench      10000  avgt   10   19.680 ±  8.778  us/op
+SecondBenchmark.multiThreadBench     100000  avgt   10   33.675 ±  3.710  us/op
+SecondBenchmark.multiThreadBench    1000000  avgt   10  119.929 ±  8.906  us/op
+SecondBenchmark.singleThreadBench     10000  avgt   10    3.206 ±  0.674  us/op
+SecondBenchmark.singleThreadBench    100000  avgt   10   37.824 ±  1.582  us/op
+SecondBenchmark.singleThreadBench   1000000  avgt   10  465.206 ± 28.376  us/op</code></pre>
+<h2 id="3-3-比较字符串连接"><a href="#3-3-比较字符串连接" class="headerlink" title="3.3 比较字符串连接"></a>3.3 比较字符串连接</h2><pre><code class="bash">Benchmark(thrpt吞吐量)                         Mode  Cnt      Score      Error   Units
+StringBuilderBenchMark.testStringAdd         thrpt    5  18700.777 ± 1333.327  ops/ms
+StringBuilderBenchMark.testStringBuilderAdd  thrpt    5  65381.089 ± 4997.020  ops/ms</code></pre>
+<h2 id="3-4-UUID"><a href="#3-4-UUID" class="headerlink" title="3.4 UUID"></a>3.4 <a href="https://lotabout.me/2019/UUID-Generator-Benchmark/" target="_blank" rel="noopener">UUID</a></h2><pre><code class="xml">&lt;dependency&gt;
+      &lt;groupId&gt;com.fasterxml.uuid&lt;/groupId&gt;
+      &lt;artifactId&gt;java-uuid-generator&lt;/artifactId&gt;
+      &lt;version&gt;3.2.0&lt;/version&gt;
+&lt;/dependency&gt;</code></pre>
+<pre><code class="java">
+private RandomBasedGenerator randomBasedGenerator;
+private RandomBasedGenerator jugRandomGenerator;
+private TimeBasedGenerator timeBasedGenerator;
+
+@Setup
+public void init() {
+      randomBasedGenerator = Generators.randomBasedGenerator();//SecureRandom随机数
+      timeBasedGenerator = Generators.timeBasedGenerator();
+      jugRandomGenerator = Generators.randomBasedGenerator(new Random());
+}
+
+@Benchmark
+public void UUIDRandomUUID(Blackhole bh) {
+      //单线程、8线程最慢吞吐量1k/ms
+      bh.consume(UUID.randomUUID());////SecureRandom随机数
+}
+
+@Benchmark
+public void jugWithRandom(Blackhole bh) {
+      //单线程最快吞吐量2w/ms，8线程吞吐量1.5k/ms
+      bh.consume(jugRandomGenerator.generate());
+}
+
+@Benchmark
+public void jugWithSecureRandom(Blackhole bh) {
+      //单线程、8线程最慢吞吐量1k/ms
+      bh.consume(randomBasedGenerator.generate());
+}
+
+@Benchmark
+public void jugTime(Blackhole bh) {
+      //8线程最快吞吐量1w/ms，单线程吞吐量1w/ms
+      bh.consume(timeBasedGenerator.generate());
+}
+
+//SecureRandom 通过获取操作系统的一些随机噪声来生成随机数的，性能不是很好（相对）</code></pre>
+
+      
+      
+      <!-- 版权声明 -->
+      
+      <div class="declare">
+        
+        <strong>本文作者：</strong>
+        Sapphire
+        
+        <br>
+        <strong>本文链接：</strong>
+        https://galaxias-sapphi-ren.github.io/2018/01/jmh/
+        <br>
+        <strong>版权声明：</strong>
+        转载请注明出处！
+      </div>
+      <!-- 版权声明 -->
+      
+      
+      <div class="page-reward">
+        <a href="javascript:;" class="page-reward-btn tooltip-top">
+          <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+        </a>
+      </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Microbenchmark</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">IDE</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jmh</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mac</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -279,18 +498,165 @@ bkg.style.background = left_url + "no-repeat top center";
 	</div>
 
 
+      
+      
+      
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!--<a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>-->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <!--<a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>-->
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box"> 
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://galaxias-sapphi-ren.github.io/2018/01/jmh/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-        </div>
-      </section>
-  
 
-    
+
+<nav id="article-nav">
+  
+    <a href="/2018/05/PlantUML/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          在 mac 上使用 PlantUML 画 UML
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/practice/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">熟能生巧</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-hello-benchmark"><span class="toc-number">2.</span> <span class="toc-text">1 hello benchmark</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-maven-依赖"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 maven 依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-简单的-sleep-性能测试实例（注解说明）"><span class="toc-number">2.2.</span> <span class="toc-text">1.2  简单的 sleep 性能测试实例（注解说明）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-运行结果"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 运行结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-trap"><span class="toc-number">3.</span> <span class="toc-text">2 trap</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-examples"><span class="toc-number">4.</span> <span class="toc-text">3 examples</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-比较-joda-DateTime-与-Calendar-性能"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 比较 joda.DateTime 与 Calendar 性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-比较并行与串行性能"><span class="toc-number">4.2.</span> <span class="toc-text">3.2 比较并行与串行性能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-比较字符串连接"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 比较字符串连接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-UUID"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 UUID</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+<!-- valine 评论系统 -->
+<div class="valine_comment"></div>
+<style>
+  .valine_comment{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.valine_comment{margin:auto;padding:10px;background:#fff}}
+</style>
+<!--载入js，在</body>之前插入即可-->
+<!--Leancloud 操作库:-->
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<!--Valine 的核心代码库-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var notify = 'false' == true ? true : false;
+  var verify = 'true' == true ? true : false;
+  new Valine({
+      av: AV,
+      el: '.valine_comment',
+      emoticon_url: 'https://cloud.panjunwen.com/alu',
+      emoticon_list: ["狂汗.png","不说话.png","汗.png","坐等.png","献花.png","不高兴.png","中刀.png","害羞.png","皱眉.png","小眼睛.png","暗地观察.png"],
+      app_id: 'UCVTWkw8V9E4MP6Qs7tDnXCw-gzGzoHsz',
+      app_key: 'vs1fcN4p13y4FP34xG7YLNis',
+      placeholder: '有话要说？'
+    });
+</script>
+<!-- valine 评论系统 -->
+
+
+
+
+
+
+
+
+
+<!-- 百度主动推送 -->
+<script>
+(function () {
+var bp = document.createElement('script');
+var curProtocol = window.location.protocol.split(':')[0];
+if (curProtocol === 'https') {
+bp.src = 'https://zz.bdstatic.com/linksubmit/push.js'
+} else {
+bp.src = 'http://push.zhanzhang.baidu.com/push.js'
+}
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(bp, s)
+})();
+</script>
+<!-- 百度主动推送 -->
 
 
           </div>
@@ -323,9 +689,9 @@ bkg.style.background = left_url + "no-repeat top center";
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
@@ -647,23 +1013,6 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+  </div>
 </body>
 </html>

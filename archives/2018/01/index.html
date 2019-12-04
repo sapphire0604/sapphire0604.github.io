@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://galaxias-sapphi-ren.github.io">
-  <title>Tag: Mac | Ren&#39;s Time Overflow Skyline ^_^</title>
+  <title>Archives: 2018/1 | Ren&#39;s Time Overflow Skyline ^_^</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Java JavaScript Python DeepLearning Programmer">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ren&#39;s Time Overflow Skyline ^_^">
-<meta property="og:url" content="https://galaxias-sapphi-ren.github.io/tags/Mac/index.html">
+<meta property="og:url" content="https://galaxias-sapphi-ren.github.io/archives/2018/01/index.html">
 <meta property="og:site_name" content="Ren&#39;s Time Overflow Skyline ^_^">
 <meta property="og:description" content="Java JavaScript Python DeepLearning Programmer">
 <meta property="og:locale" content="zh-CN">
@@ -217,56 +217,66 @@ bkg.style.background = left_url + "no-repeat top center";
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-jmh" class="article article-type-post
+   article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <header class="article-header">
       
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-          <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/09/ideaOnMac/" class="archive-article-date">
-	<time datetime="2019-09-20T01:23:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
-</a>
-
-1
-        </div>
-    	 
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/ideaOnMac/">Mac 上使用 IntelliJ IDEA</a>
+      <a class="article-title" href="/2018/01/jmh/">jmh - 微秒级方法层微基准测试</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      
+    </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p><img src="//galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg" alt></p>
+<blockquote>
+<p>JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM.</p>
+<p>—— <a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">JMH</a></p>
+<p>If you cannot measure it, you cannot improve it.</p>
+<p>—— Lord Kelvin</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<blockquote>
+<p><a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">jmh</a>（Java Microbenchmark Harness 2013）由 Oracle 实现 JIT 的开发人员开发的基准测试框架，作为Java9的一部分来发布。</p>
+<p>jmh 在方法级层面上进行基准（性能）测试，精度可以精确到微秒级。同时像 junit 一样具有 <a href="https://github.com/artyushov/idea-jmh-plugin" target="_blank" rel="noopener">idea 集成插件</a>。为应用提供数据支持，是评价和比较方法好坏的基准。</p>
+<p>Java 编程过程中，通常使用 jmh 对热点代码进行性能评估，或者对不同实现逻辑性能比较。是用来代替初级 System.currentTimeMillis() 更好的方法。jvm初始化或者JIT缓存热点代码，测试时需要对测试代码进行预热。jmh 会因为 JIT 的代码优化出现一些测试陷阱。</p>
+<p>可以在 <a href="http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/" target="_blank" rel="noopener">samples</a> 上查看使用方法，<a href="http://tutorials.jenkov.com/java-performance/jmh.html" target="_blank" rel="noopener">教程</a>。</p>
+</blockquote>
+      
+      
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Microbenchmark</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">IDE</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jmh</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mac</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -279,19 +289,38 @@ bkg.style.background = left_url + "no-repeat top center";
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/01/jmh/">Know More >></a>
+      </p>
+      
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-      </section>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
-
-    
-
+  
 
           </div>
         </div>
@@ -324,8 +353,8 @@ bkg.style.background = left_url + "no-repeat top center";
 		mathjax: true,
 		isHome: false,
 		isPost: false,
-		isArchive: false,
-		isTag: true,
+		isArchive: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,

@@ -112,7 +112,7 @@ bkg.style.background = left_url + "no-repeat top center";
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部
     			<!--文章统计-->
 				
-    				[ 13 ]
+    				[ 14 ]
     			
     			<!--文章统计-->
     			</a>
@@ -602,6 +602,109 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 
 
   
+    <article id="post-jmh" class="article article-type-post
+   article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/jmh/">jmh - 微秒级方法层微基准测试</a>
+    </h1>
+  
+
+      
+    </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p><img src="//galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg" alt></p>
+<blockquote>
+<p>JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM.</p>
+<p>—— <a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">JMH</a></p>
+<p>If you cannot measure it, you cannot improve it.</p>
+<p>—— Lord Kelvin</p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<blockquote>
+<p><a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">jmh</a>（Java Microbenchmark Harness 2013）由 Oracle 实现 JIT 的开发人员开发的基准测试框架，作为Java9的一部分来发布。</p>
+<p>jmh 在方法级层面上进行基准（性能）测试，精度可以精确到微秒级。同时像 junit 一样具有 <a href="https://github.com/artyushov/idea-jmh-plugin" target="_blank" rel="noopener">idea 集成插件</a>。为应用提供数据支持，是评价和比较方法好坏的基准。</p>
+<p>Java 编程过程中，通常使用 jmh 对热点代码进行性能评估，或者对不同实现逻辑性能比较。是用来代替初级 System.currentTimeMillis() 更好的方法。jvm初始化或者JIT缓存热点代码，测试时需要对测试代码进行预热。jmh 会因为 JIT 的代码优化出现一些测试陷阱。</p>
+<p>可以在 <a href="http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/" target="_blank" rel="noopener">samples</a> 上查看使用方法，<a href="http://tutorials.jenkov.com/java-performance/jmh.html" target="_blank" rel="noopener">教程</a>。</p>
+</blockquote>
+      
+      
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Microbenchmark</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jmh</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Blog//" class="article-tag-list-link color5">Blog</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/01/jmh/">Know More >></a>
+      </p>
+      
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-practice" class="article article-type-post
    article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -800,7 +903,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/javac/">javac编译器的源码分析</a>
+      <a class="article-title" href="/2017/03/javac/">javac源码笔记与简单的编译原理</a>
     </h1>
   
 
@@ -813,13 +916,14 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
       <p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/cover.jpg" alt></p>
 <blockquote>
 <p>Reads Java class and interface definitions and compiles them into bytecode and class files.</p>
-<p>—— <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javac.html" target="_blank" rel="noopener">java8</a></p>
+<p>—— <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javac.html" target="_blank" rel="noopener">java8 - javac</a></p>
 </blockquote>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
 <blockquote>
-<p>java程序的编译工作通常使用IDE或Maven，Gradle等工具完成，容易忽视java编译期隐藏的细节，深入理解javac、编译等相关概念。</p>
-<p>javac是<a href="https://zh.wikipedia.org/wiki/JDK" target="_blank" rel="noopener">JDK</a>的Java语言编译器工具，将满足Java语言规范（The Java Language Specification）的.java源文件编译成为满足JVM规范（The Java Virtual Machine Specification）的.class字节码文件。可以更准确、直观地理解Java语言中更深层次的东西。如关键字的实现，<a href="https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html" target="_blank" rel="noopener">字节码增强</a>，实现语法糖等。</p>
-<p>一般而言，javac扫描源文件，生成Token流，构建抽象语法树，填充符号表，生成插入式注解语法树，语义分析后生成字节码。是java的前端编译器。</p>
+<p>java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的细节，深入理解 javac、编译等相关概念。</p>
+<p>javac 是 <a href="https://zh.wikipedia.org/wiki/JDK" target="_blank" rel="noopener">JDK</a> 的Java语言前端编译器工具，将满足 Java 语言规范（JLS, Java Language Specification）的 .java 源文件编译成为满足JVM规范（JVMS, Java Virtual Machine Specification）的 .class 字节码文件。</p>
+<p>学习 javac，可以更准确、直观地理解 Java 语言中深层知识。如：编译原理、插入式注解API <a href="https://jcp.org/en/jsr/detail?id=269" target="_blank" rel="noopener">JSR-296</a>、语法糖等核心技术。理解如何生成字节码编译过程，便于理解JLS，JVMS，<a href="https://zhuanlan.zhihu.com/p/29881777" target="_blank" rel="noopener">并发编程内存模型</a>、<a href="http://tutorials.jenkov.com/java-concurrency/volatile.html" target="_blank" rel="noopener">java 关键字实现</a>、<a href="https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html" target="_blank" rel="noopener">字节码增强技术</a>等。</p>
+<p>一般而言，javac 的编译过程为：源代码 –(词法分析)–&gt;  符号Token流 –(语法分析)–&gt; 抽象语法树 –&gt; 填充符号表 –&gt; –(注解处理器)–&gt; 插入式注解语法树 -(语义分析)-&gt; 完整语法树 –(生成代码)–&gt; 字节码。是java的前端编译器。</p>
 <p>javac由java语言编写，支持JSR 269（Pluggable Annotation Processing API）和JSR 199（the Java Compiler API），方便调试学习。</p>
 </blockquote>
       
@@ -861,97 +965,6 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
       
       <p class="article-more-link">
         <a class="article-more-a" href="/2017/03/javac/">Know More >></a>
-      </p>
-      
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-recsysGuide" class="article article-type-post
-   article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/recsysGuide/">Machine Learning | 推荐系统</a>
-    </h1>
-  
-
-      
-    </header>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      <p> <img src="//galaxias-sapphi-ren.github.io/2017/03/recsysGuide/cover.jpg" alt></p>
-<p>2017年03月08日 - rensifei @Copyright Smart Home &amp; Roobo</p>
-<blockquote>
-<p><code>推荐系统</code>是一种信息过滤系统，用于预测用户对物品的“评分”或“偏好”。</p>
-<p><code>推荐系统</code>是一种有效代替 <strong>搜索算法</strong> 的方式，用于解决在 <strong>信息过载</strong> 环境下，根据用户的特征，为用户提供有用信息。</p>
-</blockquote>
-      
-      
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Blog//" class="article-tag-list-link color5">Blog</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Blog/Artificial-Intelligence//" class="article-tag-list-link color4">Artificial Intelligence</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2017/03/recsysGuide/">Know More >></a>
       </p>
       
       
@@ -1122,6 +1135,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
@@ -1131,14 +1152,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Yeoman</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1159,6 +1172,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Microbenchmark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jmh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1247,6 +1272,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://www.lizhi.fm/user/2507994147099082284" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>荔枝</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://jdkcb.com/rain/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>听雨</a>
             </li>
           
         </ul>

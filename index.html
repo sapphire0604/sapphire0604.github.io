@@ -112,7 +112,7 @@ bkg.style.background = left_url + "no-repeat top center";
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部
     			<!--文章统计-->
 				
-    				[ 13 ]
+    				[ 14 ]
     			
     			<!--文章统计-->
     			</a>
@@ -602,7 +602,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 
 
   
-    <article id="post-practice" class="article article-type-post
+    <article id="post-jmh" class="article article-type-post
    article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -610,7 +610,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/practice/">熟能生巧</a>
+      <a class="article-title" href="/2018/01/jmh/">jmh - 微秒级方法层微基准测试</a>
     </h1>
   
 
@@ -620,18 +620,20 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 
     <div class="article-entry" itemprop="articleBody">
       
-      <p><img src="//galaxias-sapphi-ren.github.io/2017/06/practice/cover.jpg" alt></p>
+      <p><img src="//galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg" alt></p>
 <blockquote>
-<p>康肃问曰：“汝亦知射乎?吾射不亦精乎?”</p>
-<p>翁曰：“无他，但手熟尔。”</p>
-<p>康肃忿然曰：“尔安敢轻吾射!”</p>
-<p>因曰：“我亦无他，惟手熟尔。”</p>
-<p>—— from <a href="https://baike.baidu.com/item/卖油翁/10894747?fr=aladdin" target="_blank" rel="noopener">《卖油翁》</a></p>
+<p>JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM.</p>
+<p>—— <a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">JMH</a></p>
+<p>If you cannot measure it, you cannot improve it.</p>
+<p>—— Lord Kelvin</p>
 </blockquote>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
-<p>常用网址</p>
-<p><a href="https://man.linuxde.net" target="_blank" rel="noopener">Linux命令大全</a></p>
-<p><a href="https://leetcode-cn.com/problemset/all/" target="_blank" rel="noopener">LeetCode</a></p>
+<blockquote>
+<p><a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">jmh</a>（Java Microbenchmark Harness 2013）由 Oracle 实现 JIT 的开发人员开发的基准测试框架，作为Java9的一部分来发布。</p>
+<p>jmh 在方法级层面上进行基准（性能）测试，精度可以精确到微秒级。同时像 junit 一样具有 <a href="https://github.com/artyushov/idea-jmh-plugin" target="_blank" rel="noopener">idea 集成插件</a>。为应用提供数据支持，是评价和比较方法好坏的基准。</p>
+<p>Java 编程过程中，通常使用 jmh 对热点代码进行性能评估，或者对不同实现逻辑性能比较。是用来代替初级 System.currentTimeMillis() 更好的方法。jvm初始化或者JIT缓存热点代码，测试时需要对测试代码进行预热。jmh 会因为 JIT 的代码优化出现一些测试陷阱。</p>
+<p>可以在 <a href="http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/" target="_blank" rel="noopener">samples</a> 上查看使用方法，<a href="http://tutorials.jenkov.com/java-performance/jmh.html" target="_blank" rel="noopener">教程</a>。</p>
+</blockquote>
       
       
       
@@ -645,7 +647,15 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Practice</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Microbenchmark</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jmh</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -657,7 +667,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/Practice//" class="article-tag-list-link color4">Practice</a>
+        			<a href="/categories/Blog//" class="article-tag-list-link color5">Blog</a>
         		</li>
       		
 		</ul>
@@ -666,7 +676,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 
       
       <p class="article-more-link">
-        <a class="article-more-a" href="/2017/06/practice/">Know More >></a>
+        <a class="article-more-a" href="/2018/01/jmh/">Know More >></a>
       </p>
       
       
@@ -838,6 +848,14 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
@@ -847,14 +865,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Yeoman</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -875,6 +885,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Microbenchmark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jmh</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -963,6 +985,10 @@ MathJax.Hub.Queue(function() {
           
             <li class="search-li">
               <a href="https://www.lizhi.fm/user/2507994147099082284" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>荔枝</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="http://jdkcb.com/rain/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>听雨</a>
             </li>
           
         </ul>
