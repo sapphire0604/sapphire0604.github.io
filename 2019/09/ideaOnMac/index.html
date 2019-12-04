@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/8_1_databaseconf.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/9_1_githubconf.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/10_1_installplugin.png">
-<meta property="og:updated_time" content="2019-12-04T22:35:21.138Z">
+<meta property="og:updated_time" content="2019-12-04T22:38:12.566Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac 上使用 IntelliJ IDEA">
 <meta name="twitter:description" content="the most intelligent java IDE IntelliJ Idea  前言  IntelliJ IDEA 是如今最好用的 java IDE 工具。这里比较系统的总结了 Idea IDE 的主要优势，模块化概念的转变，以及如何安装、新建工程、操作。便于学习 Java 项目。 介绍了IDE的组成，如个性化推荐配置、参数调优、修改热键、调试流程、常用视图（使用习惯）、常用命令、使">
@@ -359,14 +359,18 @@ bkg.style.background = left_url + "no-repeat top center";
 <li><p>提示功能：快速、范围广</p>
 <pre><code>  ⌥ ⏎ #代码提示</code></pre></li>
 <li><p>快捷键及模板代码（live Templates，postfix）</p>
-<pre><code>     ```</code></pre><p>  “⌘ ,” -&gt; “ Editor | Live Templates”<br>  psvm #main函数<br>  iter #foreach<br> fori #iterate</p>
-<pre><code></code></pre></li>
+<pre><code>  &quot;⌘ ,&quot; -&gt; &quot; Editor | Live Templates&quot;
+  psvm #main函数 
+  iter #foreach
+ fori #iterate</code></pre></li>
 <li><p>精确搜索：视图、定位</p>
-<pre><code>     ```</code></pre><p>   ⇧ ⌥ ⌘ U #视图<br> ⇧ ⇧ #定位</p>
-<pre><code></code></pre></li>
+<pre><code>   ⇧ ⌥ ⌘ U #视图
+ ⇧ ⇧ #定位</code></pre></li>
 <li><p>重构、代码审查</p>
-<pre><code>     ```</code></pre><p>   ⇧ F6 #rename<br>   ⌘ F6 #重构方法<br>   ⌥ ⌘ V|C|F|P|M #抽取变量|静态变量|成员变量|方法参数|方法<br>   ⌥ ⌘ L #格式化代码</p>
-<pre><code></code></pre></li>
+<pre><code>   ⇧ F6 #rename
+   ⌘ F6 #重构方法
+   ⌥ ⌘ V|C|F|P|M #抽取变量|静态变量|成员变量|方法参数|方法
+   ⌥ ⌘ L #格式化代码</code></pre></li>
 </ul>
 <h3 id="1-1-6-debug-gt-调试（detail-in-5-How-to-Debug）"><a href="#1-1-6-debug-gt-调试（detail-in-5-How-to-Debug）" class="headerlink" title="1.1.6 debug -&gt; 调试（detail in 5 How to Debug）"></a>1.1.6 debug -&gt; 调试（detail in 5 How to Debug）</h3><ul>
 <li><p>调试时，灵活查看对象的值。</p>
@@ -655,20 +659,22 @@ bkg.style.background = left_url + "no-repeat top center";
 &quot;Build Tools | Maven | Importing | Automatically download — Sources #Maven自动导入源码</code></pre><h1 id="5-How-to-Debug"><a href="#5-How-to-Debug" class="headerlink" title="5 How to Debug"></a>5 How to Debug</h1><hr>
 <h2 id="5-1-流程"><a href="#5-1-流程" class="headerlink" title="5.1 流程"></a>5.1 流程</h2><ol>
 <li><p><strong>Compile</strong>    </p>
-<pre><code> ```</code></pre><p>“⌘ F9” Make Project 或自动编译</p>
+<pre><code> ```</code></pre><p> “⌘ F9” Make Project 或自动编译</p>
 <pre><code></code></pre></li>
 <li><p><strong>Breakpoint</strong> </p>
-<pre><code> ```</code></pre><p> “⌘ F8” 设置断点，或者点击行号添加断点。<br> “⌘ 2” Favorites视图查看断点<br>“⌘ ⇧ F8” 断点视图查看断点</p>
-<pre><code></code></pre></li>
+<pre><code> &quot;⌘ F8&quot; 设置断点，或者点击行号添加断点。
+ &quot;⌘ 2&quot; Favorites视图查看断点
+&quot;⌘ ⇧ F8&quot; 断点视图查看断点</code></pre></li>
 <li><p><strong>Thread</strong> </p>
-<pre><code> ```</code></pre><p>右键断点 -&gt; “Suspend - Thread”设置多线程调试模式</p>
-<pre><code></code></pre></li>
+<pre><code>右键断点 -&gt; &quot;Suspend - Thread&quot;设置多线程调试模式</code></pre></li>
 <li><p><strong>Run | Debug</strong> </p>
-<pre><code> ```</code></pre><p>“⌃ ⌥ R|D” #hold “⇧”改变 Run|Debug 模式，打开调试</p>
-<pre><code></code></pre></li>
+<pre><code>&quot;⌃ ⌥ R|D&quot; #hold &quot;⇧&quot;改变 Run|Debug 模式，打开调试</code></pre></li>
 <li><p><strong>Debugging</strong></p>
-<pre><code> ```</code></pre><p> ”F7“ Step into 跳入该方法<br> ”F8“ Step over 跳到下一个方法<br> ”⇧ F8“ Step out 跳出该方法<br> ”F9“ Resume Program  跳到下一个断点<br> ”⌥ F9“ Run to cursor 跳到下一个断点或光标处</p>
-<pre><code></code></pre></li>
+<pre><code> ”F7“ Step into 跳入该方法
+ ”F8“ Step over 跳到下一个方法
+ ”⇧ F8“ Step out 跳出该方法
+ ”F9“ Resume Program  跳到下一个断点
+ ”⌥ F9“ Run to cursor 跳到下一个断点或光标处</code></pre></li>
 <li><p><strong>Watches</strong></p>
 <pre><code> ```</code></pre><p> “⌥ F8” Evaluate expression 执行表达式动态窗口<br> 跳转至”Debugger | Threads”面板调试多线程</p>
 <pre><code>
@@ -831,7 +837,6 @@ Preferences | Plugins | Install plug from disk - 下载好的插件</code></pre>
 <h1 id="11-BiliBili"><a href="#11-BiliBili" class="headerlink" title="11 BiliBili"></a>11 BiliBili</h1><hr>
 <p>参考的哔哩哔哩视频。</p>
 <iframe src="//player.bilibili.com/player.html?aid=30080993&cid=52434034&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="95%" height="450"> </iframe>
-
 
       
       
