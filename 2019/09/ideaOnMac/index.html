@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/8_1_databaseconf.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/9_1_githubconf.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/10_1_installplugin.png">
-<meta property="og:updated_time" content="2019-10-06T12:26:25.564Z">
+<meta property="og:updated_time" content="2019-12-04T22:35:21.138Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac 上使用 IntelliJ IDEA">
 <meta name="twitter:description" content="the most intelligent java IDE IntelliJ Idea  前言  IntelliJ IDEA 是如今最好用的 java IDE 工具。这里比较系统的总结了 Idea IDE 的主要优势，模块化概念的转变，以及如何安装、新建工程、操作。便于学习 Java 项目。 介绍了IDE的组成，如个性化推荐配置、参数调优、修改热键、调试流程、常用视图（使用习惯）、常用命令、使">
@@ -310,20 +310,17 @@ bkg.style.background = left_url + "no-repeat top center";
 <p>📖 <strong>学习文档</strong></p>
 <p><a href="2019-09-20-ideaOnMac/https://www.w3cschool.cn/intellij_idea_doc/">w3cshool</a></p>
 <p><a href="2019-09-20-ideaOnMac/https://www.jetbrains.com/help/idea/getting-started.html">jetbrains help</a></p>
-<p>👍 <strong>优势</strong> </p>
-<ol>
-<li><p>内存空间 -&gt; 速度</p>
-<ul>
+<h2 id="1-1-优势"><a href="#1-1-优势" class="headerlink" title="1.1 优势"></a>1.1 优势</h2><h3 id="1-1-1-内存空间-gt-速度"><a href="#1-1-1-内存空间-gt-速度" class="headerlink" title="1.1.1 内存空间 -&gt; 速度"></a>1.1.1 内存空间 -&gt; 速度</h3><ul>
 <li>idea安装包小。</li>
 <li>运行时会把建立的索引保存到内存空间中，加快文件查询，从而加快各种查找、代码提示等操作的速度。</li>
 <li>实际占用CPU少。尤其当Eclipse使用JSP等语法检查时很慢。</li>
 </ul>
 <p>🗣 <strong>Tips</strong></p>
-<p><strong>索引</strong>：idea会建立文件、类、方法等索引。如：抽象类、注解类、普通类、枚举类、异常类、接口、含main类、方法、属性及其修饰符，建立语法树，分析上下文。</p>
-<p>idea的缓存和索引文件也是会损坏的，如断电、蓝屏引起的强制关机。</p>
-<pre><code>  &quot;File&quot; -&gt; &quot;Invalidate Caches / Restart...&quot; -&gt; Invalidate and Restart #修复</code></pre></li>
-<li><p>概念切换 -&gt; 灵活</p>
-<table>
+<ol>
+<li>索引**：idea会建立文件、类、方法等索引。如：抽象类、注解类、普通类、枚举类、异常类、接口、含main类、方法、属性及其修饰符，建立语法树，分析上下文。</li>
+<li>idea的缓存和索引文件也是会损坏的，如断电、蓝屏引起的强制关机。</li>
+</ol>
+<pre><code>&quot;File&quot; -&gt; &quot;Invalidate Caches / Restart...&quot; -&gt; Invalidate and Restart #修复</code></pre><h3 id="1-1-2-概念切换-gt-灵活"><a href="#1-1-2-概念切换-gt-灵活" class="headerlink" title="1.1.2 概念切换 -&gt; 灵活"></a>1.1.2 概念切换 -&gt; 灵活</h3><table>
 <thead>
 <tr>
 <th align="center">eclipse</th>
@@ -355,52 +352,37 @@ bkg.style.background = left_url + "no-repeat top center";
 <td align="center">path variable</td>
 </tr>
 </tbody></table>
-<p><strong>工作空间 -&gt; 模块化</strong> ：IDEA不需要设置工作空间，每一个项目工程（Project）都具备一个工作空间，每一个子模块（Module）都可以使用独立的JDK和MAVEN配置。新项目配置（ProjectStructs）后，子模块初始化继承项目配置。</p>
-<pre><code>    ⌘ ; -&gt; &quot;Project|Module&quot;</code></pre></li>
-<li><p>工作区间最大化 -&gt; 专注</p>
-<pre><code> ⌘ ⇧ F12 -&gt; &quot;Project|Module&quot;</code></pre></li>
-</ol>
-<ol start="4">
-<li><p>功能 -&gt; 便捷 </p>
-<ul>
+<h3 id="1-1-3-工作空间-gt-模块化"><a href="#1-1-3-工作空间-gt-模块化" class="headerlink" title="1.1.3 工作空间 -&gt; 模块化"></a>1.1.3 工作空间 -&gt; 模块化</h3><p>IDEA不需要设置工作空间，每一个项目工程（Project）都具备一个工作空间，每一个子模块（Module）都可以使用独立的JDK和MAVEN配置。新项目配置（ProjectStructs）后，子模块初始化继承项目配置。</p>
+<pre><code>⌘ ; -&gt; &quot;Project|Module&quot;</code></pre><h3 id="1-1-4-工作区间最大化-gt-专注"><a href="#1-1-4-工作区间最大化-gt-专注" class="headerlink" title="1.1.4 工作区间最大化 -&gt; 专注"></a>1.1.4 工作区间最大化 -&gt; 专注</h3><pre><code>⌘ ⇧ F12 -&gt; &quot;Project|Module&quot;</code></pre><h3 id="1-1-5-功能-gt-便捷"><a href="#1-1-5-功能-gt-便捷" class="headerlink" title="1.1.5 功能 -&gt; 便捷"></a>1.1.5 功能 -&gt; 便捷</h3><ul>
 <li><p>整合能力：各类版本工具(git、svn等)、JUnit、CVS、Spring、Tomcat、Maven</p>
 </li>
 <li><p>提示功能：快速、范围广</p>
-<pre><code>   ⌥ ⏎ #代码提示</code></pre></li>
+<pre><code>  ⌥ ⏎ #代码提示</code></pre></li>
 <li><p>快捷键及模板代码（live Templates，postfix）</p>
-<pre><code>   #&quot;⌘ ,&quot; -&gt; &quot; Editor | Live Templates&quot;
-   psvm #main函数 
-   iter #foreach
-   fori #iterate</code></pre></li>
+<pre><code>     ```</code></pre><p>  “⌘ ,” -&gt; “ Editor | Live Templates”<br>  psvm #main函数<br>  iter #foreach<br> fori #iterate</p>
+<pre><code></code></pre></li>
 <li><p>精确搜索：视图、定位</p>
-<pre><code>   ⇧ ⌥ ⌘ U #视图
-   ⇧ ⇧ #定位</code></pre></li>
+<pre><code>     ```</code></pre><p>   ⇧ ⌥ ⌘ U #视图<br> ⇧ ⇧ #定位</p>
+<pre><code></code></pre></li>
 <li><p>重构、代码审查</p>
-<pre><code>   ⇧ F6 #rename
-    ⌘ F6 #重构方法
-    ⌥ ⌘ V|C|F|P|M #抽取变量|静态变量|成员变量|方法参数|方法
-    ⌥ ⌘ L #格式化代码</code></pre></li>
+<pre><code>     ```</code></pre><p>   ⇧ F6 #rename<br>   ⌘ F6 #重构方法<br>   ⌥ ⌘ V|C|F|P|M #抽取变量|静态变量|成员变量|方法参数|方法<br>   ⌥ ⌘ L #格式化代码</p>
+<pre><code></code></pre></li>
 </ul>
-</li>
-<li><p>debug -&gt; 调试（detail in 5 How to Debug）</p>
-<ul>
-<li>调试时，灵活查看对象的值。</li>
-</ul>
+<h3 id="1-1-6-debug-gt-调试（detail-in-5-How-to-Debug）"><a href="#1-1-6-debug-gt-调试（detail-in-5-How-to-Debug）" class="headerlink" title="1.1.6 debug -&gt; 调试（detail in 5 How to Debug）"></a>1.1.6 debug -&gt; 调试（detail in 5 How to Debug）</h3><ul>
+<li><p>调试时，灵活查看对象的值。</p>
 <ol>
 <li>选中对象后，拖动到Variables中。新建Watch。</li>
 <li>选中对象后，使用快捷键”⌥ F8” 动态编辑值Evaluate expression。</li>
 <li>选中对象后，鼠标悬停。</li>
 </ol>
-<ul>
+</li>
 <li><p>查看Map类型的对象，如果实现类采用的是哈希映射，则会自动过滤空的Entry实例。</p>
 </li>
 <li><p>右击断点，可以设置多线程调试，并添加条件，当满足条件后进入断点。多线程执行的情况在Log on console。</p>
 </li>
 </ul>
-</li>
-</ol>
 <p>✨ <strong>技巧</strong> </p>
-<pre><code> ⇧ ⌘ A #Actions，输入关键字查找命令</code></pre><h1 id="2-Support"><a href="#2-Support" class="headerlink" title="2 Support"></a>2 Support</h1><hr>
+<pre><code>⇧ ⌘ A #Actions，输入关键字查找命令</code></pre><h1 id="2-Support"><a href="#2-Support" class="headerlink" title="2 Support"></a>2 Support</h1><hr>
 <table>
 <thead>
 <tr>
@@ -510,10 +492,10 @@ bkg.style.background = left_url + "no-repeat top center";
 <li><p>预备JetbrainsCrack.jar放入idea的bin目录下</p>
 </li>
 <li><p>修改配置文件（idea.vmoptions）</p>
-<pre><code> 试用 -&gt; &quot;Help&quot; -&gt; &quot;Edit Custom VM Options ...&quot;，若提示创建文件，点&quot;是|Yes&quot;。</code></pre><p>linux系统/root/.idea中idea.vmoptions，javaagent也要改</p>
-</li>
+<pre><code>试用 -&gt; &quot;Help&quot; -&gt; &quot;Edit Custom VM Options ...&quot;，若提示创建文件，点&quot;是|Yes&quot;。
+#linux系统/root/.idea中idea.vmoptions，javaagent也要改</code></pre></li>
 <li><p>末行添加jar文件的绝对路径</p>
-<pre><code> -javaagent:/Applications/IntelliJ IDEA.app/Contents/bin/JetbrainsCrack.jar</code></pre></li>
+<pre><code>-javaagent:/Applications/IntelliJ IDEA.app/Contents/bin/JetbrainsCrack.jar</code></pre></li>
 </ol>
 <p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/3_install_structure.png" alt></p>
 <table>
@@ -549,19 +531,18 @@ bkg.style.background = left_url + "no-repeat top center";
 </tr>
 </tbody></table>
 <p>👉参数调优（启动项配置）</p>
-<pre><code>&#39;&#39;&#39;vim
-# vi idea.vmoptions
+<pre><code class="properties"># vi idea.vmoptions
 -Xms2048m #初始内存
 -Xmx2048m #最大内存
 -XX:MaxPermSize=1024m #最大允许分配的非堆内存
--XX:ReservedCodeCacheSize=512m #可保留代码的缓存大小
-&#39;&#39;&#39;</code></pre><p>Idea 启动时间并不依赖于内存设置。Idea 在所有场景下的测试时间都是10秒，无论内存分配有多少。而 Xmx 内存大些对响应能力提升的帮助非常明显。其他jvm参数效果忽略不计。<br><a href="https://dzone.com/articles/the-one-and-only-reason-to-customize-intellij-idea" target="_blank" rel="noopener">参考资料</a></p>
-<p>🗣 <strong>Tips</strong> idea执行时会有大量缓存、索引文件（caches目录），对硬件设备要求更高。</p>
-<p>🗣 <strong>Tips</strong> 不是修改IDEA安装应用包内容中的 idea.vmoptions 配置文件，而是修改 ~/Library/Preferences/IntelliJIdea…中的 idea.vmoptions 配置文件<a href="https://www.jetbrains.com/help/idea/tuning-the-ide.html#configure-jvm-options" target="_blank" rel="noopener">jetbrains配置文档</a> <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html" target="_blank" rel="noopener">oracle配置文档</a></p>
-<p>🗣 <strong>Tips</strong> 选用正确的JDK后，再根据文档配置jvm运行参数。</p>
-<blockquote>
-<h1 id="4-Hello-World！"><a href="#4-Hello-World！" class="headerlink" title="4 Hello World！"></a>4 Hello World！</h1></blockquote>
-<h2 id="4-1-first-IDEA-Project"><a href="#4-1-first-IDEA-Project" class="headerlink" title="4.1 first IDEA Project"></a>4.1 first IDEA Project</h2><hr>
+-XX:ReservedCodeCacheSize=512m #可保留代码的缓存大小</code></pre>
+<p>Idea 启动时间并不依赖于内存设置。Idea 在所有场景下的测试时间都是10秒，无论内存分配有多少。而 Xmx 内存大些对响应能力提升的帮助非常明显。其他jvm参数效果忽略不计。<a href="https://dzone.com/articles/the-one-and-only-reason-to-customize-intellij-idea" target="_blank" rel="noopener">参考资料</a></p>
+<p>🗣 <strong>Tips</strong> </p>
+<ol>
+<li>idea执行时会有大量缓存、索引文件（caches目录），对硬件设备要求更高。</li>
+<li>不是修改IDEA安装应用包内容中的 idea.vmoptions 配置文件，而是修改 ~/Library/Preferences/IntelliJIdea…中的 idea.vmoptions 配置文件<a href="https://www.jetbrains.com/help/idea/tuning-the-ide.html#configure-jvm-options" target="_blank" rel="noopener">jetbrains配置文档</a> <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/java.html" target="_blank" rel="noopener">oracle配置文档</a>选用正确的JDK后，再根据文档配置jvm运行参数。</li>
+</ol>
+<h1 id="4-Hello-World！"><a href="#4-Hello-World！" class="headerlink" title="4 Hello World！"></a>4 Hello World！</h1><p>4.1 first IDEA Project</p>
 <pre><code>&quot;File&quot; -&gt; &quot;new&quot; -&gt; &quot;Project&quot; -&gt; &quot;SDK archetype GroupId ArtifactId Version&quot; #创建Project
 &quot;⌘ N&quot; -&gt; &quot;Module&quot; -&gt; &quot;SDK...&quot; #创建Module
 &quot;⌘ ;&quot; #查看Module依赖关系，删除目录前先移除Module
@@ -576,16 +557,10 @@ bkg.style.background = left_url + "no-repeat top center";
 <p>如果需要整体编译项目，则需要手动build一下。</p>
 <h2 id="4-2-commons-Preferences-Configure"><a href="#4-2-commons-Preferences-Configure" class="headerlink" title="4.2 commons Preferences Configure"></a>4.2 commons Preferences Configure</h2><pre><code>&quot;⌘ ,&quot; #settings 设置 = 偏好设置，独立于项目设置
 #或点击Toorbar小扳手图标</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_2_settings.png" alt></p>
-<ul>
-<li><p><strong>外观和行为 Appearance &amp; Behavior</strong></p>
-<p>  “Appearance | Show memory indicator” #打开内存使用状态<br>  “System Settings | Updates | Automatically check updates” #取消自动更新<br>  “System Settings | Reopen last project on startup” #启动时不打开工程</p>
-</li>
-</ul>
-<p><a href="http://www.riaway.com/theme.php" target="_blank" rel="noopener">Theme download</a></p>
-<pre><code>&quot;File&quot; -&gt; &quot;Import Settings...&quot; #主题 Theme : Darcla Light...</code></pre><ul>
-<li><strong>快捷键 Keymap</strong></li>
-</ul>
-<p><a href="2019-09-20-ideaOnMac/https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf">热键文档</a> </p>
+<h3 id="4-2-1-外观和行为-Appearance-amp-Behavior"><a href="#4-2-1-外观和行为-Appearance-amp-Behavior" class="headerlink" title="4.2.1 外观和行为 Appearance &amp; Behavior"></a>4.2.1 外观和行为 Appearance &amp; Behavior</h3><pre><code>&quot;Appearance | Show memory indicator&quot; #打开内存使用状态
+&quot;System Settings | Updates | Automatically check updates&quot; #取消自动更新
+&quot;System Settings | Reopen last project on startup&quot; #启动时不打开工程`</code></pre><p><a href="http://www.riaway.com/theme.php" target="_blank" rel="noopener">Theme download</a></p>
+<pre><code>&quot;File&quot; -&gt; &quot;Import Settings...&quot; #主题 Theme : Darcla Light...</code></pre><h3 id="4-2-2-快捷键-Keymap"><a href="#4-2-2-快捷键-Keymap" class="headerlink" title="4.2.2 快捷键 Keymap"></a>4.2.2 快捷键 Keymap</h3><p><a href="2019-09-20-ideaOnMac/https://resources.jetbrains.com/storage/products/intellij-idea/docs/IntelliJIDEA_ReferenceCard.pdf">热键文档</a> </p>
 <table>
 <thead>
 <tr>
@@ -665,59 +640,40 @@ bkg.style.background = left_url + "no-repeat top center";
 </tr>
 </tbody></table>
 <p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_2_hotkeysetting.png" alt></p>
-<ul>
-<li><p><strong>编辑器 Editor</strong></p>
-<pre><code>  &quot;General | Auto Import | Insert Imports on paste - All&quot; #自动导入
-  &quot;General | Limits | Recent files limit — 20&quot; #&quot;⌘ E&quot;弹层文件个数
-  &quot;General | Appearance | how method separators&quot; #方法分隔行
-  &quot;General | Code Completion | Match Case&quot; #提示忽略大小写
-  &quot;General | Editor Tabs | Show tabs in one row&quot; #多行显示tab不隐藏
-
-  &quot;Font | Size - 16&quot; #字体
-  &quot;Code Style | Visual guides - 80&quot; #设置换行符和自动换行
-  &quot;File and Code Templates | Class&quot; #类注释
-  &quot;Live Templates | + Template Group - Method | + Live Templates | Abbr Desc Edit Vars | Define - java&quot; #快捷方法注释 * + Tab
-  &quot;File Encodings | Global Project Default Encodings - UTF-8 Transparent native-to-ascii conversion&quot; #字符集中文显示，当打开其他编码类型文件时，可以通过状态栏的编码类型重新读文件
-  &quot;File Types | Ignore files and folders —target;.gradle;.iml;.idea;&quot; #隐藏文件和文件夹</code></pre></li>
-<li><p><strong>插件</strong></p>
-</li>
-<li><p><strong>版本控制 Version Control</strong></p>
-<pre><code>  &quot;Show directories with changed descendants&quot; #版本控制文件变化显示</code></pre></li>
-<li><p><strong>构建、执行、部署 Build, Execution, Deployment</strong></p>
-<pre><code>  &quot;Compiler | build project automatically&quot; #自动编译
-  &quot;Compiler | in parallel&quot; #多模块并行编译
-  &quot;Compiler | build process heap size - 1500&quot; #防止编译报错OutOfMemoryError
-  &quot;Build Tools | Maven | home directory Print exception stack traces #Maven配置
-  &quot;Build Tools | Maven | Importing | Import Maven projects automatically #Maven动刷新
-  &quot;Build Tools | Maven | Importing | Automatically download — Sources #Maven自动导入源码</code></pre></li>
-</ul>
-<ul>
-<li><p><strong>语音、框架</strong></p>
-</li>
-<li><p><strong>工具</strong></p>
-</li>
-</ul>
-<h1 id="5-How-to-Debug"><a href="#5-How-to-Debug" class="headerlink" title="5 How to Debug"></a>5 How to Debug</h1><hr>
+<h3 id="4-2-3-编辑器-Editor"><a href="#4-2-3-编辑器-Editor" class="headerlink" title="4.2.3 编辑器 Editor"></a>4.2.3 编辑器 Editor</h3><p>“General | Auto Import | Insert Imports on paste - All” #自动导入<br>    “General | Limits | Recent files limit — 20” #”⌘ E”弹层文件个数<br>    “General | Appearance | how method separators” #方法分隔行<br>    “General | Code Completion | Match Case” #提示忽略大小写<br>    “General | Editor Tabs | Show tabs in one row” #多行显示tab不隐藏</p>
+<pre><code>&quot;Font | Size - 16&quot; #字体
+&quot;Code Style | Visual guides - 80&quot; #设置换行符和自动换行
+&quot;File and Code Templates | Class&quot; #类注释
+&quot;Live Templates | + Template Group - Method | + Live Templates | Abbr Desc Edit Vars | Define - java&quot; #快捷方法注释 * + Tab
+&quot;File Encodings | Global Project Default Encodings - UTF-8 Transparent native-to-ascii conversion&quot; #字符集中文显示，当打开其他编码类型文件时，可以通过状态栏的编码类型重新读文件
+&quot;File Types | Ignore files and folders —target;.gradle;.iml;.idea;&quot; #隐藏文件和文件夹</code></pre><h3 id="4-2-4-插件"><a href="#4-2-4-插件" class="headerlink" title="4.2.4 插件"></a>4.2.4 插件</h3><h3 id="4-2-5-版本控制-Version-Control"><a href="#4-2-5-版本控制-Version-Control" class="headerlink" title="4.2.5 版本控制 Version Control"></a>4.2.5 版本控制 Version Control</h3><p>“Show directories with changed descendants” #版本控制文件变化显示</p>
+<h3 id="4-2-6-构建、执行、部署-Build-Execution-Deployment"><a href="#4-2-6-构建、执行、部署-Build-Execution-Deployment" class="headerlink" title="4.2.6 构建、执行、部署 Build, Execution, Deployment"></a>4.2.6 构建、执行、部署 Build, Execution, Deployment</h3><pre><code>&quot;Compiler | build project automatically&quot; #自动编译
+&quot;Compiler | in parallel&quot; #多模块并行编译
+&quot;Compiler | build process heap size - 1500&quot; #防止编译报错OutOfMemoryError
+&quot;Build Tools | Maven | home directory Print exception stack traces #Maven配置
+&quot;Build Tools | Maven | Importing | Import Maven projects automatically #Maven动刷新
+&quot;Build Tools | Maven | Importing | Automatically download — Sources #Maven自动导入源码</code></pre><h1 id="5-How-to-Debug"><a href="#5-How-to-Debug" class="headerlink" title="5 How to Debug"></a>5 How to Debug</h1><hr>
 <h2 id="5-1-流程"><a href="#5-1-流程" class="headerlink" title="5.1 流程"></a>5.1 流程</h2><ol>
 <li><p><strong>Compile</strong>    </p>
-<pre><code> &quot;⌘ F9&quot; Make Project 或自动编译</code></pre></li>
+<pre><code> ```</code></pre><p>“⌘ F9” Make Project 或自动编译</p>
+<pre><code></code></pre></li>
 <li><p><strong>Breakpoint</strong> </p>
-<pre><code> &quot;⌘ F8&quot; 设置断点，或者点击行号添加断点。
- &quot;⌘ 2&quot; Favorites视图查看断点
- &quot;⌘ ⇧ F8&quot; 断点视图查看断点</code></pre></li>
+<pre><code> ```</code></pre><p> “⌘ F8” 设置断点，或者点击行号添加断点。<br> “⌘ 2” Favorites视图查看断点<br>“⌘ ⇧ F8” 断点视图查看断点</p>
+<pre><code></code></pre></li>
 <li><p><strong>Thread</strong> </p>
-<pre><code> 右键断点 -&gt; &quot;Suspend - Thread&quot;设置多线程调试模式</code></pre></li>
+<pre><code> ```</code></pre><p>右键断点 -&gt; “Suspend - Thread”设置多线程调试模式</p>
+<pre><code></code></pre></li>
 <li><p><strong>Run | Debug</strong> </p>
-<pre><code> &quot;⌃ ⌥ R|D&quot; #hold &quot;⇧&quot;改变 Run|Debug 模式，打开调试</code></pre></li>
+<pre><code> ```</code></pre><p>“⌃ ⌥ R|D” #hold “⇧”改变 Run|Debug 模式，打开调试</p>
+<pre><code></code></pre></li>
 <li><p><strong>Debugging</strong></p>
-<pre><code> ”F7“ Step into 跳入该方法
- ”F8“ Step over 跳到下一个方法
- ”⇧ F8“ Step out 跳出该方法
- ”F9“ Resume Program  跳到下一个断点
- ”⌥ F9“ Run to cursor 跳到下一个断点或光标处</code></pre></li>
+<pre><code> ```</code></pre><p> ”F7“ Step into 跳入该方法<br> ”F8“ Step over 跳到下一个方法<br> ”⇧ F8“ Step out 跳出该方法<br> ”F9“ Resume Program  跳到下一个断点<br> ”⌥ F9“ Run to cursor 跳到下一个断点或光标处</p>
+<pre><code></code></pre></li>
 <li><p><strong>Watches</strong></p>
-<pre><code> &quot;⌥ F8&quot; Evaluate expression 执行表达式动态窗口
- 跳转至&quot;Debugger | Threads&quot;面板调试多线程</code></pre></li>
+<pre><code> ```</code></pre><p> “⌥ F8” Evaluate expression 执行表达式动态窗口<br> 跳转至”Debugger | Threads”面板调试多线程</p>
+<pre><code>
+
+</code></pre></li>
 </ol>
 <p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/5_1_debugthread.png" alt></p>
 <h1 id="6-View-amp-Actions"><a href="#6-View-amp-Actions" class="headerlink" title="6 View &amp; Actions"></a>6 View &amp; Actions</h1><hr>
@@ -789,7 +745,7 @@ bkg.style.background = left_url + "no-repeat top center";
 &quot;⌘ F&quot; #在当前文件中查找，出现Find工具窗口
 &quot;⇧ ⌘ F&quot; #在路径中查找
 &quot;⌘ R&quot; #在当前文件中替换
-&quot;⇧ ⌘ R&quot; #在路径中替换</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_2_find.png" alt></p>
+&quot;⇧ ⌘ R&quot; #在路径中替换</code></pre><p>​<br><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_2_find.png" alt></p>
 <h2 id="6-3-Navigate-导航"><a href="#6-3-Navigate-导航" class="headerlink" title="6.3 Navigate 导航"></a>6.3 Navigate 导航</h2><p>标记</p>
 <p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_3_navigate.png" alt></p>
 <pre><code># 常用
@@ -852,32 +808,29 @@ Preferences | Plugins | Install plug from disk - 下载好的插件</code></pre>
 <p>  Java开发中，经常有把json格式的内容转成Object的需求，GsonFormat这款插件可以实现该功能。</p>
 </li>
 <li><p>Free Mybatis plugin</p>
-<p>   Mybatis的JavaMapper文件中会根据xml配置关联定位。（绿色箭头）</p>
+<p>Mybatis的JavaMapper文件中会根据xml配置关联定位。（绿色箭头）</p>
 </li>
 <li><p>MyBatis Log Plugin</p>
-<p>   将Mybatis执行的sql脚本在日志中显示，清晰执行sql脚本。</p>
+<p>将Mybatis执行的sql脚本在日志中显示，清晰执行sql脚本。     </p>
 </li>
 <li><p>Lombok</p>
-<p>   使用了lombok的注解(@Setter, @Getter, @ToString, @Data)后，不需编写或生成get/set等方法，减少了代码量与代码维护负担。</p>
-<pre><code>   &lt;dependency&gt;
-      &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
-      &lt;artifactId&gt;lombok&lt;/artifactId&gt;
-  &lt;/dependency&gt;</code></pre></li>
+<p>使用了lombok的注解(@Setter, @Getter, @ToString, @Data)后，不需编写或生成get/set等方法，减少了代码量与代码维护负担。    </p>
+<pre><code>&lt;dependency&gt;
+        &lt;groupId&gt;org.projectlombok&lt;/groupId&gt;
+        &lt;artifactId&gt;lombok&lt;/artifactId&gt;
+&lt;/dependency&gt;</code></pre></li>
 <li><p>RestfulToolkit</p>
 <pre><code>Spring MVC开发中通过URL地址定位controller，并根据controller生成默认的测试数据，解决了postman调试数据时，无需自己组装数据或在console找数据包。</code></pre></li>
 <li><p>Rainbow Brackets</p>
-<p>   括号高亮插件</p>
+<p> 括号高亮插件     </p>
 </li>
 <li><p>VisualVM Launcher</p>
-<p>   jvm调优必备工具，查看某个对象占用了多大的内存。</p>
+<p>jvm调优必备工具，查看某个对象占用了多大的内存。      </p>
 </li>
 </ul>
 <h1 id="11-BiliBili"><a href="#11-BiliBili" class="headerlink" title="11 BiliBili"></a>11 BiliBili</h1><hr>
 <p>参考的哔哩哔哩视频。</p>
 <iframe src="//player.bilibili.com/player.html?aid=30080993&cid=52434034&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="95%" height="450"> </iframe>
-
-
-
 
 
       
@@ -1051,7 +1004,7 @@ Preferences | Plugins | Install plug from disk - 下载好的插件</code></pre>
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1 Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Support"><span class="toc-number">3.</span> <span class="toc-text">2 Support</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Install"><span class="toc-number">4.</span> <span class="toc-text">3 Install</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Hello-World！"><span class="toc-number">5.</span> <span class="toc-text">4 Hello World！</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-first-IDEA-Project"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 first IDEA Project</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-commons-Preferences-Configure"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 commons Preferences Configure</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-How-to-Debug"><span class="toc-number">6.</span> <span class="toc-text">5 How to Debug</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-流程"><span class="toc-number">6.1.</span> <span class="toc-text">5.1 流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-View-amp-Actions"><span class="toc-number">7.</span> <span class="toc-text">6 View &amp; Actions</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-Tool-Windows-工具窗口"><span class="toc-number">7.1.</span> <span class="toc-text">6.1 Tool Windows 工具窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-Edit-编辑"><span class="toc-number">7.2.</span> <span class="toc-text">6.2 Edit 编辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-Navigate-导航"><span class="toc-number">7.3.</span> <span class="toc-text">6.3 Navigate 导航</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-Code-代码"><span class="toc-number">7.4.</span> <span class="toc-text">6.4 Code 代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-Refactor-重构"><span class="toc-number">7.4.1.</span> <span class="toc-text">6.5 Refactor 重构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-6-Analyze-检查"><span class="toc-number">7.5.</span> <span class="toc-text">6.6 Analyze 检查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-7-Live-Templates-amp-Postfix-代码模板"><span class="toc-number">7.6.</span> <span class="toc-text">6.7 Live Templates &amp; Postfix 代码模板</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-Tomcat"><span class="toc-number">8.</span> <span class="toc-text">7 Tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-Tomcat配置"><span class="toc-number">8.1.</span> <span class="toc-text">7.1 Tomcat配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Database"><span class="toc-number">9.</span> <span class="toc-text">8 Database</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-Database-Mysql配置"><span class="toc-number">9.1.</span> <span class="toc-text">8.1 Database Mysql配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-VCS-GitHub"><span class="toc-number">10.</span> <span class="toc-text">9 VCS GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-checkout-clone"><span class="toc-number">10.1.</span> <span class="toc-text">9.1 checkout clone</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-Plugins"><span class="toc-number">11.</span> <span class="toc-text">10 Plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-install"><span class="toc-number">11.0.1.</span> <span class="toc-text">10.1 install</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-recommend"><span class="toc-number">11.0.2.</span> <span class="toc-text">10.2 recommend</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-BiliBili"><span class="toc-number">12.</span> <span class="toc-text">11 BiliBili</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-Introduction"><span class="toc-number">2.</span> <span class="toc-text">1 Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-优势"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 优势</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1-内存空间-gt-速度"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.1.1 内存空间 -&gt; 速度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2-概念切换-gt-灵活"><span class="toc-number">2.1.2.</span> <span class="toc-text">1.1.2 概念切换 -&gt; 灵活</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-3-工作空间-gt-模块化"><span class="toc-number">2.1.3.</span> <span class="toc-text">1.1.3 工作空间 -&gt; 模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-4-工作区间最大化-gt-专注"><span class="toc-number">2.1.4.</span> <span class="toc-text">1.1.4 工作区间最大化 -&gt; 专注</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-5-功能-gt-便捷"><span class="toc-number">2.1.5.</span> <span class="toc-text">1.1.5 功能 -&gt; 便捷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-6-debug-gt-调试（detail-in-5-How-to-Debug）"><span class="toc-number">2.1.6.</span> <span class="toc-text">1.1.6 debug -&gt; 调试（detail in 5 How to Debug）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Support"><span class="toc-number">3.</span> <span class="toc-text">2 Support</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-Install"><span class="toc-number">4.</span> <span class="toc-text">3 Install</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Hello-World！"><span class="toc-number">5.</span> <span class="toc-text">4 Hello World！</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-commons-Preferences-Configure"><span class="toc-number">5.1.</span> <span class="toc-text">4.2 commons Preferences Configure</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-外观和行为-Appearance-amp-Behavior"><span class="toc-number">5.1.1.</span> <span class="toc-text">4.2.1 外观和行为 Appearance &amp; Behavior</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-2-快捷键-Keymap"><span class="toc-number">5.1.2.</span> <span class="toc-text">4.2.2 快捷键 Keymap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-3-编辑器-Editor"><span class="toc-number">5.1.3.</span> <span class="toc-text">4.2.3 编辑器 Editor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-4-插件"><span class="toc-number">5.1.4.</span> <span class="toc-text">4.2.4 插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-5-版本控制-Version-Control"><span class="toc-number">5.1.5.</span> <span class="toc-text">4.2.5 版本控制 Version Control</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-6-构建、执行、部署-Build-Execution-Deployment"><span class="toc-number">5.1.6.</span> <span class="toc-text">4.2.6 构建、执行、部署 Build, Execution, Deployment</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-How-to-Debug"><span class="toc-number">6.</span> <span class="toc-text">5 How to Debug</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-流程"><span class="toc-number">6.1.</span> <span class="toc-text">5.1 流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-View-amp-Actions"><span class="toc-number">7.</span> <span class="toc-text">6 View &amp; Actions</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#6-1-Tool-Windows-工具窗口"><span class="toc-number">7.1.</span> <span class="toc-text">6.1 Tool Windows 工具窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-2-Edit-编辑"><span class="toc-number">7.2.</span> <span class="toc-text">6.2 Edit 编辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-3-Navigate-导航"><span class="toc-number">7.3.</span> <span class="toc-text">6.3 Navigate 导航</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-4-Code-代码"><span class="toc-number">7.4.</span> <span class="toc-text">6.4 Code 代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-5-Refactor-重构"><span class="toc-number">7.4.1.</span> <span class="toc-text">6.5 Refactor 重构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-6-Analyze-检查"><span class="toc-number">7.5.</span> <span class="toc-text">6.6 Analyze 检查</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-7-Live-Templates-amp-Postfix-代码模板"><span class="toc-number">7.6.</span> <span class="toc-text">6.7 Live Templates &amp; Postfix 代码模板</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-Tomcat"><span class="toc-number">8.</span> <span class="toc-text">7 Tomcat</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-Tomcat配置"><span class="toc-number">8.1.</span> <span class="toc-text">7.1 Tomcat配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-Database"><span class="toc-number">9.</span> <span class="toc-text">8 Database</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#8-1-Database-Mysql配置"><span class="toc-number">9.1.</span> <span class="toc-text">8.1 Database Mysql配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-VCS-GitHub"><span class="toc-number">10.</span> <span class="toc-text">9 VCS GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#9-1-checkout-clone"><span class="toc-number">10.1.</span> <span class="toc-text">9.1 checkout clone</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-Plugins"><span class="toc-number">11.</span> <span class="toc-text">10 Plugins</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#10-1-install"><span class="toc-number">11.0.1.</span> <span class="toc-text">10.1 install</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-2-recommend"><span class="toc-number">11.0.2.</span> <span class="toc-text">10.2 recommend</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#11-BiliBili"><span class="toc-number">12.</span> <span class="toc-text">11 BiliBili</span></a></li></ol>
                     </div>
                 </span>
             </div>
