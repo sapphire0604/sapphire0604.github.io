@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/8_1_databaseconf.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/9_1_githubconf.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/10_1_installplugin.png">
-<meta property="og:updated_time" content="2019-12-04T22:38:12.566Z">
+<meta property="og:updated_time" content="2019-12-04T22:40:48.770Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac 上使用 IntelliJ IDEA">
 <meta name="twitter:description" content="the most intelligent java IDE IntelliJ Idea  前言  IntelliJ IDEA 是如今最好用的 java IDE 工具。这里比较系统的总结了 Idea IDE 的主要优势，模块化概念的转变，以及如何安装、新建工程、操作。便于学习 Java 项目。 介绍了IDE的组成，如个性化推荐配置、参数调优、修改热键、调试流程、常用视图（使用习惯）、常用命令、使">
@@ -276,7 +276,7 @@ bkg.style.background = left_url + "no-repeat top center";
     <span class="post-meta-item-icon">
       <i class="fa fa-hourglass-half"></i>
       <span class="post-meta-item-text" >  阅读时长: </span>
-      <span class="post-count">13分</span>
+      <span class="post-count">14分</span>
     </span>
   </span>
 </div>
@@ -644,14 +644,18 @@ bkg.style.background = left_url + "no-repeat top center";
 </tr>
 </tbody></table>
 <p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_2_hotkeysetting.png" alt></p>
-<h3 id="4-2-3-编辑器-Editor"><a href="#4-2-3-编辑器-Editor" class="headerlink" title="4.2.3 编辑器 Editor"></a>4.2.3 编辑器 Editor</h3><p>“General | Auto Import | Insert Imports on paste - All” #自动导入<br>    “General | Limits | Recent files limit — 20” #”⌘ E”弹层文件个数<br>    “General | Appearance | how method separators” #方法分隔行<br>    “General | Code Completion | Match Case” #提示忽略大小写<br>    “General | Editor Tabs | Show tabs in one row” #多行显示tab不隐藏</p>
-<pre><code>&quot;Font | Size - 16&quot; #字体
+<h3 id="4-2-3-编辑器-Editor"><a href="#4-2-3-编辑器-Editor" class="headerlink" title="4.2.3 编辑器 Editor"></a>4.2.3 编辑器 Editor</h3><pre><code>&quot;General | Auto Import | Insert Imports on paste - All&quot; #自动导入
+&quot;General | Limits | Recent files limit — 20&quot; #&quot;⌘ E&quot;弹层文件个数
+&quot;General | Appearance | how method separators&quot; #方法分隔行
+&quot;General | Code Completion | Match Case&quot; #提示忽略大小写
+&quot;General | Editor Tabs | Show tabs in one row&quot; #多行显示tab不隐藏
+
+&quot;Font | Size - 16&quot; #字体
 &quot;Code Style | Visual guides - 80&quot; #设置换行符和自动换行
 &quot;File and Code Templates | Class&quot; #类注释
 &quot;Live Templates | + Template Group - Method | + Live Templates | Abbr Desc Edit Vars | Define - java&quot; #快捷方法注释 * + Tab
 &quot;File Encodings | Global Project Default Encodings - UTF-8 Transparent native-to-ascii conversion&quot; #字符集中文显示，当打开其他编码类型文件时，可以通过状态栏的编码类型重新读文件
-&quot;File Types | Ignore files and folders —target;.gradle;.iml;.idea;&quot; #隐藏文件和文件夹</code></pre><h3 id="4-2-4-插件"><a href="#4-2-4-插件" class="headerlink" title="4.2.4 插件"></a>4.2.4 插件</h3><h3 id="4-2-5-版本控制-Version-Control"><a href="#4-2-5-版本控制-Version-Control" class="headerlink" title="4.2.5 版本控制 Version Control"></a>4.2.5 版本控制 Version Control</h3><p>“Show directories with changed descendants” #版本控制文件变化显示</p>
-<h3 id="4-2-6-构建、执行、部署-Build-Execution-Deployment"><a href="#4-2-6-构建、执行、部署-Build-Execution-Deployment" class="headerlink" title="4.2.6 构建、执行、部署 Build, Execution, Deployment"></a>4.2.6 构建、执行、部署 Build, Execution, Deployment</h3><pre><code>&quot;Compiler | build project automatically&quot; #自动编译
+&quot;File Types | Ignore files and folders —target;.gradle;.iml;.idea;&quot; #隐藏文件和文件夹</code></pre><h3 id="4-2-4-插件"><a href="#4-2-4-插件" class="headerlink" title="4.2.4 插件"></a>4.2.4 插件</h3><h3 id="4-2-5-版本控制-Version-Control"><a href="#4-2-5-版本控制-Version-Control" class="headerlink" title="4.2.5 版本控制 Version Control"></a>4.2.5 版本控制 Version Control</h3><pre><code>&quot;Show directories with changed descendants&quot; #版本控制文件变化显示</code></pre><h3 id="4-2-6-构建、执行、部署-Build-Execution-Deployment"><a href="#4-2-6-构建、执行、部署-Build-Execution-Deployment" class="headerlink" title="4.2.6 构建、执行、部署 Build, Execution, Deployment"></a>4.2.6 构建、执行、部署 Build, Execution, Deployment</h3><pre><code>&quot;Compiler | build project automatically&quot; #自动编译
 &quot;Compiler | in parallel&quot; #多模块并行编译
 &quot;Compiler | build process heap size - 1500&quot; #防止编译报错OutOfMemoryError
 &quot;Build Tools | Maven | home directory Print exception stack traces #Maven配置
@@ -659,8 +663,9 @@ bkg.style.background = left_url + "no-repeat top center";
 &quot;Build Tools | Maven | Importing | Automatically download — Sources #Maven自动导入源码</code></pre><h1 id="5-How-to-Debug"><a href="#5-How-to-Debug" class="headerlink" title="5 How to Debug"></a>5 How to Debug</h1><hr>
 <h2 id="5-1-流程"><a href="#5-1-流程" class="headerlink" title="5.1 流程"></a>5.1 流程</h2><ol>
 <li><p><strong>Compile</strong>    </p>
-<pre><code> ```</code></pre><p> “⌘ F9” Make Project 或自动编译</p>
-<pre><code></code></pre></li>
+<pre><code>&quot;⌘ F9&quot; Make Project 或自动编译</code></pre></li>
+</ol>
+<ol start="2">
 <li><p><strong>Breakpoint</strong> </p>
 <pre><code> &quot;⌘ F8&quot; 设置断点，或者点击行号添加断点。
  &quot;⌘ 2&quot; Favorites视图查看断点
