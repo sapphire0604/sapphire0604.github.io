@@ -112,7 +112,7 @@ bkg.style.background = left_url + "no-repeat top center";
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部
     			<!--文章统计-->
 				
-    				[ 14 ]
+    				[ 16 ]
     			
     			<!--文章统计-->
     			</a>
@@ -432,11 +432,12 @@ bkg.style.background = left_url + "no-repeat top center";
 </blockquote>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
 <blockquote>
-<p>java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的细节，深入理解 javac、编译等相关概念。</p>
+<p>java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的技术细节，深入理解 javac、编译等相关概念。</p>
 <p>javac 是 <a href="https://zh.wikipedia.org/wiki/JDK" target="_blank" rel="noopener">JDK</a> 的Java语言前端编译器工具，将满足 Java 语言规范（JLS, Java Language Specification）的 .java 源文件编译成为满足JVM规范（JVMS, Java Virtual Machine Specification）的 .class 字节码文件。</p>
-<p>学习 javac，可以更准确、直观地理解 Java 语言中深层知识。如：编译原理、插入式注解API <a href="https://jcp.org/en/jsr/detail?id=269" target="_blank" rel="noopener">JSR-296</a>、语法糖等核心技术。理解如何生成字节码编译过程，便于理解JLS，JVMS，<a href="https://zhuanlan.zhihu.com/p/29881777" target="_blank" rel="noopener">并发编程内存模型</a>、<a href="http://tutorials.jenkov.com/java-concurrency/volatile.html" target="_blank" rel="noopener">java 关键字实现</a>、<a href="https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html" target="_blank" rel="noopener">字节码增强技术</a>等。</p>
-<p>一般而言，javac 的编译过程为：源代码 –(词法分析)–&gt;  符号Token流 –(语法分析)–&gt; 抽象语法树 –&gt; 填充符号表 –&gt; –(注解处理器)–&gt; 插入式注解语法树 -(语义分析)-&gt; 完整语法树 –(生成代码)–&gt; 字节码。是java的前端编译器。</p>
-<p>javac由java语言编写，支持JSR 269（Pluggable Annotation Processing API）和JSR 199（the Java Compiler API），方便调试学习。</p>
+<p>javac的知识合集 = 编译原理 + JDK（ <a href="https://jcp.org/en/jsr/detail?id=269" target="_blank" rel="noopener">JSR-269 Pluggable Annotation Processing API</a>，<a href="https://jcp.org/en/jsr/detail?id=199" target="_blank" rel="noopener">JSR 199 the Java Compiler API</a>，语法糖，javac工作原理等）+  JLS + JVMS + bytescode</p>
+<p>javac的知识引申 = 生成字节码编译过程，<a href="https://zhuanlan.zhihu.com/p/29881777" target="_blank" rel="noopener">并发编程内存模型</a>、<a href="http://tutorials.jenkov.com/java-concurrency/volatile.html" target="_blank" rel="noopener">java 关键字实现</a>、<a href="https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html" target="_blank" rel="noopener">字节码增强技术</a>等。</p>
+<p>一般而言，javac 的编译过程为：源代码 –(词法分析)–&gt;  符号Token流 –(语法分析)–&gt; 抽象语法树 –(注解处理器)–&gt; 插入式注解语法树 -(语义分析)-&gt; 完整语法树 –(生成代码)–&gt; 字节码。是java的前端编译器。</p>
+<p>javac由java语言编写，方便调试学习。</p>
 </blockquote>
       
       
@@ -982,7 +983,7 @@ bkg.style.background = left_url + "no-repeat top center";
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2019 Sapphire
+        &copy; 2020 Sapphire
       </div>
       <!-- 不蒜子统计 -->
       
@@ -1111,15 +1112,27 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">scrum</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sprint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">agile development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1131,7 +1144,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1147,6 +1160,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
@@ -1159,19 +1180,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
               </li>
              
               <li class="article-tag-list-item">

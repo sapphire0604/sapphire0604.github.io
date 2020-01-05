@@ -112,7 +112,7 @@ bkg.style.background = left_url + "no-repeat top center";
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部
     			<!--文章统计-->
 				
-    				[ 14 ]
+    				[ 16 ]
     			
     			<!--文章统计-->
     			</a>
@@ -602,7 +602,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 
 
   
-    <article id="post-jmh" class="article article-type-post
+    <article id="post-reflection" class="article article-type-post
    article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -610,7 +610,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/jmh/">jmh - 微秒级方法层微基准测试</a>
+      <a class="article-title" href="/2018/03/reflection/">反射 reflection</a>
     </h1>
   
 
@@ -620,19 +620,17 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 
     <div class="article-entry" itemprop="articleBody">
       
-      <p><img src="//galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg" alt></p>
+      <p><img src="//galaxias-sapphi-ren.github.io/2018/03/reflection/cover.jpeg" alt></p>
 <blockquote>
-<p>JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM.</p>
-<p>—— <a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">JMH</a></p>
-<p>If you cannot measure it, you cannot improve it.</p>
-<p>—— Lord Kelvin</p>
+<p>Reflection enables Java code to discover information about the fields, methods and constructors of loaded classes, and to use reflected fields, methods, and constructors to operate on their underlying counterparts, within security restrictions.<br>The API accommodates applications that need access to either the public members of a target object (based on its runtime class) or the members declared by a given class. It also allows programs to suppress default reflective access control.</p>
+<p>—— <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/index.html" target="_blank" rel="noopener">oracle</a></p>
 </blockquote>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
 <blockquote>
-<p><a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">jmh</a>（Java Microbenchmark Harness 2013）由 Oracle 实现 JIT 的开发人员开发的基准测试框架，作为Java9的一部分来发布。</p>
-<p>jmh 在方法级层面上进行基准（性能）测试，精度可以精确到微秒级。同时像 junit 一样具有 <a href="https://github.com/artyushov/idea-jmh-plugin" target="_blank" rel="noopener">idea 集成插件</a>。为应用提供数据支持，是评价和比较方法好坏的基准。</p>
-<p>Java 编程过程中，通常使用 jmh 对热点代码进行性能评估，或者对不同实现逻辑性能比较。是用来代替初级 System.currentTimeMillis() 更好的方法。jvm初始化或者JIT缓存热点代码，测试时需要对测试代码进行预热。jmh 会因为 JIT 的代码优化出现一些测试陷阱。</p>
-<p>可以在 <a href="http://hg.openjdk.java.net/code-tools/jmh/file/tip/jmh-samples/src/main/java/org/openjdk/jmh/samples/" target="_blank" rel="noopener">samples</a> 上查看使用方法，<a href="http://tutorials.jenkov.com/java-performance/jmh.html" target="_blank" rel="noopener">教程</a>。</p>
+<p>反射是一个抽象概念，在 Java中由 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/package-summary.html" target="_blank" rel="noopener"><code>java.lang.reflect</code></a>包和<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" target="_blank" rel="noopener"><code>java.lang.Class</code></a>类支持。</p>
+<p>Java 反射机制在程序运行时，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性。这种 <strong>动态的获取信息</strong> 以及 <strong>动态调用对象的方法</strong> 的功能称为 java 的反射机制。</p>
+<p>这里动态指Java 程序可以加载一个运行时才得知名称的 <code>.class</code> 文件，然后获悉其完整构造，并生成对象实体、或对 fields（变量）设值、或调用 methods（方法）。运行时确定类型，绑定对象。</p>
+<p>应用在动态代理、RPC框架、ORM框架、依赖注入、克隆工具类（BeanUtils、ObjectMapper等）、注解式编程（权限认证、日志、Restful）。增加代码的灵活性，获取类的变量，调用私有方法。</p>
 </blockquote>
       
       
@@ -647,11 +645,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Microbenchmark</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jmh</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">reflection</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -676,7 +670,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
 
       
       <p class="article-more-link">
-        <a class="article-more-a" href="/2018/01/jmh/">Know More >></a>
+        <a class="article-more-a" href="/2018/03/reflection/">Know More >></a>
       </p>
       
       
@@ -707,7 +701,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -719,7 +713,7 @@ PlantUML有比较详细的guide文档，也可以适配集成IDEA intelliJ、Sub
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2019 Sapphire
+        &copy; 2020 Sapphire
       </div>
       <!-- 不蒜子统计 -->
       
@@ -848,15 +842,27 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">scrum</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sprint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">agile development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -868,7 +874,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -884,6 +890,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
@@ -896,19 +910,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
               </li>
              
               <li class="article-tag-list-item">

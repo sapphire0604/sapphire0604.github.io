@@ -112,7 +112,7 @@ bkg.style.background = left_url + "no-repeat top center";
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部
     			<!--文章统计-->
 				
-    				[ 14 ]
+    				[ 16 ]
     			
     			<!--文章统计-->
     			</a>
@@ -508,6 +508,103 @@ bkg.style.background = left_url + "no-repeat top center";
 
 
   
+    <article id="post-reflection" class="article article-type-post
+   article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/reflection/">反射 reflection</a>
+    </h1>
+  
+
+      
+    </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p><img src="//galaxias-sapphi-ren.github.io/2018/03/reflection/cover.jpeg" alt></p>
+<blockquote>
+<p>Reflection enables Java code to discover information about the fields, methods and constructors of loaded classes, and to use reflected fields, methods, and constructors to operate on their underlying counterparts, within security restrictions.<br>The API accommodates applications that need access to either the public members of a target object (based on its runtime class) or the members declared by a given class. It also allows programs to suppress default reflective access control.</p>
+<p>—— <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/index.html" target="_blank" rel="noopener">oracle</a></p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<blockquote>
+<p>反射是一个抽象概念，在 Java中由 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/package-summary.html" target="_blank" rel="noopener"><code>java.lang.reflect</code></a>包和<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" target="_blank" rel="noopener"><code>java.lang.Class</code></a>类支持。</p>
+<p>Java 反射机制在程序运行时，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性。这种 <strong>动态的获取信息</strong> 以及 <strong>动态调用对象的方法</strong> 的功能称为 java 的反射机制。</p>
+<p>这里动态指Java 程序可以加载一个运行时才得知名称的 <code>.class</code> 文件，然后获悉其完整构造，并生成对象实体、或对 fields（变量）设值、或调用 methods（方法）。运行时确定类型，绑定对象。</p>
+<p>应用在动态代理、RPC框架、ORM框架、依赖注入、克隆工具类（BeanUtils、ObjectMapper等）、注解式编程（权限认证、日志、Restful）。增加代码的灵活性，获取类的变量，调用私有方法。</p>
+</blockquote>
+      
+      
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">reflection</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Blog//" class="article-tag-list-link color5">Blog</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/03/reflection/">Know More >></a>
+      </p>
+      
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jmh" class="article article-type-post
    article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -553,15 +650,15 @@ bkg.style.background = left_url + "no-repeat top center";
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Microbenchmark</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jmh</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -733,11 +830,12 @@ bkg.style.background = left_url + "no-repeat top center";
 </blockquote>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
 <blockquote>
-<p>java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的细节，深入理解 javac、编译等相关概念。</p>
+<p>java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的技术细节，深入理解 javac、编译等相关概念。</p>
 <p>javac 是 <a href="https://zh.wikipedia.org/wiki/JDK" target="_blank" rel="noopener">JDK</a> 的Java语言前端编译器工具，将满足 Java 语言规范（JLS, Java Language Specification）的 .java 源文件编译成为满足JVM规范（JVMS, Java Virtual Machine Specification）的 .class 字节码文件。</p>
-<p>学习 javac，可以更准确、直观地理解 Java 语言中深层知识。如：编译原理、插入式注解API <a href="https://jcp.org/en/jsr/detail?id=269" target="_blank" rel="noopener">JSR-296</a>、语法糖等核心技术。理解如何生成字节码编译过程，便于理解JLS，JVMS，<a href="https://zhuanlan.zhihu.com/p/29881777" target="_blank" rel="noopener">并发编程内存模型</a>、<a href="http://tutorials.jenkov.com/java-concurrency/volatile.html" target="_blank" rel="noopener">java 关键字实现</a>、<a href="https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html" target="_blank" rel="noopener">字节码增强技术</a>等。</p>
-<p>一般而言，javac 的编译过程为：源代码 –(词法分析)–&gt;  符号Token流 –(语法分析)–&gt; 抽象语法树 –&gt; 填充符号表 –&gt; –(注解处理器)–&gt; 插入式注解语法树 -(语义分析)-&gt; 完整语法树 –(生成代码)–&gt; 字节码。是java的前端编译器。</p>
-<p>javac由java语言编写，支持JSR 269（Pluggable Annotation Processing API）和JSR 199（the Java Compiler API），方便调试学习。</p>
+<p>javac的知识合集 = 编译原理 + JDK（ <a href="https://jcp.org/en/jsr/detail?id=269" target="_blank" rel="noopener">JSR-269 Pluggable Annotation Processing API</a>，<a href="https://jcp.org/en/jsr/detail?id=199" target="_blank" rel="noopener">JSR 199 the Java Compiler API</a>，语法糖，javac工作原理等）+  JLS + JVMS + bytescode</p>
+<p>javac的知识引申 = 生成字节码编译过程，<a href="https://zhuanlan.zhihu.com/p/29881777" target="_blank" rel="noopener">并发编程内存模型</a>、<a href="http://tutorials.jenkov.com/java-concurrency/volatile.html" target="_blank" rel="noopener">java 关键字实现</a>、<a href="https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html" target="_blank" rel="noopener">字节码增强技术</a>等。</p>
+<p>一般而言，javac 的编译过程为：源代码 –(词法分析)–&gt;  符号Token流 –(语法分析)–&gt; 抽象语法树 –(注解处理器)–&gt; 插入式注解语法树 -(语义分析)-&gt; 完整语法树 –(生成代码)–&gt; 字节码。是java的前端编译器。</p>
+<p>javac由java语言编写，方便调试学习。</p>
 </blockquote>
       
       
@@ -897,115 +995,6 @@ bkg.style.background = left_url + "no-repeat top center";
 
 
   
-    <article id="post-NeuralNetworks" class="article article-type-post
-   article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/NeuralNetworks/">Machine Learning | 扬帆起航神经网络与深度学习</a>
-    </h1>
-  
-
-      
-    </header>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      <p><img src="//galaxias-sapphi-ren.github.io/2017/02/NeuralNetworks/cover.jpg" alt="cover"></p>
-<blockquote>
-<p>睡眼惺忪，阳光入帘，起床深呼吸，要不然，开始有智能的机器就要淘汰你了。</p>
-</blockquote>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p> 智能是根据环境变化而做出相应变化的能力，从信息论的观点看就是减熵的能力。而人工智能（Artificial Intelligence）的研究目标是使机器像人一样智能，主要应用于自然语言处理、知识表现、推理、规划、感知、模式识别等。</p>
-<pre><code>机器学习（Machine Learning）是一门人工智能的科学，该领域的主要研究对象是人工智能，特别是如何在经验学习中改善具体算法的性能。
-
-深度学习（Deep Learning）是深层的机器学习（Deep ML）。其“深层”（Deep）的真正含义是通过“抽象概念”学习，将多层表达的特征提取器和识别器合在一起，算法加“深”。
-
-神经网络（Neural Networks）属于ML的一种。而深层神经网络（Deep NN）也只是深层学习的一种。
-
-本文分别从自然学习与机器学习的概念类比、python最简代码（核心算法）学习、为什么要进行深度学习、谷歌开放机器学习框架tensorflow神经网络官方playground实例，四个方面概述人工智能、机器学习、深度学习的内容和结构，并层层递进的阐释感知器、神经网络、循环神经网络、卷积神经网络等的概念与常用算法。
-
-本文试图在脱离线性代数、统计学相关公式的情况下，从不同角度聚焦在人工智能领域的神经网络和深度学习相关内容。并且最终给出一般性算法选择路径。</code></pre></blockquote>
-<p>2017年02月21日 - rensifei @Copyright Smart Home &amp; Roobo</p>
-      
-      
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Deep Learning</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Neural Networks</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Blog//" class="article-tag-list-link color5">Blog</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Blog/Artificial-Intelligence//" class="article-tag-list-link color4">Artificial Intelligence</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2017/02/NeuralNetworks/">Know More >></a>
-      </p>
-      
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/categories/Blog/page/2/">2</a><a class="extend next" rel="next" href="/categories/Blog/page/2/">Next &raquo;</a>
@@ -1019,7 +1008,7 @@ bkg.style.background = left_url + "no-repeat top center";
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2019 Sapphire
+        &copy; 2020 Sapphire
       </div>
       <!-- 不蒜子统计 -->
       
@@ -1148,15 +1137,27 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">scrum</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sprint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">agile development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1168,7 +1169,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1184,6 +1185,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
@@ -1196,19 +1205,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
               </li>
              
               <li class="article-tag-list-item">

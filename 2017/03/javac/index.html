@@ -8,30 +8,31 @@
   <link rel="dns-prefetch" href="https://galaxias-sapphi-ren.github.io">
   <title>javac源码笔记与简单的编译原理 | Ren&#39;s Time Overflow Skyline ^_^</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8 - javac  前言  java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的细节，深入理解 javac、编译等相关概念。 j">
+  <meta name="description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8 - javac  前言  java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的技术细节，深入理解 javac、编译等相关概念。">
 <meta name="keywords" content="Javac,ToolKits">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javac源码笔记与简单的编译原理">
 <meta property="og:url" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/index.html">
 <meta property="og:site_name" content="Ren&#39;s Time Overflow Skyline ^_^">
-<meta property="og:description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8 - javac  前言  java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的细节，深入理解 javac、编译等相关概念。 j">
+<meta property="og:description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8 - javac  前言  java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的技术细节，深入理解 javac、编译等相关概念。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/cover.jpg">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/1_%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/1_%E5%90%8E%E7%AB%AF%E7%BC%96%E8%AF%91%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_javac%E9%98%B6%E6%AE%B5.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_javac%E5%8E%9F%E7%90%86.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_token.png">
+<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_token%E8%AF%BB%E5%8F%96%E6%B5%81%E7%A8%8B.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_tree.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_symbol.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_%E6%B3%A8%E8%A7%A3.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/3_api.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/4_debug.png">
 <meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/4_idea.png">
-<meta property="og:updated_time" content="2019-12-04T22:09:02.684Z">
+<meta property="og:updated_time" content="2019-12-25T09:42:08.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javac源码笔记与简单的编译原理">
-<meta name="twitter:description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8 - javac  前言  java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的细节，深入理解 javac、编译等相关概念。 j">
+<meta name="twitter:description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8 - javac  前言  java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的技术细节，深入理解 javac、编译等相关概念。">
 <meta name="twitter:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/cover.jpg">
   
   
@@ -127,7 +128,7 @@ bkg.style.background = left_url + "no-repeat top center";
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部
     			<!--文章统计-->
 				
-    				[ 14 ]
+    				[ 16 ]
     			
     			<!--文章统计-->
     			</a>
@@ -263,7 +264,7 @@ bkg.style.background = left_url + "no-repeat top center";
     <span class="post-meta-item-icon">
       <i class="fa fa-keyboard-o"></i>
       <span class="post-meta-item-text">  总字数: </span>
-      <span class="post-count" >5.5k字</span>
+      <span class="post-count" >6.2k字</span>
     </span>
   </span>
   <span class="post-time">
@@ -271,7 +272,7 @@ bkg.style.background = left_url + "no-repeat top center";
     <span class="post-meta-item-icon">
       <i class="fa fa-hourglass-half"></i>
       <span class="post-meta-item-text" >  阅读时长: </span>
-      <span class="post-count">22分</span>
+      <span class="post-count">25分</span>
     </span>
   </span>
 </div>
@@ -290,11 +291,12 @@ bkg.style.background = left_url + "no-repeat top center";
 </blockquote>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
 <blockquote>
-<p>java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的细节，深入理解 javac、编译等相关概念。</p>
+<p>java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的技术细节，深入理解 javac、编译等相关概念。</p>
 <p>javac 是 <a href="https://zh.wikipedia.org/wiki/JDK" target="_blank" rel="noopener">JDK</a> 的Java语言前端编译器工具，将满足 Java 语言规范（JLS, Java Language Specification）的 .java 源文件编译成为满足JVM规范（JVMS, Java Virtual Machine Specification）的 .class 字节码文件。</p>
-<p>学习 javac，可以更准确、直观地理解 Java 语言中深层知识。如：编译原理、插入式注解API <a href="https://jcp.org/en/jsr/detail?id=269" target="_blank" rel="noopener">JSR-296</a>、语法糖等核心技术。理解如何生成字节码编译过程，便于理解JLS，JVMS，<a href="https://zhuanlan.zhihu.com/p/29881777" target="_blank" rel="noopener">并发编程内存模型</a>、<a href="http://tutorials.jenkov.com/java-concurrency/volatile.html" target="_blank" rel="noopener">java 关键字实现</a>、<a href="https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html" target="_blank" rel="noopener">字节码增强技术</a>等。</p>
-<p>一般而言，javac 的编译过程为：源代码 –(词法分析)–&gt;  符号Token流 –(语法分析)–&gt; 抽象语法树 –&gt; 填充符号表 –&gt; –(注解处理器)–&gt; 插入式注解语法树 -(语义分析)-&gt; 完整语法树 –(生成代码)–&gt; 字节码。是java的前端编译器。</p>
-<p>javac由java语言编写，支持JSR 269（Pluggable Annotation Processing API）和JSR 199（the Java Compiler API），方便调试学习。</p>
+<p>javac的知识合集 = 编译原理 + JDK（ <a href="https://jcp.org/en/jsr/detail?id=269" target="_blank" rel="noopener">JSR-269 Pluggable Annotation Processing API</a>，<a href="https://jcp.org/en/jsr/detail?id=199" target="_blank" rel="noopener">JSR 199 the Java Compiler API</a>，语法糖，javac工作原理等）+  JLS + JVMS + bytescode</p>
+<p>javac的知识引申 = 生成字节码编译过程，<a href="https://zhuanlan.zhihu.com/p/29881777" target="_blank" rel="noopener">并发编程内存模型</a>、<a href="http://tutorials.jenkov.com/java-concurrency/volatile.html" target="_blank" rel="noopener">java 关键字实现</a>、<a href="https://tech.meituan.com/2019/09/05/java-bytecode-enhancement.html" target="_blank" rel="noopener">字节码增强技术</a>等。</p>
+<p>一般而言，javac 的编译过程为：源代码 –(词法分析)–&gt;  符号Token流 –(语法分析)–&gt; 抽象语法树 –(注解处理器)–&gt; 插入式注解语法树 -(语义分析)-&gt; 完整语法树 –(生成代码)–&gt; 字节码。是java的前端编译器。</p>
+<p>javac由java语言编写，方便调试学习。</p>
 </blockquote>
 <a id="more"></a>
 
@@ -344,8 +346,8 @@ javac -cp &quot;$PROJECT_DIR/lib/*&quot; @$PROJECT_DIR/target/options.txt @$PROJ
 cp -rf $PROJECT_DIR/resources/* $PROJECT_DIR/target
 # clean temp files
 rm -rf $PROJECT_DIR/target/options.txt $PROJECT_DIR/target/files.txt</code></pre>
-<h2 id="1-3-编译-与-javac"><a href="#1-3-编译-与-javac" class="headerlink" title="1.3 编译 与 javac"></a>1.3 编译 与 javac</h2><h3 id="1-3-1-编译"><a href="#1-3-1-编译" class="headerlink" title="1.3.1 编译"></a>1.3.1 编译</h3><p><strong>编译</strong>：将便于人编写、阅读、维护的高级计算机语言所写作的源代码程序，翻译为计算机能解读、运行的低阶机器语言的程序的过程。负责这一过程的处理的工具叫做<strong>编译器</strong>。</p>
-<p>通俗理解，<strong>编译</strong> = 分析 + 翻译 + 优化，把源代码转化为机器码的过程。</p>
+<h2 id="1-3-编译-与-javac"><a href="#1-3-编译-与-javac" class="headerlink" title="1.3 编译 与 javac"></a>1.3 编译 与 javac</h2><h3 id="1-3-1-编译"><a href="#1-3-1-编译" class="headerlink" title="1.3.1 编译"></a>1.3.1 编译</h3><p><strong>编译</strong>：将便于人编写、阅读、维护的高级计算机语言写的源代码程序，翻译为计算机能解读、运行的低阶机器语言的程序的过程。负责这一过程的处理的工具叫做<strong>编译器</strong>。</p>
+<p>简单理解，<strong>编译</strong> = 高级语言源代码 —(分析 + 翻译 + 优化)—&gt; 低级语言机器码。</p>
 <table>
 <thead>
 <tr>
@@ -367,7 +369,7 @@ rm -rf $PROJECT_DIR/target/options.txt $PROJECT_DIR/target/files.txt</code></pre
 </tr>
 </tbody></table>
 <p>编译原理中，根据编译任务不同：</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_%E7%BC%96%E8%AF%91%E8%BF%87%E7%A8%8B.png" alt></p>
+<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/1_%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" alt></p>
 <p>字节码不是机器能识别的语言，还需要 JVM 再将字节码转换成机器码。</p>
 <table>
 <thead>
@@ -395,10 +397,10 @@ rm -rf $PROJECT_DIR/target/options.txt $PROJECT_DIR/target/files.txt</code></pre
 </tbody></table>
 <p>前端编译为字节码的好处：</p>
 <ol>
-<li>解耦后端JVM编译，减少JVM工作，避免每次执行时词法、语法、语义分析。方便读取，执行速度比直接解析源代码（AOT）快。</li>
-<li>字节码可以由Groovy，Clojure，Scala语言生成，供JVM调用。</li>
-<li>字节码有版本信息，可以在编译过程抹平一些语言层面的变化。</li>
-<li>字节码格式比源码紧凑、轻量，方便方便网络传输。嵌入设备不够资源跑起完整的编译器，只需嵌入一个小巧的JVM就可以编译源码。</li>
+<li><strong>解耦</strong>后端JVM编译，减少JVM工作，避免每次执行时词法、语法、语义分析。方便读取，执行速度比直接解析源代码（AOT）快。</li>
+<li>字节码可以由Groovy，Clojure，Scala<strong>跨语言</strong>生成，供JVM调用。</li>
+<li>字节码有版本信息，可以在编译过程在一些语言层面上<strong>擦除版本变化</strong>。</li>
+<li>字节码格式比源码紧凑、<strong>轻量</strong>，方便方便网络传输。<strong>嵌入式</strong>设备不够资源跑起完整的编译器，只需嵌入一个小巧的JVM就可以编译源码。</li>
 </ol>
 <h3 id="1-3-2-前端编译-javac"><a href="#1-3-2-前端编译-javac" class="headerlink" title="1.3.2 前端编译 javac"></a>1.3.2 前端编译 javac</h3><p><em><em>javac </em></em>是java前端编译的一种编译器实现。</p>
 <p>🗣 <strong>Tips</strong> :</p>
@@ -409,7 +411,7 @@ rm -rf $PROJECT_DIR/target/options.txt $PROJECT_DIR/target/files.txt</code></pre
 <h3 id="1-3-3-反编译"><a href="#1-3-3-反编译" class="headerlink" title="1.3.3 反编译"></a>1.3.3 反编译</h3><ul>
 <li><strong>javap</strong> 将字节码转化为看得懂字节码，<code>synchronized</code>底层依赖了<code>ACC_SYNCHRONIZED</code>标记和<code>monitorenter</code>、<code>monitorexit</code>两个指令来实现同步。</li>
 <li><strong>jad</strong>  不支持 Java 8 - lambda 表达式，字符串的 switch 是通过<code>equals()</code>和<code>hashCode()</code>实现的。</li>
-<li><strong>IDEA插件 jclasslib</strong> 字节码查看器 view | show bytecode with jclasslib。</li>
+<li><strong>IDEA插件 jclasslib</strong> 字节码查看器 <code>view | show bytecode with jclasslib</code>。</li>
 </ul>
 <h3 id="1-3-4-后端编译-Just-In-Time-Compiler"><a href="#1-3-4-后端编译-Just-In-Time-Compiler" class="headerlink" title="1.3.4 后端编译 Just-In-Time Compiler"></a>1.3.4 后端编译 Just-In-Time Compiler</h3><p>本文关注javac的编译过程，对后端编译一笔带过。</p>
 <p>传统 JVM 通过解释字节码将其翻译成对应的机器指令执行。为了解决效率问题，小部分热点代码消耗大部分的资源，引入 <strong>JIT</strong> 技术。</p>
@@ -460,7 +462,7 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
                   enterTrees(stopIfError(CompileState.PARSE, 
                // 1.1 词法分析和语法分析
                         parseFiles(sourceFileObjects))), classnames);
-      // 3.分析及字节码class文件生成
+      // 3.语义分析及字节码class文件生成
         delegateCompiler.compile2();</code></pre>
 <p>编译过程大致可以分为3个过程</p>
 <p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_javac%E9%98%B6%E6%AE%B5.png" alt></p>
@@ -486,7 +488,7 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 <td>com.sun.tools.javac.parser.Scanner</td>
 </tr>
 </tbody></table>
-<p>该阶段将<strong>源码文件</strong>解析构建<strong>抽象语法树</strong>( Abstract Syntax Tree，AST )。从功能上分为<strong>词法分析</strong>和<strong>语法分析</strong>，实际上同时进行。编译时，通过ParserFactory与ScannerFactory工厂类管理JavacParser与Scanner对象。JavacParser解析时，Scanner读取源文件字符流，逐个读入Token，构建抽象语法树。之后，编译器就基本不会再对源码文件进行操作，后续操作都建立在抽象语法树之上。（添加默认无参构造方法等）</p>
+<p>该阶段将<strong>源码文件</strong>解析构建<strong>抽象语法树</strong>( Abstract Syntax Tree，AST )。从功能上分为 <strong>词法分析</strong> 和 <strong>语法分析</strong>，实际上同时进行。编译时，通过 ParserFactory 与 ScannerFactory 工厂类管理 JavacParser 与 Scanner 对象。JavacParser 解析时，Scanner 读取源文件字符流，逐个读入 Token，构建抽象语法树。之后，编译器就基本不会再对源码文件进行操作，后续操作都建立在抽象语法树之上。（添加默认无参构造方法等）</p>
 <pre><code class="java">public List&lt;JCCompilationUnit&gt; parseFiles(Iterable&lt;JavaFileObject&gt; fileObjects) {
    if (shouldStop(CompileState.PARSE))
        return List.nil();
@@ -554,11 +556,13 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 </tbody></table>
 <p>🗣 <strong>Tips</strong> :</p>
 <ol>
-<li>java命名规范指出声明变量的时候必须以字母、下划线或者美元符开头，包括字母、数字、下划线或者美元符。使JavacParser识别int y=x+1的Token流。</li>
+<li>java命名规范指出声明变量的时候必须以字母、下划线或者美元符开头，包括字母、数字、下划线或者美元符。由JavacParser规定并识别 int y=x+1; package per.rsf.javac; 的Token流。</li>
 <li>Tokens根据Token.name先转化成Name对象，建立Name和Token的对应关系，保存在key数组中。这个key数组只保存了在Token类中定义的所有Token到Name对象的关系，而其他所有字符集合Tokens都会将它对应到TokenKind.IDENTIFIER类型</li>
 <li>Javac中每个与文件相关的实现类都直接或间接实现了JavaFileObject接口，这个接口专门为操作.java文件及.class文件而定义的。每个RegularFileObject类对象可以代表一个Java源文件。调用getCharContent()方法获取字符流输入。</li>
 <li>关键代码nextToken的主要逻辑：处理特殊字符、标识符、16进制、数字、分隔符、斜杠开头、反斜杠开头、双引号开头、默认处理。</li>
 </ol>
+<p>例：package的Token读取流程</p>
+<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_token%E8%AF%BB%E5%8F%96%E6%B5%81%E7%A8%8B.png" alt></p>
 <h3 id="2-1-2-语法分析"><a href="#2-1-2-语法分析" class="headerlink" title="2.1.2 语法分析"></a>2.1.2 语法分析</h3><table>
 <thead>
 <tr>
@@ -573,7 +577,7 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 <td>包、类型、运算符、修饰符、接口、返回值、代码注释</td>
 </tr>
 </tbody></table>
-<p>将Token流组建成更加结构化的<strong>语法树</strong>，描述程序代码语法结构，检查是否符合Java语言规范。每个语法树上的节点都是com.sun.tools.javac.tree.JCTree的一个实例，代表着程序代码中的一个语法结构（Construct），如包、类型、修饰符、运算符、接口、返回值甚至代码注释。</p>
+<p>将Token流组装成更结构化的<strong>语法树</strong>，描述程序代码语法结构，检查是否符合Java语言规范。每个语法树上的节点都是<code>com.sun.tools.javac.tree.JCTree</code>的一个实例，继承自<code>com.sun.source.tree.Tree</code>接口，代表着程序代码中的一个语法结构（Construct），如包、类型、修饰符、运算符、接口、返回值甚至代码注释。</p>
 <p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_tree.png" alt></p>
 <table>
 <thead>
@@ -592,15 +596,15 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 </tr>
 <tr>
 <td>com.sun.tools.javac.tree.JCTree#Tag</td>
-<td>enum类，区分语法树的类型。</td>
+<td>enum类，区分语法树的类型。类型的数值是上一个节点类型的数值+1</td>
 </tr>
 <tr>
 <td>com.sun.tools.javac.tree.JCTree#pos</td>
-<td>源文件中位置</td>
+<td>语法节点在源文件中的起始位置，-1表示不存在</td>
 </tr>
 <tr>
 <td>com.sun.tools.javac.tree.JCTree#type</td>
-<td>Java类型</td>
+<td>Java类型（int、float、String）</td>
 </tr>
 </tbody></table>
 <p>🗣 <strong>Tips</strong> :</p>
@@ -610,9 +614,14 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 <li><p>在遍历像抽象语法树这样由各种类的实例所组成的树形结构时，通常会借助Visitors访问者模式来完成。</p>
 </li>
 </ol>
-<h3 id="2-1-3-填充符号表"><a href="#2-1-3-填充符号表" class="headerlink" title="2.1.3 填充符号表"></a>2.1.3 填充符号表</h3><p>一个类中的符号变量，除了类本身定义，其他类定义。如调用其他类方法、变量，继承或实现父类和接口等。</p>
-<p>调用其他类的符号变量时，就需要通过符号表来进行查找。</p>
-<p>这些类的符号也需解析到符号表中。<code>com.sun.tools.javac.comp.Enter</code>按照递归向下的顺序解析语法树，将所有的符号都输入到符号表中。</p>
+<h3 id="2-1-3-填充符号表"><a href="#2-1-3-填充符号表" class="headerlink" title="2.1.3 填充符号表"></a>2.1.3 填充符号表</h3><p>该步骤实际发生在语义分析中，在处理注解前。</p>
+<p>一个类中的符号变量，除了类本身定义，其他类定义。如调用其他类方法、变量，继承或实现父类和接口等。</p>
+<p>调用其他类的符号变量时，就需要通过符号表来进行查找。（符号引用）</p>
+<p>这些类的符号也需解析到符号表中。<code>com.sun.tools.javac.comp.Enter</code>按照递归向下的顺序解析语法树，</p>
+<ol>
+<li>将所有类中出现的符号输入到自身的符号表，并将类符号、类的参数类型符号(泛型参数类型)、超类符号，继承类型符号和继承的接口类型符号都存储到一个未处理列表中。</li>
+<li>将这个未处理列表中的所有类都解析到各自的符号列表中。</li>
+</ol>
 <p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_symbol.png" alt></p>
 <table>
 <thead>
@@ -628,7 +637,7 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 <td>一组符号地址和符号信息构成的表格</td>
 </tr>
 </tbody></table>
-<p>符号表是由一组符号地址和符号信息构成的表格。在语义分析中，符号表所登记的内容将用于语义检查和产生中间代码。在目标生成阶段，当对符号名进行地址分配时，符号表是地址分配的依据。</p>
+<p>符号表是由一组符号地址和符号信息构成的表格。在语义分析中，符号表所登记的内容将用于<strong>语义检查</strong>和产生中间代码。在目标生成阶段，当对符号名进行<strong>地址分配</strong>时，符号表是地址分配的依据。</p>
 <table>
 <thead>
 <tr>
@@ -651,16 +660,17 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 </tbody></table>
 <h2 id="2-2-Annotation-Processing"><a href="#2-2-Annotation-Processing" class="headerlink" title="2.2 Annotation Processing"></a>2.2 Annotation Processing</h2><p>JDK 6 实现了插入式注解处理API（JSR-269）,位于<code>javax.annotation.processing</code>和<code>javax.lang.model</code>包。</p>
 <p>通过声明一个注解，实现一个注解处理器。注册服务后</p>
-<p>在编译期由<code>com.sun.tools.javac.processing.JavacProcessingEnvironment类</code>处理注解。读取、修改、添加抽象语法树中的任意元素。像反射一样访问类、字段、方法和注解等元素，创建新的源文件。每一个插入式注解处理器操作语法树，编译器将回到解析及填充符号表的过程循环。</p>
-<p>减少编写配置文件的劳动量，提高代码可读性。</p>
-<p><strong>测试使用时，测试类和实现类写在不同子模块下！！！否则编译不通过！！！</strong></p>
+<p>在编译期由<code>com.sun.tools.javac.processing.JavacProcessingEnvironment</code>处理注解。读取、修改、添加抽象语法树中的任意元素。像反射一样访问类、字段、方法和注解等元素，创建新的源文件。每一个插入式注解处理器操作语法树，编译器将回到解析及填充符号表的过程循环。</p>
+<p>作用：减少编写配置文件的劳动量，提高代码可读性。</p>
+<p><strong>测试使用时，测试类和实现类写在不同子模块下！！！否则编译不通过！！！一般需要插件工具完成，如 Lombok 插件</strong></p>
 <h3 id="2-2-1-javac-命令编译过程"><a href="#2-2-1-javac-命令编译过程" class="headerlink" title="2.2.1 javac 命令编译过程"></a>2.2.1 javac 命令编译过程</h3><ol>
 <li>声明一个注解</li>
-<li>创建一个注解处理器，注解处理器需实现 <code>javax.annotation.processing.Processor</code> 接口或继承 <code>javax.annotation.processing.AbstractProcessor</code> 类。重写process方法。</li>
+<li>创建一个注解处理器，注解处理器需实现 <code>javax.annotation.processing.Processor</code> 接口或继承 <code>javax.annotation.processing.AbstractProcessor</code> 类。重写<code>process</code>方法。</li>
 <li>为注解处理器注册服务。在<code>META-INF.services</code>文件夹下创建 <code>javax.annotation.processing.Processor</code>文件。写入注解处理器的全称。</li>
 <li>为了能够让项目能够通过编译，我们需要为Java编译器添加一个不进行注解处理的参数</li>
 </ol>
-<pre><code class="xml">   &lt;plugin&gt;
+<pre><code class="xml">  &lt;!--maven默认运行javac编译，将javax.annotation.processing.Processor文件作为类路径的一部分。此时编译器期望注释处理器已编译成实例。引发“错误的服务配置文件...”错误。-proc:none 禁用注释处理--&gt; 
+    &lt;plugin&gt;
            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
            &lt;configuration&gt;
@@ -668,6 +678,93 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
            &lt;/configuration&gt;
    &lt;/plugin&gt;</code></pre>
 <p>也可使用 <code>javac -processor</code>指定注解处理器</p>
+<p>主要源码：</p>
+<pre><code class="java">// 注解处理器
+// 以下注解可以重写get...方法 如getSupportedAnnotationTypes getSupportedSourceVersion
+// @SupportedAnnotationTypes(&quot;...&quot;)//注册注解处理器要处理的注解类型
+// @SupportedSourceVersion(SourceVersion.RELEASE_8) 注册注解处理器要处理的源代码版本
+// @SupportedOptions 注册通过命令行传递给处理器的操作选项
+public MyProcessor extends AbstractProcessor{
+    @Override
+      // 自动调用，ProcessingEnvironment类提供工具类：Filer，Types，Elements，Messager等
+    public synchronized void init(ProcessingEnvironment processingEnv) {
+        super.init(processingEnv);
+    }
+
+        @Override
+      // 处理器的main（）方法。自动调用，扫描和处理注解的主要逻辑，RoundEnvironment类用于查找出程序元素上使用的注解
+      // 返回值true:接下来的处理器不可处理该注解；false:接下来的处理器可以处理该处理器处理的注解。
+    public boolean process(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv) {
+        return false;
+    } 
+}
+
+public interface ProcessingEnvironment {
+    Map&lt;String,String&gt; getOptions();
+    //Messager用来报告错误，警告和其他提示信息
+    Messager getMessager();
+    //Filer用来创建新的源文件，class文件以及辅助文件
+    Filer getFiler();
+    //Elements中包含用于操作Element的工具方法
+    Elements getElementUtils();
+    //Types中包含用于操作TypeMirror的工具方法
+    Types getTypeUtils();
+    SourceVersion getSourceVersion();
+    Locale getLocale();
+}
+
+public interface RoundEnvironment {
+        // 是否最终轮
+    boolean processingOver();
+      // 上一轮注解处理器是否产生错误
+    boolean errorRaised();
+      // 返回上一轮注解处理器生成的根元素
+    Set&lt;? extends Element&gt; getRootElements();
+      // 返回包含指定注解类型的元素的集合
+    Set&lt;? extends Element&gt; getElementsAnnotatedWith(TypeElement a);
+    // 返回包含指定注解类型的元素的集合
+    Set&lt;? extends Element&gt; getElementsAnnotatedWith(Class&lt;? extends Annotation&gt; a);
+}</code></pre>
+<table>
+<thead>
+<tr>
+<th>元素</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Element</td>
+<td>程序元素（源代码）</td>
+</tr>
+<tr>
+<td>VariableElement</td>
+<td>代表一个字段，枚举常量，方法或者构造方法的参数，局部变量及异常参数等元素</td>
+</tr>
+<tr>
+<td>PackageElement</td>
+<td>包元素</td>
+</tr>
+<tr>
+<td>TypeElement</td>
+<td>类或接口元素</td>
+</tr>
+<tr>
+<td>ExecutableElement</td>
+<td>代码方法，构造函数，类或接口的初始化代码块等元素，也包括注解类型元素</td>
+</tr>
+<tr>
+<td>TypeMirror</td>
+<td>声明类型（类类型和接口类型），数组，类型变量和空类型。也代表通配类型参数，可执行文件的签名和返回类型等。TypeMirror = Element.asType()</td>
+</tr>
+<tr>
+<td>DeclaredType</td>
+<td>声明类型：类类型还是接口类型</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
 <h3 id="2-2-2-编译器-API-实例过程"><a href="#2-2-2-编译器-API-实例过程" class="headerlink" title="2.2.2 编译器 API 实例过程"></a>2.2.2 编译器 API 实例过程</h3><p>使用 <code>CompilationTask</code> 的 <code>setProcessors</code> 方法可以传入注解处理器。</p>
 <pre><code class="java">JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
 DiagnosticCollector&lt;JavaFileObject&gt; diagnostics = new DiagnosticCollector&lt;&gt;();
@@ -688,8 +785,9 @@ manager.close();</code></pre>
 public @interface Check {//标识一个类被 findbugs 检查
 }</code></pre>
 <h4 id="注解处理类-ClassChecker"><a href="#注解处理类-ClassChecker" class="headerlink" title="注解处理类 ClassChecker"></a>注解处理类 ClassChecker</h4><pre><code class="java">//以下两个注解可以重写 getSupportedAnnotationTypes 与 getSupportedSourceVersion 方法
-@SupportedAnnotationTypes(&quot;per.rsf.jsr269.anno.Check&quot;)
-@SupportedSourceVersion(SourceVersion.RELEASE_8)
+@SupportedAnnotationTypes(&quot;per.rsf.jsr269.anno.Check&quot;)//注册注解处理器要处理的注解类型
+@SupportedSourceVersion(SourceVersion.RELEASE_8)//注册注解处理器要处理的源代码版本
+//@SupportedOptions 注册通过命令行传递给处理器的操作选项
 public class ClassChecker extends AbstractProcessor {
    @Override
     public boolean process(Set&lt;? extends TypeElement&gt; annotations, RoundEnvironment roundEnv) {
@@ -698,7 +796,7 @@ public class ClassChecker extends AbstractProcessor {
         for (Element element : elements) {
             scanner8.scan(element);
         }
-        return false;// 如果为true，则接下来的处理器不可处理该注解；如果为false，则接下来的处理器可以处理该处理器处理的注解。
+        return false;
     } 
 }
 
@@ -709,8 +807,8 @@ class ClassScanner extends ElementScanner8&lt;Set&lt;? extends Element&gt;, Elem
           // if e.getConstantValue() != null 访问静态常量
           // if e.getEnclosingElement().getKind() == ElementKind.ENUM 访问枚举
           // else 访问实例变量
-        String name = e.getSimpleName().toString();
           // ...
+          return super.visitVariable(e, element);
     }
         //类
     @Override
@@ -756,12 +854,12 @@ public class testCHECK {
 </tr>
 </thead>
 <tbody><tr>
-<td>语法树、符号表</td>
+<td>语法树</td>
 <td>字节码文件</td>
 <td>标注检查，数据及控制流分析</td>
 </tr>
 </tbody></table>
-<p>语法分析将源文件抽象成结构正确的抽象语法树，但无法保证符合逻辑的。</p>
+<p>语法分析将源文件抽象成结构正确的抽象语法树，但无法保证符合逻辑的。还需添加默认的构造器，检查变量使用前是否已经初始化等。</p>
 <table>
 <thead>
 <tr>
@@ -799,7 +897,7 @@ public class testCHECK {
 <li>常量折叠：a=1+2 -&gt; a=3</li>
 <li>如果代码中没有提供任何构造函数，自动添加一个没有参数、访问权限与当前类一致的默认构造函数。如果提供了构造函数，则在代码生成阶段添加。</li>
 </ol>
-<h3 id="2-3-2-语法糖（Syntactic-Sugar）"><a href="#2-3-2-语法糖（Syntactic-Sugar）" class="headerlink" title="2.3.2 语法糖（Syntactic Sugar）"></a>2.3.2 语法糖（Syntactic Sugar）</h3><p>Java中最常用的 <a href="https://mp.weixin.qq.com/s/EBnM7QAOPjDk5bG3M0Mu-w" target="_blank" rel="noopener">语法糖</a> 主要是前面提到过的泛型、变长参数、自动装箱/拆箱等。JVM运行时不支持这些语法，它们在编译阶段还原回简单的基础语法结构，这个过程称为解语法糖。解语法糖的过程由JavaCompiler#desugar()方法触发。</p>
+<h4 id="语法糖（Syntactic-Sugar）"><a href="#语法糖（Syntactic-Sugar）" class="headerlink" title="语法糖（Syntactic Sugar）"></a>语法糖（Syntactic Sugar）</h4><p>Java中最常用的 <a href="https://mp.weixin.qq.com/s/EBnM7QAOPjDk5bG3M0Mu-w" target="_blank" rel="noopener">语法糖</a> 主要是前面提到过的泛型、变长参数、自动装箱/拆箱等。JVM运行时不支持这些语法，它们在编译阶段还原回简单的基础语法结构，这个过程称为解语法糖。解语法糖的过程由JavaCompiler#desugar()方法触发。</p>
 <table>
 <thead>
 <tr>
@@ -816,7 +914,7 @@ public class testCHECK {
 <td>inner classes, class literals, assertions, foreach loops, etc.</td>
 </tr>
 </tbody></table>
-<h3 id="2-3-3-字节码生成"><a href="#2-3-3-字节码生成" class="headerlink" title="2.3.3 字节码生成"></a>2.3.3 字节码生成</h3><table>
+<h3 id="2-3-2-字节码生成"><a href="#2-3-2-字节码生成" class="headerlink" title="2.3.2 字节码生成"></a>2.3.2 字节码生成</h3><table>
 <thead>
 <tr>
 <th>输入</th>
@@ -830,7 +928,12 @@ public class testCHECK {
 <td>编译器添加和转换少量的代码，生成字节码文件。</td>
 </tr>
 </tbody></table>
-<p>把前面各个步骤所生成的信息转化成字节码，在收敛代码的过程中，将实例构造器<init>方法和类重载构造器<clinit>方法添加到语法树之中。</clinit></init></p>
+<p>把前面各个步骤所生成的信息转化成字节码，</p>
+<ol>
+<li>代码收敛，将方法块转成符合JVM语法的命令形式，jvm的所有操作都是基于栈的，所有操作都必须经过进出栈来完成。</li>
+<li>按照jvm的文件组织格式将字节码输出到以class文扩展名的文件中。</li>
+</ol>
+<p>在收敛代码的过程中，将实例构造器<init>方法和类重载构造器<clinit>方法添加到语法树之中。</clinit></init></p>
 <table>
 <thead>
 <tr>
@@ -855,8 +958,7 @@ public class testCHECK {
 <td>输出字节码，生成最终的Class文件</td>
 </tr>
 </tbody></table>
-<p>2.3.3.1 <code>clinit</code>与<code>init</code></p>
-<p><clinit>方法编译器自动收集static代码块，收敛顺序为<strong>先父后子，先单后块，父接口随遇而安</strong>。final static 静态不可变常量提前被编译器放入常量池，无需初始化。</clinit></p>
+<h4 id="clinit与init"><a href="#clinit与init" class="headerlink" title="clinit与init"></a><code>clinit</code>与<code>init</code></h4><p><clinit>方法编译器自动收集static代码块，收敛顺序为<strong>先父后子，先单后块，父接口“随遇而安”</strong>。final static 静态不可变常量提前被编译器放入常量池，无需初始化。</clinit></p>
 <p><init>方法编译器自动收集非static代码块，收敛顺序为<strong>先父后子，先单后块最后构造函数</strong>。</init></p>
 <p><init>方法（实例化阶段）永远在<clinit>方法（类初始化阶段）执行后执行。🗣 <strong>Tips</strong> :</clinit></init></p>
 <ol>
@@ -922,10 +1024,7 @@ public class testCHECK {
 <td>内部 API 和编译器的实现类</td>
 </tr>
 </tbody></table>
-<h2 id="3-1-Lombok实现-JSR269-插件化注解API"><a href="#3-1-Lombok实现-JSR269-插件化注解API" class="headerlink" title="3.1 Lombok实现 JSR269 插件化注解API"></a>3.1 Lombok实现 JSR269 插件化注解API</h2><p>Lombok以及MapStruct都是通过在目标代码上标记注解，编译器能够根据注解生成对应的实现代码。比如Lombok在属性上标记<code>@Getter</code>，那么在这个<code>Java Bean</code>内就会生成对应属性的<code>get</code>方法。</p>
-<p>本质上通过Java的一个标准API（<code>Pluggable Annotation Processing API</code>）实现，简称JSR269。定义了通用的插入式API用于创建标准的注解处理器。</p>
-<h3 id="3-1-1-JSR269运行机制"><a href="#3-1-1-JSR269运行机制" class="headerlink" title="3.1.1 JSR269运行机制"></a>3.1.1 JSR269运行机制</h3><h1 id="4-javac-调试"><a href="#4-javac-调试" class="headerlink" title="4 javac 调试"></a>4 javac 调试</h1><p>TODO 内容没有成功，也没有用到。</p>
-<h2 id="4-1-修改-idea-vmoptions"><a href="#4-1-修改-idea-vmoptions" class="headerlink" title="4.1 修改 idea.vmoptions"></a>4.1 修改 idea.vmoptions</h2><pre><code class="properties">-Dcompiler.process.debug.port=12346</code></pre>
+<h1 id="4-javac-调试"><a href="#4-javac-调试" class="headerlink" title="4 javac 调试"></a>4 javac 调试</h1><h2 id="4-1-修改-idea-vmoptions"><a href="#4-1-修改-idea-vmoptions" class="headerlink" title="4.1 修改 idea.vmoptions"></a>4.1 修改 idea.vmoptions</h2><pre><code class="properties">-Dcompiler.process.debug.port=12346</code></pre>
 <h2 id="4-2-配置远程debug"><a href="#4-2-配置远程debug" class="headerlink" title="4.2 配置远程debug"></a>4.2 配置远程debug</h2><p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/4_debug.png" alt></p>
 <h2 id="4-3-启用idea编译调试"><a href="#4-3-启用idea编译调试" class="headerlink" title="4.3 启用idea编译调试"></a>4.3 启用idea编译调试</h2><p>IDEA默认会禁用编译调试，这里需要开启一个开关，以此让IDEA在编译之前等待调试程序的链接。并且，<strong>这个配置在IDEA重启后会失效</strong>。</p>
 <p>双击<code>Shift</code>，打开平常搜索类的界面，输入<code>debug build process</code></p>
@@ -1107,7 +1206,7 @@ public class testCHECK {
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-hello-javac"><span class="toc-number">2.</span> <span class="toc-text">1 hello javac</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-javac-经典应用"><span class="toc-number">2.1.</span> <span class="toc-text">1.1  javac 经典应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-javac-实例场景"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 javac 实例场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-编译-与-javac"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 编译 与 javac</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-编译"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.3.1 编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-前端编译-javac"><span class="toc-number">2.3.2.</span> <span class="toc-text">1.3.2 前端编译 javac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-反编译"><span class="toc-number">2.3.3.</span> <span class="toc-text">1.3.3 反编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-4-后端编译-Just-In-Time-Compiler"><span class="toc-number">2.3.4.</span> <span class="toc-text">1.3.4 后端编译 Just-In-Time Compiler</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-javac-编译过程源码分析"><span class="toc-number">3.</span> <span class="toc-text">2 javac 编译过程源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Parse-and-Enter"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 Parse and Enter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-词法分析"><span class="toc-number">3.1.1.</span> <span class="toc-text">2.1.1 词法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-语法分析"><span class="toc-number">3.1.2.</span> <span class="toc-text">2.1.2 语法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-填充符号表"><span class="toc-number">3.1.3.</span> <span class="toc-text">2.1.3 填充符号表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Annotation-Processing"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 Annotation Processing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-javac-命令编译过程"><span class="toc-number">3.2.1.</span> <span class="toc-text">2.2.1 javac 命令编译过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-编译器-API-实例过程"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.2.2 编译器 API 实例过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-实例"><span class="toc-number">3.2.3.</span> <span class="toc-text">2.2.3 实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注解类-Check"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">注解类 Check</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注解处理类-ClassChecker"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">注解处理类 ClassChecker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册服务"><span class="toc-number">3.2.3.3.</span> <span class="toc-text">注册服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试类"><span class="toc-number">3.2.3.4.</span> <span class="toc-text">测试类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果"><span class="toc-number">3.2.3.5.</span> <span class="toc-text">结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Analyse-and-Generate"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 Analyse and Generate</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-语义分析"><span class="toc-number">3.3.1.</span> <span class="toc-text">2.3.1 语义分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-语法糖（Syntactic-Sugar）"><span class="toc-number">3.3.2.</span> <span class="toc-text">2.3.2 语法糖（Syntactic Sugar）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-字节码生成"><span class="toc-number">3.3.3.</span> <span class="toc-text">2.3.3 字节码生成</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-javac-API"><span class="toc-number">4.</span> <span class="toc-text">3 javac API</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Lombok实现-JSR269-插件化注解API"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 Lombok实现 JSR269 插件化注解API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-JSR269运行机制"><span class="toc-number">4.1.1.</span> <span class="toc-text">3.1.1 JSR269运行机制</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-javac-调试"><span class="toc-number">5.</span> <span class="toc-text">4 javac 调试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-修改-idea-vmoptions"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 修改 idea.vmoptions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-配置远程debug"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 配置远程debug</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-启用idea编译调试"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 启用idea编译调试</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-hello-javac"><span class="toc-number">2.</span> <span class="toc-text">1 hello javac</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-javac-经典应用"><span class="toc-number">2.1.</span> <span class="toc-text">1.1  javac 经典应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-javac-实例场景"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 javac 实例场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-编译-与-javac"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 编译 与 javac</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-1-编译"><span class="toc-number">2.3.1.</span> <span class="toc-text">1.3.1 编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-2-前端编译-javac"><span class="toc-number">2.3.2.</span> <span class="toc-text">1.3.2 前端编译 javac</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-3-反编译"><span class="toc-number">2.3.3.</span> <span class="toc-text">1.3.3 反编译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-4-后端编译-Just-In-Time-Compiler"><span class="toc-number">2.3.4.</span> <span class="toc-text">1.3.4 后端编译 Just-In-Time Compiler</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-javac-编译过程源码分析"><span class="toc-number">3.</span> <span class="toc-text">2 javac 编译过程源码分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-Parse-and-Enter"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 Parse and Enter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-1-词法分析"><span class="toc-number">3.1.1.</span> <span class="toc-text">2.1.1 词法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-语法分析"><span class="toc-number">3.1.2.</span> <span class="toc-text">2.1.2 语法分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-3-填充符号表"><span class="toc-number">3.1.3.</span> <span class="toc-text">2.1.3 填充符号表</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Annotation-Processing"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 Annotation Processing</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-1-javac-命令编译过程"><span class="toc-number">3.2.1.</span> <span class="toc-text">2.2.1 javac 命令编译过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-2-编译器-API-实例过程"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.2.2 编译器 API 实例过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-3-实例"><span class="toc-number">3.2.3.</span> <span class="toc-text">2.2.3 实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#注解类-Check"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">注解类 Check</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注解处理类-ClassChecker"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">注解处理类 ClassChecker</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注册服务"><span class="toc-number">3.2.3.3.</span> <span class="toc-text">注册服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#测试类"><span class="toc-number">3.2.3.4.</span> <span class="toc-text">测试类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#结果"><span class="toc-number">3.2.3.5.</span> <span class="toc-text">结果</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-Analyse-and-Generate"><span class="toc-number">3.3.</span> <span class="toc-text">2.3 Analyse and Generate</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-语义分析"><span class="toc-number">3.3.1.</span> <span class="toc-text">2.3.1 语义分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#语法糖（Syntactic-Sugar）"><span class="toc-number">3.3.1.1.</span> <span class="toc-text">语法糖（Syntactic Sugar）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-字节码生成"><span class="toc-number">3.3.2.</span> <span class="toc-text">2.3.2 字节码生成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#clinit与init"><span class="toc-number">3.3.2.1.</span> <span class="toc-text">clinit与init</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-javac-API"><span class="toc-number">4.</span> <span class="toc-text">3 javac API</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-javac-调试"><span class="toc-number">5.</span> <span class="toc-text">4 javac 调试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-修改-idea-vmoptions"><span class="toc-number">5.1.</span> <span class="toc-text">4.1 修改 idea.vmoptions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-配置远程debug"><span class="toc-number">5.2.</span> <span class="toc-text">4.2 配置远程debug</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-启用idea编译调试"><span class="toc-number">5.3.</span> <span class="toc-text">4.3 启用idea编译调试</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -1176,7 +1275,7 @@ s.parentNode.insertBefore(bp, s)
   <div class="outer">
     <div id="footer-info">
       <div class="footer-left">
-        &copy; 2019 Sapphire
+        &copy; 2020 Sapphire
       </div>
       <!-- 不蒜子统计 -->
       
@@ -1305,15 +1404,27 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">scrum</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">sprint</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">agile development</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1325,7 +1436,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
+                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1341,6 +1452,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
@@ -1353,19 +1472,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">JVM</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Plantuml</a>
               </li>
              
               <li class="article-tag-list-item">
