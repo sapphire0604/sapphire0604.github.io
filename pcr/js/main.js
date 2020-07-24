@@ -1,4 +1,18 @@
+var boss_id_map = [];
+
 var main = function(){
+
+	var trim= function(str){
+		if(str){
+			if(typeof str == "string"){
+				return str.trim();
+			}else{
+				return str;
+			}
+		}else{
+			return "";
+		}
+	};
 	var msg = function(msg){
 		layui.use('layer', function(){
 		  	layui.layer.msg(msg);
@@ -27,7 +41,7 @@ var main = function(){
 	var axis_obj_translater = function(){
 		if(axis && axis.length > 0){
 			axis.forEach(function(work) {
-				var work_id = work["id"];
+				var work_id = work["work_id"];
 				var axis_text = work["text"];
 				if(!work_id || !axis_text){
 					return true;
@@ -38,12 +52,12 @@ var main = function(){
 					axis_array.forEach(function(axis_work) {
 						let work_item = axis_work.split(" ");
 						work_text_map[work_id].push({
-							"time" : work_item[0],
-							"name" : work_item[1],
-							"action" : work_item[2],
-							"work" : work_item[3],
-							"damage" : work_item[4],
-							"axis" : work_item[5]
+							"time" : trim(work_item[0]),
+							"name" : trim(work_item[1]),
+							"action" : trim(work_item[2]),
+							"work" : trim(work_item[3]),
+							"damage" :trim(work_item[4]),
+							"axis" : trim(work_item[5])
 						});
 					});
 				}
@@ -66,9 +80,9 @@ var main = function(){
 				text += "<thead><tr><th>时间</th><th>人物</th><th>目押动作</th>" +
 					"<th>行动</th><th>伤害</th><th>破甲轴</th></tr></thead><tbody>";
 				work_text_map[work_id].forEach(function(item) {
-					text += "<tr><td>" + item.time + "</td><td>" + item.name + "</td><td>" +
-					item.action + "</td><td>" + item.work + "</td><td>" +
-					item.damage + "</td><th>" + item.axis + "</th></tr>";
+					text += "<tr><td>" + trim(item.time) + "</td><td>" + trim(item.name) + "</td><td>" +
+					trim(item.action) + "</td><td>" + trim(item.work) + "</td><td>" +
+					trim(item.damage) + "</td><th>" + trim(item.axis) + "</th></tr>";
 				});
 				text += "</tbody></table>";
 			}else if(typeof work_text_map[work_id] == "string"){
@@ -100,20 +114,34 @@ var main = function(){
 			});
 		});
 	};
+
+	var load_bosses = function(){
+		if(boss_data && boss_data.length > 0){
+			boss_data.forEach(function(boss) {
+				boss_id_map[boss.id] = new Boss(boss.name, boss.id, boss.hp);
+			});
+		}
+	};
+
+	var get_boss_by_id = function(boss_id){
+		return boss_id_map[boss_id];
+	};
+
 	var init = function(){
+		load_bosses();
 		axis_obj_translater();
 		check_works(works_json);
 		works_json.forEach(function(work, i) {
-			let round = work.id.indexOf('A') > -1 ? "一周目":"二周目";
-			let name = work.boss_id;
-			var tr_row = "<tr id='" + work.id + "'><td>" + (i+1) + "</td><td>" + round + "</td><td>" + name +
-			"</td><td>" + work.id + "</td><td>" + work.cfg + "</td><td>"+
-			work.hp / 1e4 + " W</td><td>" + work.count + "</td><td>" + work.creater +
-			" " + work.checker + "</td><td>" + work.src + "</td>" +
-			"<td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button>" +
-			"<button type='button' onclick='main.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
-			"<button type='button' onclick='main.modify(this);' class='layui-btn layui-btn-warm'>修改</button></td>";
-			//"<button type='button' onclick='main.remove(this);' class='layui-btn layui-btn-danger'>删除</button></td>";
+			let round = work.boss_id.indexOf('A') > -1 ? "一周目":"二周目";
+			let boss = get_boss_by_id(work.boss_id);
+			var tr_row = "<tr id='" + work.id + "'><td>" + (i+1) + "</td><td>" + round + "</td><td>" +
+				boss.name + " " + boss.id + "</td><td>" + work.id + "</td><td>" + work.cfg + "</td><td>"+
+				work.hp / 1e4 + " W</td><td>" + work.count + "</td><td>" + trim(work.creater) +"</td><td>" +
+				trim(work.checker) + "</td><td>" + trim(work.src) + "</td>" +
+				"<td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button></td>";
+				//"<button type='button' onclick='main.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
+				//"<button type='button' onclick='main.modify(this);' class='layui-btn layui-btn-warm'>修改</button></td>";
+				//"<button type='button' onclick='main.remove(this);' class='layui-btn layui-btn-danger'>删除</button></td>";
 			$("#works_table tbody").append(tr_row);
 		});
 		countdown();
