@@ -36,7 +36,6 @@ var main = function(){
 				if(axis_array && axis_array.length > 0){
 					work_text_map[work_id] = [];
 					axis_array.forEach(function(axis_work) {
-						console.log(axis_work);
 						let work_item = axis_work.split(" ");
 						work_text_map[work_id].push({
 							"time" : work_item[0],
@@ -92,7 +91,7 @@ var main = function(){
 		layui.use('util', function(){
 			var now = new Date();
 			var now_time = new Date(now.toLocaleDateString()).getTime();
-			var end_time = now.getHours() > 5 ? new Date(now_time + 29 * 60 * 60 * 1000 - 1).getTime() :
+			var end_time = now.getHours() >= 5 ? new Date(now_time + 29 * 60 * 60 * 1000 - 1).getTime() :
 				new Date(now_time + 5 * 60 * 60 * 1000 - 1).getTime(); // 翌日5点
 			var server_time = now.getTime();
 			layui.util.countdown(end_time, server_time, function(date, server_time, timer){
