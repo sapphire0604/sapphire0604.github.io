@@ -127,6 +127,14 @@ var main = function(){
 		return boss_id_map[boss_id];
 	};
 
+	var render = function(){
+		// 鼠标悬浮时的字体颜色改变
+		$('body').on("mouseenter",".layui-table-body tr",function () {
+		    $(this).siblings().find("div").css("color","#666");
+		    $(this).find("div").css("color","#009688");
+		})
+	};
+
 	var init = function(){
 		load_bosses();
 		axis_obj_translater();
@@ -134,10 +142,10 @@ var main = function(){
 		works_json.forEach(function(work, i) {
 			let round = work.boss_id.indexOf('A') > -1 ? "一周目":"二周目";
 			let boss = get_boss_by_id(work.boss_id);
-			var tr_row = "<tr id='" + work.id + "'><td>" + (i+1) + "</td><td>" + round + "</td><td>" +
-				boss.name + " " + boss.id + "</td><td>" + work.id + "</td><td>" + work.cfg + "</td><td>"+
-				work.hp / 1e4 + " W</td><td>" + work.count + "</td><td>" + trim(work.creater) +"</td><td>" +
-				trim(work.checker) + "</td><td>" + trim(work.src) + "</td>" +
+			var tr_row = "<tr id='" + work.id + "'><td>" + (i+1) + "</td><td><div>" + round + "</div></td><td><div>" +
+				boss.name + " " + boss.id + "</div></td><td><div>" + work.id + "</div></td><td><div>" + trim(work.cfg) + "</div></td><td><div>"+
+				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + trim(work.creater) +"</div></td><td><div>" +
+				trim(work.checker) + "</div></td><td><div>" + trim(work.src) + "</div></td>" +
 				"<td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button></td>";
 				//"<button type='button' onclick='main.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
 				//"<button type='button' onclick='main.modify(this);' class='layui-btn layui-btn-warm'>修改</button></td>";
@@ -145,6 +153,7 @@ var main = function(){
 			$("#works_table tbody").append(tr_row);
 		});
 		countdown();
+		render();
 	};
 	return {
 		init : init,
