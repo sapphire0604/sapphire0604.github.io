@@ -146,7 +146,7 @@ var main = function(){
 		}
 	};
 
-	var table = function(title, round, boss_value, group_type){
+	var table = function(title, round, boss_value, _group_type){
 		title = trim(title);
 		let boss_id = get_boss_id(round, boss_value);
 		let work_id, cfg_info;
@@ -176,23 +176,23 @@ var main = function(){
 				//"<button type='button' onclick='main.remove(this);' class='layui-btn layui-btn-danger'>删除</button></td>";
 			let is_show = true;
 			is_show = round == 1 ? is_round_1 : !is_round_1;
-			if(!cfg_info && work_id && work.id.indexOf(work_id) < 0){
-				if(work.id == "b1"){
+			if(title != ""){
+				if(is_show && !cfg_info && work_id && work.id.indexOf(work_id) < 0){
+					is_show = false;
+				}
+				if(is_show && !work_id && cfg_info && work.cfg.indexOf(cfg_info) < 0){
+					is_show = false;
+				}
+				if(is_show && boss_id != "" && work.boss_id != boss_id){
+					is_show = false;
+				}
 			}
-				is_show = false;
-			}
-			if(!work_id && cfg_info && work.cfg.indexOf(cfg_info) < 0){
-				is_show = false;
-			}
-			if(boss_id != "" && work.boss_id != boss_id){
-				is_show = false;
-			}
-			if(group_type < 4){
-				if(group_type == 3){
-					if(typeof _group_type != "object" || _group_type.indexOf(group_type.sy) > -1 || _group_type.indexOf(group_type.hq) > -1){
+			if(_group_type < 4){
+				if(_group_type == 3){
+					if(typeof work.group_type != "object" || work.group_type.indexOf(group_type.sy) < 0 || work.group_type.indexOf(group_type.hq) < 0){
 						is_show = false;
 					}
-				}else if(group_type != work.group_type){
+				}else if(_group_type != work.group_type){
 					is_show = false;
 				}
 			}
