@@ -79,10 +79,10 @@ var main = function(){
 	var detall_work_text = function(obj){
 		var work_row = $(obj).parent().parent();
 		var work_id = work_row.attr("id");
-		var work_round = work_row.find('td:eq(1)').text();
-		var work_boss_id = work_row.find('td:eq(2)').text();
-		var work_cfg = work_row.find('td:eq(4)').text();
-		var work_hp = work_row.find('td:eq(5)').text();
+		var work_round = work_row.find('td:eq(0)').text();
+		var work_boss_id = work_row.find('td:eq(1)').text();
+		var work_cfg = work_row.find('td:eq(3)').text();
+		var work_hp = work_row.find('td:eq(4)').text();
 		var text = "<h2>" + work_round + " " + work_boss_id +
 			"</h2><br/>" + work_cfg + " " + work_hp;
 		if(layui && work_text_map){
