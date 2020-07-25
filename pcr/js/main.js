@@ -65,6 +65,17 @@ var main = function(){
 		};
 	};
 
+	var src = function(obj){
+		var work_row = $(obj).parent().parent();
+		var work_id = work_row.attr("id");
+		layui.use('layer', function(){
+		  	layui.layer.open({
+			  	title: work_id + "参考网址（BV号）",
+			  	content: $(obj).attr('id').split(' ').join('<br/>')
+			});
+		});
+	};
+
 	var detall_work_text = function(obj){
 		var work_row = $(obj).parent().parent();
 		var work_id = work_row.attr("id");
@@ -110,7 +121,7 @@ var main = function(){
 			var server_time = now.getTime();
 			layui.util.countdown(end_time, server_time, function(date, server_time, timer){
 			   	var str = date[0] + '天' + date[1] + '时' +  date[2] + '分' + date[3] + '秒';
-				layui.$('#countdown').html('距离今天出刀结束还有：'+ str);
+				layui.$('#div_countdown').html('<i class="layui-icon layui-icon-time"></i>' + '  距离今天出刀结束还有：'+ str);
 			});
 		});
 	};
@@ -127,39 +138,103 @@ var main = function(){
 		return boss_id_map[boss_id];
 	};
 
+	var get_boss_id = function(round, boss_value){
+		if(boss_value && boss_value > 0){
+			return (round == 1 ? "A" : "B") + boss_value;
+		}else{
+			return "";
+		}
+	};
+
+	var table = function(title, round, boss_value, group_type){
+		title = trim(title);
+		let boss_id = get_boss_id(round, boss_value);
+		let work_id, cfg_info;
+		if(title != ""){
+			["a","b","A","B"].forEach(function(key){
+				if(title.indexOf(key) > 0){
+					work_id = title;
+				}
+			});
+		}
+		if(!work_id){
+			cfg_info = title;
+		}
+		$("#works_table tbody").html("");
+		var vhtml = "";
+		works_json.forEach(function(work) {
+			let is_round_1 = work.boss_id.indexOf('A') > -1;
+			let round_text = is_round_1 ? "一周目":"二周目";
+			let boss = get_boss_by_id(work.boss_id);
+			var tr_row = "<tr id='" + work.id + "'><td><div>" + round_text + "</div></td><td><div>" +
+				boss.name + " " + boss.id + "</div></td><td><div>" + work.id + "</div></td><td><div>" + trim(work.cfg) + "</div></td><td><div>"+
+				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + get_group_name(work.group_type) + "</div></td><td><div>" + trim(work.creater) +"</div></td><td><div>" +
+				trim(work.checker) + "</div></td><td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button><button id='" +
+				trim(work.src) + "'type='button' onclick='main.src(this);' class='layui-btn layui-btn-warm'>来源</button></td>";
+				//"<button type='button' onclick='main.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
+				//"<button type='button' onclick='main.remove(this);' class='layui-btn layui-btn-danger'>删除</button></td>";
+			if(work_id){
+				if(work.id == work_id){
+					vhtml = tr_row;
+					return false;
+				}
+			}
+			let is_show = true;
+			if(cfg_info && work.cfg.indexOf(cfg_info < 0)){
+				is_show = false;
+			}
+			is_show = round == 1 ? is_round_1 : !is_round_1;
+			if(boss_id != "" && work.boss_id != boss_id){
+				is_show = false;
+			}
+			if(group_type < 4){
+				if(group_type == 3){
+					if(typeof _group_type != "object" || _group_type.indexOf(group_type.sy) > -1 || _group_type.indexOf(group_type.hq) > -1){
+						is_show = false;
+					}
+				}else if(group_type != work.group_type){
+					is_show = false;
+				}
+			}
+			if(is_show){
+				vhtml += tr_row;
+			}
+		});
+		$("#works_table tbody").append(vhtml);
+	};
+
 	var render = function(){
 		// 鼠标悬浮时的字体颜色改变
 		$('body').on("mouseenter",".layui-table-body tr",function () {
 		    $(this).siblings().find("div").css("color","#666");
 		    $(this).find("div").css("color","#009688");
 		})
+		layui.use('form', function(){
+		  	var form = layui.form;
+		  	form.render();
+			form.on('submit(form_query)', function(data){
+				let query = JSON.parse(JSON.stringify(data.field));
+				table(query.title, query.round, query.boss_value, query.group_type);
+				return false;
+			});
+		});
 	};
 
 	var init = function(){
 		load_bosses();
 		axis_obj_translater();
 		check_works(works_json);
-		works_json.forEach(function(work, i) {
-			let round = work.boss_id.indexOf('A') > -1 ? "一周目":"二周目";
-			let boss = get_boss_by_id(work.boss_id);
-			var tr_row = "<tr id='" + work.id + "'><td>" + (i+1) + "</td><td><div>" + round + "</div></td><td><div>" +
-				boss.name + " " + boss.id + "</div></td><td><div>" + work.id + "</div></td><td><div>" + trim(work.cfg) + "</div></td><td><div>"+
-				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + trim(work.creater) +"</div></td><td><div>" +
-				trim(work.checker) + "</div></td><td><div>" + trim(work.src) + "</div></td>" +
-				"<td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button></td>";
-				//"<button type='button' onclick='main.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
-				//"<button type='button' onclick='main.modify(this);' class='layui-btn layui-btn-warm'>修改</button></td>";
-				//"<button type='button' onclick='main.remove(this);' class='layui-btn layui-btn-danger'>删除</button></td>";
-			$("#works_table tbody").append(tr_row);
-		});
+		table("", 1, 0, 4);
 		countdown();
 		render();
 	};
+
 	return {
 		init : init,
 		detall_work_text : detall_work_text,
 		detall_member : detall_member,
 		modify : modify,
-		remove : remove
+		remove : remove,
+		src : src
 	};
 }();

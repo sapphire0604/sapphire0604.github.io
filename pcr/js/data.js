@@ -39,7 +39,7 @@ var work_text_map = {
 		{"time" : "0:05", "name" : "忍", "action" : "", "work" : "ub", "damage" : "12312", "axis" : ""},
 		{"time" : "0:01", "name" : "狗,猫拳", "action" : "正中突破后", "work" : "ub", "damage" : "", "axis" : ""},
 	],
-	"c0" : "一周目 三王 猪<br/>狗5狼5深4傻4暴4  110W以上伤害<br/>1:07 亚里沙开UB（卡深月破甲）<br/>1:06 狗连点开UB（卡深月破甲）<br/>0:50 狼开UB，狂点亚里沙，狗，暴击弓，深月开UB<br/>0:32 狗开UB<br/>0:31 亚里沙开UB （都是深月破甲后有就开）<br/>0:16 狼开UB，狂点狗，亚里沙，暴击弓，深月开UB<br/>0:02 亚里沙开UB，同时狗开UB（狗可以等卡好正中拳突破后再开UB，不过时间极限）<br/>",
+	"c0" : "一周目 三王 猪<br/>狗5狼5深4傻4暴4 110W<br/>1:07 亚里沙开UB（卡深月破甲）<br/>1:06 狗连点开UB（卡深月破甲）<br/>0:50 狼开UB，狂点亚里沙，狗，暴击弓，深月开UB<br/>0:32 狗开UB<br/>0:31 亚里沙开UB （都是深月破甲后有就开）<br/>0:16 狼开UB，狂点狗，亚里沙，暴击弓，深月开UB<br/>0:02 亚里沙开UB，同时狗开UB（狗可以等卡好正中拳突破后再开UB，不过时间极限）<br/>",
 	"d0" : "一周目 四王 马<br/>狗5狼5深4傻4栞5 110w<br/>1:03 狼开UB，狂点狗、栞、亚里沙开UB<br/>0:50 深月开UB<br/>0:49 亚里沙开UB<br/>0:47 狗开UB<br/>0:31 狼开UB，随即狂点亚里沙、栞开UB<br/>0:30 狗开UB<br/>0:15 深月开UB，亚里沙开UB<br/>0:10 狗开UB<br/>0:04 狼开UB，亚里沙随即开UB，栞也随即开UB<br/>",
 	"e6" : "一周目 五王 蟹<br/>毛4仓5伊5黑5妹5 78W<br/>1:09 yly开UB<br/>0:53 妹法开UB，随即毛二力开UB，随即YLY开UB<br/>0:48 XCW开UB，狂点凯露开UB<br/>0:34 yly开UB<br/>0:22 妹法开UB<br/>0:18 毛二力开UB<br/>0:12 凯露开UB，yly开UB<br/>0:01 狂点XCW开UB",
 	"e5" : "一周目 五王 蟹<br/>姐4仓5伊5黑5妹5 78W<br/>1:07 yly开UB<br/>0:49 妹法开UB（以下时间接的短，应该是有就开）<br/>0:48 姐姐开UB<br/>0:47 yly开UB，凯露开UB，xcw开UB<br/>0:29 yly开UB<br/>0:15 妹法开UB<br/>0:12 姐姐开UB，凯露开UB<br/>0:08 XCW开UB<br/>0:03 yly开UB",
@@ -176,7 +176,7 @@ function get_group_name(_group_type){
 	if(typeof _group_type == "object" &&_group_type.indexOf(group_type.sy) > -1 && _group_type.indexOf(group_type.hq) > -1){
 		return "三破甲刀";
 	}
-	switch(group_type) {
+	switch(_group_type) {
 		case 0 : return "深月刀";
 		case 1 : return "黑骑刀";
 		case 2 : return "弟弟刀";

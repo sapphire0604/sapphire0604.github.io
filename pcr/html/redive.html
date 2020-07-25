@@ -7,11 +7,46 @@
 	</head>
 	<body>
 		<h1>巨蟹座备用轴表</h1>
-		<div id="countdown"></div>
-  		<div class="layui-inline">
+		<div id="div_countdown"></div>
+		<div id="div_form_query" >
+			<form class="layui-form">
+				<div class="layui-form-item">
+		    	    <div class="layui-input-inline" style="width: 200px;">
+      					<input type="text" name="title" placeholder="请输入英雄/作业名称" autocomplete="off" class="layui-input">
+    				</div>
+    				<div class="layui-input-inline">
+    					<input type="radio" name="round" value="1" title="一周目" checked>
+						<input type="radio" name="round" value="2" title="二周目">
+					</div>
+					<div class="layui-input-inline" style="width: 200px;">
+						<select name="boss_value">
+							<option value="0" selected>BOSS名称（全部）</option>
+							<option value="1">飞龙</option>
+							<option value="2">狮鹫</option>
+							<option value="3">黑猪</option>
+							<option value="4">独角</option>
+							<option value="5">螃蟹</option>
+							<option value="6">狂暴蟹</option>
+						</select>
+					</div>
+					<div class="layui-input-inline" style="width: 300px;">
+						<select name="group_type">
+							<option value="0">深月刀</option>
+							<option value="1">黑骑刀</option>
+							<option value="2">弟弟刀</option>
+							<option value="3">三破甲</option>
+							<option value="4" selected>作业类型（全部）</option>
+						</select>
+					</div>
+					<div class="layui-input-inline" style="width: 200px;">
+						<button class="layui-btn layui-anim layui-anim-scaleSpring" lay-submit lay-filter="form_query">查询</button>
+					</div>
+				</div>
+			</form>
+		</div>
+  		<div id="table_div" class="layui-inline">
             <table id="works_table" class="layui-table" lay-even lay-skin="nob">
 			  	<colgroup>
-				    <col width="60">
 				    <col width="100">
 				    <col width="100">
 				    <col width="60">
@@ -20,21 +55,21 @@
 				    <col width="60">
 				    <col width="100">
 				    <col width="100">
-				    <col width="150">
+				    <col width="100">
+				    <col width="200">
 				    <col>
 			  	</colgroup>
 			 	<thead>
 		    		<tr>
-			      		<th>序号</th>
 			      		<th>周目</th>
 				      	<th>BOSS</th>
 				      	<th>编号</th>
 				      	<th><div>作业配置</div></th>
 				      	<th>均害</th>
 				      	<th>数量</th>
+				      	<th>类型</th>
 				      	<th>摸轴</th>
 				      	<th>审查</th>
-				      	<th>来源（BV号）</th>
 				      	<th>操作</th>
 			    	</tr>
 			  	</thead>
@@ -761,24 +796,24 @@
 	RS.init(boss_id, boss_hp);
 
 	// 简单排刀算法，先使用贪心算法解决当前问题，最后将剩余刀通过伤害比例调优。
-	doWork.init_count(total_count);
+	// doWork.init_count(total_count);
 
-	console.log("[START] 开始排刀，当前boss ：" + RS.current_boss_id + "，剩余血量：" + RS.current_boss_hp);
-	console.log("[STEP 1] 贪婪算法，获取初始结果集！");
+	// console.log("[START] 开始排刀，当前boss ：" + RS.current_boss_id + "，剩余血量：" + RS.current_boss_hp);
+	// console.log("[STEP 1] 贪婪算法，获取初始结果集！");
 
-	var work_result = doWork.order(boss_id, boss_hp);
-	let max_loop_times = 20; // 防止死循环
-	while (!doWork.isFinished && max_loop_times > 0) {
-		max_loop_times--;
-		work_result = doWork.order();
-	}
+	// var work_result = doWork.order(boss_id, boss_hp);
+	// let max_loop_times = 20; // 防止死循环
+	// while (!doWork.isFinished && max_loop_times > 0) {
+	// 	max_loop_times--;
+	// 	work_result = doWork.order();
+	// }
 
-	console.log("[STEP 2] 权重置换，完善结果集！");
-	//doWork.replace();
+	// console.log("[STEP 2] 权重置换，完善结果集！");
+	// //doWork.replace();
 
-	console.log("[STEP 3] 动态规划，交叉验证结果集！");
-	console.log(doWork.get_result());
-	console.log(RS.get_works());
-	console.log("[END] 结束排刀，当前boss ：" + RS.current_boss_id + "，剩余血量：" + RS.current_boss_hp);
+	// console.log("[STEP 3] 动态规划，交叉验证结果集！");
+	// console.log(doWork.get_result());
+	// console.log(RS.get_works());
+	// console.log("[END] 结束排刀，当前boss ：" + RS.current_boss_id + "，剩余血量：" + RS.current_boss_hp);
 
 </script>
