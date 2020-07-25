@@ -152,7 +152,7 @@ var main = function(){
 		let work_id, cfg_info;
 		if(title != ""){
 			["a","b","A","B"].forEach(function(key){
-				if(title.indexOf(key) > 0){
+				if(title.indexOf(key) > -1){
 					work_id = title;
 				}
 			});
@@ -167,23 +167,23 @@ var main = function(){
 			let round_text = is_round_1 ? "一周目":"二周目";
 			let boss = get_boss_by_id(work.boss_id);
 			var tr_row = "<tr id='" + work.id + "'><td><div>" + round_text + "</div></td><td><div>" +
-				boss.name + " " + boss.id + "</div></td><td><div>" + work.id + "</div></td><td><div>" + trim(work.cfg) + "</div></td><td><div>"+
-				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + get_group_name(work.group_type) + "</div></td><td><div>" + trim(work.creater) +"</div></td><td><div>" +
-				trim(work.checker) + "</div></td><td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button><button id='" +
+				boss.name + "</div></td><td><div>" + work.id + "</div></td><td><div>" + trim(work.cfg) + "</div></td><td><div>"+
+				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + get_group_name(work.group_type) + "</div></td><td><div>" + 
+				trim(work.creater) +"</div></td><td><div>" + trim(work.checker) +
+				"</div></td><td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button><button id='" +
 				trim(work.src) + "'type='button' onclick='main.src(this);' class='layui-btn layui-btn-warm'>来源</button></td>";
 				//"<button type='button' onclick='main.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
 				//"<button type='button' onclick='main.remove(this);' class='layui-btn layui-btn-danger'>删除</button></td>";
-			if(work_id){
-				if(work.id == work_id){
-					vhtml = tr_row;
-					return false;
-				}
-			}
 			let is_show = true;
-			if(cfg_info && work.cfg.indexOf(cfg_info < 0)){
+			is_show = round == 1 ? is_round_1 : !is_round_1;
+			if(!cfg_info && work_id && work.id.indexOf(work_id) < 0){
+				if(work.id == "b1"){
+			}
 				is_show = false;
 			}
-			is_show = round == 1 ? is_round_1 : !is_round_1;
+			if(!work_id && cfg_info && work.cfg.indexOf(cfg_info) < 0){
+				is_show = false;
+			}
 			if(boss_id != "" && work.boss_id != boss_id){
 				is_show = false;
 			}
