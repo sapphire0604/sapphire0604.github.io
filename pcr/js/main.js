@@ -1,14 +1,9 @@
 var boss_id_map = [];
 
 var main = function(){
-
 	var trim= function(str){
 		if(str){
-			if(typeof str == "string"){
-				return str.trim();
-			}else{
-				return str;
-			}
+			return typeof str == "string" ? str.trim() : str;
 		}else{
 			return "";
 		}
@@ -187,7 +182,7 @@ var main = function(){
 				}
 			}
 			if(boss_id && boss_id.length > 0){
-				if(boss_id != work.boss_id){
+				if (boss_id != work.boss_id) {
 					is_show = false;
 				}
 			}
