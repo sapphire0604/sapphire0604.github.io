@@ -19,7 +19,7 @@ var main = function(){
 		});
 	};
 	var check_works = function(works){
-		works_json.forEach(function(work) {
+		works.forEach(function(work) {
 			if(!work.id || !work.boss_id || !work.hp ||!work.cfg){
 				msg(work.id + "空数据!");
 			}
@@ -88,7 +88,7 @@ var main = function(){
 		if(layui && work_text_map){
 			if(typeof work_text_map[work_id] == "object"){//数组格式的数据以表格显示
 				text += "<table id='works_table' class='layui-table'>";
-				text += "<thead><tr><th>时间</th><th>人物</th><th>目押动作</th>" +
+				text += "<thead><tr><th width='30'>时间</th><th>人物</th><th>目押动作</th>" +
 					"<th>行动</th><th>伤害</th><th>破甲轴</th></tr></thead><tbody>";
 				work_text_map[work_id].forEach(function(item) {
 					text += "<tr><td>" + trim(item.time) + "</td><td>" + trim(item.name) + "</td><td>" +
@@ -109,8 +109,6 @@ var main = function(){
 		}
 	};
 	var detall_member = function(obj){};
-	var modify = function(obj){};
-	var remove = function(obj){};
 	// 倒计时
 	var countdown = function(){
 		layui.use('util', function(){
@@ -148,6 +146,10 @@ var main = function(){
 
 	var table = function(title, round, boss_value, _group_type){
 		title = trim(title);
+		round = round && round == 2 ? 2 : 1;
+		boss_value = boss_value && boss_value > 0 ? boss_value : 0;
+		_group_type = _group_type && _group_type < 4 ? _group_type : 4;
+
 		let boss_id = get_boss_id(round, boss_value);
 		let work_id, cfg_info;
 		if(title != ""){
@@ -162,14 +164,14 @@ var main = function(){
 		}
 		$("#works_table tbody").html("");
 		var vhtml = "";
-		works_json.forEach(function(work) {
+		works_data.forEach(function(work) {
 			let is_round_1 = work.boss_id.indexOf('A') > -1;
 			let round_text = is_round_1 ? "一周目":"二周目";
 			let boss = get_boss_by_id(work.boss_id);
 			var tr_row = "<tr id='" + work.id + "'><td><div>" + round_text + "</div></td><td><div>" +
 				boss.name + "</div></td><td><div>" + work.id + "</div></td><td><div>" + trim(work.cfg) + "</div></td><td><div>"+
-				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + get_group_name(work.group_type) + "</div></td><td><div>" + 
-				trim(work.creater) +"</div></td><td><div>" + trim(work.checker) +
+				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + get_group_name(work.group_type) +
+				"</div></td><td><div>" + trim(work.creater) +
 				"</div></td><td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button><button id='" +
 				trim(work.src) + "'type='button' onclick='main.src(this);' class='layui-btn layui-btn-warm'>来源</button></td>";
 				//"<button type='button' onclick='main.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
@@ -183,7 +185,9 @@ var main = function(){
 				if(is_show && !work_id && cfg_info && work.cfg.indexOf(cfg_info) < 0){
 					is_show = false;
 				}
-				if(is_show && boss_id != "" && work.boss_id != boss_id){
+			}
+			if(boss_id && boss_id.length > 0){
+				if(boss_id != work.boss_id){
 					is_show = false;
 				}
 			}
@@ -223,8 +227,9 @@ var main = function(){
 	var init = function(){
 		load_bosses();
 		axis_obj_translater();
-		check_works(works_json);
-		table("", 1, 0, 4);
+		check_works(works_data);
+		// title, round, boss_value, _group_type
+		table();
 		countdown();
 		render();
 	};
@@ -233,8 +238,6 @@ var main = function(){
 		init : init,
 		detall_work_text : detall_work_text,
 		detall_member : detall_member,
-		modify : modify,
-		remove : remove,
 		src : src
 	};
 }();

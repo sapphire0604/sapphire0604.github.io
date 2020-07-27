@@ -2,10 +2,14 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>公主连接工会战排刀demo</title>
+		<title>公主连接:复仇十字军工会战轴管理</title>
 		<link rel="stylesheet" href="../layui/css/layui.css">
 	</head>
 	<body>
+		<ul class="layui-nav" lay-filter="">
+		  <li class="layui-nav-item layui-this"><a href="../html/redive.html">备用轴表</a></li>
+		  <li class="layui-nav-item"><a href="../html/task.html">摸轴任务表</a></li>
+		</ul>
 		<h1>巨蟹座备用轴表</h1>
 		<div id="div_countdown"></div>
 		<div id="div_form_query" >
@@ -55,22 +59,20 @@
 				    <col width="60">
 				    <col width="100">
 				    <col width="100">
-				    <col width="100">
-				    <col width="200">
+				    <col>
 				    <col>
 			  	</colgroup>
 			 	<thead>
 		    		<tr>
-			      		<th>周目</th>
-				      	<th>BOSS</th>
-				      	<th>编号</th>
-				      	<th><div>作业配置</div></th>
-				      	<th>均害</th>
-				      	<th>数量</th>
-				      	<th>类型</th>
-				      	<th>摸轴</th>
-				      	<th>审查</th>
-				      	<th>操作</th>
+			      		<th><strong>周目</strong></th>
+				      	<th><strong>BOSS</strong></th>
+				      	<th><strong>编号</strong></th>
+				      	<th><strong>作业配置</strong></th>
+				      	<th><strong>均害</strong></th>
+				      	<th><strong>数量</strong></th>
+				      	<th><strong>类型</strong></th>
+				      	<th><strong>摸轴</strong></th>
+				      	<th><strong>操作</strong></th>
 			    	</tr>
 			  	</thead>
 		  		<tbody class="layui-table-body"></tbody>
@@ -84,6 +86,9 @@
 <script src="../js/data.js"></script>
 <script src="../js/main.js"></script>
 <script type="text/javascript">
+	layui.use('element', function(){
+	  var element = layui.element;
+	});
 	main.init();
 
 	// 公主连接排刀工具
@@ -792,7 +797,7 @@
 	var boss_id = "A1";
 	var boss_hp = 600e4;
 	var total_count = 90;
-	RS.add_works(works_json);
+	RS.add_works(works_data);
 	RS.init(boss_id, boss_hp);
 
 	// 简单排刀算法，先使用贪心算法解决当前问题，最后将剩余刀通过伤害比例调优。
@@ -815,5 +820,4 @@
 	// console.log(doWork.get_result());
 	// console.log(RS.get_works());
 	// console.log("[END] 结束排刀，当前boss ：" + RS.current_boss_id + "，剩余血量：" + RS.current_boss_hp);
-
 </script>
