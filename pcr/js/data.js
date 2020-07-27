@@ -21,7 +21,9 @@ var group_type = {
 // 规范轴模板
 // 时间 人物 目押动作 行动 伤害 破甲轴
 var axis = [
+	{"work_id" : "a0", "text" : "112 yls 连点 ub 12000 狼吼，忍虚弱；107 狗 连点 ub 19000 狼吼，忍虚弱；100 狼 劈砍后 ub 13000 狼吼；056 忍，yls 连点 ub 27000 狼ub，忍ub；053 狗 狼吼后 ub 41000 狼ub，狼吼，忍ub；050 玲奈 加攻后 ub 63000 狼ub，狼吼，忍ub；046 yls 连点 ub 42000 狼ub，狼吼，忍ub；037 狼，狗 狼吼后 ub 13000，35000 狼ub，狼吼；035 yls 连点 ub 36000 狼ub，狼吼；027 忍 连点 ub；020 yls，狗 狼吼后 ub 42000，40000 狼ub，狼吼，忍ub；015 狼 连点 ub 15000 狼ub，狼吼，忍ub；014 玲奈 加攻后 ub 63000 狼ub，狼吼，忍ub；012 yls 连点 ub 42000 狼ub，狼吼，忍ub；002 忍，yls，狗 狼吼后 ub 35000 狼ub，狼吼；"},
 	{"work_id" : "b0", "text" : "1:03 狼、狗、猫拳 连点 ub 12000、27000、22000 狼吼；0:52 狗 狼吼后 ub 42000；0:47 妈、深、猫拳 换T、卡毒 ub 9000、26000 狼吼；0:45 狼 连点 ub 21000 狼吼；0:32 狗 深月红圈后 ub 36000 狼吼 狼ub 深月红圈；0:26 狼 普攻后 ub 15000；0:22 妈 加速后 ub。0:21 猫拳 深月红圈后 ub 27000 狼吼；0:14 狗 正中突后 ub 34000 狼吼、深月红圈;0:02 狼、狗、猫拳、深月 连点 ub 42000"},
+	{"work_id" : "e3", "text" : "1:05 yly 连点 ub 19000 黑猫、妹法减甲；1:03 狗 普攻后 ub 15000 黑猫球；0:49 妹法 普攻后 ub 卡掉普攻后摇；0:44 xcw、yly、黑猫 妹法爱心命中后 ub 52000、19000、8000 黑猫球、妹法爱心；044-040 狗 连点 ub 15000 黑猫球；0:21 yly、狗 妹法爱心命中后 18000、15000 黑猫球、妹法爱心；0:15 妹法 技能命中后 ub；0:10 xcw、黑猫 xcw加攻后 ub 52000、8000 黑猫球、妹法爱心；0:03 yly、狗 普攻后 ub 9000、13000 黑猫球；"},
 	{"work_id" : "A2", "text" : "1:08 狗 普攻后 ub 24000 狼吼、深月红圈；1:02 狼、猫拳 狼劈砍后 ub 16000 35000 狼吼；0:52 狗 深月红圈后 ub 42000 狼ub、狼吼、深月红圈；0:51 猫拳 普攻后 ub 26000 狼ub、狼吼、深月红圈；0；0:47 深、妈 诅咒抬手时 卡毒、换T 11000、2800*3 狼ub、深月红圈；0:43 狼 劈砍后 ub 7000 狼吼；0:37 狗 深月红圈后 ub 41000 狼ub、狼吼、深月红圈；0:33 猫拳 重击后 ub 30000 狼ub、狼吼、深月红圈；0:24 妈 连点 ub 0:21 狼、狗 深月红圈后 ub 17000、41000 狼ub、狼吼、深月红圈；0:15 猫拳、深月 普攻后 ub 28000、11000 狼ub、深月红圈;0:03 狼、狗、猫拳 连点 ub 16000、27000、39000 狼ub、狼吼、深月红圈；"},
 	{"work_id" : "F2", "text" : "1:03 狼、暴击弓、栞 按顺序 ub 13909、62100、15456 狼ub、狼吼、深月红圈；0:58 黄骑 充能数字出现后 ub；0:54 深月 立直后 ub 5016 狼吼、狼ub；0:49 栞 连点 ub 11601 狼ub、深月红圈；0:42 狼、暴击弓 狼三闪后 ub 13909、62100 狼吼、狼ub；0:30 栞 连点 ub 小于28105 狼ub、狼吼、深月红圈；0:26 暴击弓 连点 ub 小于38324 狼ub、深月红圈；0:23 黄骑 充能数字出现后 ub；0:10 狼、深月、栞、暴击弓 顺序 ub 13909、10819、62100、31184 狼ub、狼吼、深月红圈；"},
 	{}
@@ -58,7 +60,7 @@ var work_text_map = {
 var works_data = [
 // ID BOSSID 平均伤害 作业配置 作业类型 作业数量 参考来源 摸轴人员 审查人员 组合作业ID
 //一周目一王
-{"id" : "a0", "boss_id" : "A1", "hp" : 105e4, "cfg" : "狗5狼5忍3傻4暴4", "group_type" : group_type.dd, "count" : 30, "src" : "私服轴 BV1oi4y1g7kD BV1gi4y13747", "creater" : "", "checker" : "", "cp_id" : []},
+{"id" : "a0", "boss_id" : "A1", "hp" : 115e4, "cfg" : "狗5狼5忍3傻4暴4", "group_type" : group_type.dd, "count" : 30, "src" : "私服轴 BV1oi4y1g7kD BV1gi4y13747", "creater" : "草莓", "checker" : "李维", "cp_id" : [""]},
 {"id" : "a4", "boss_id" : "A1", "hp" : 102e4, "cfg" : "狗5狼5猫拳5忍3傻4", "group_type" : group_type.dd, "count" : 30, "src" : "私服轴 BV1oi4y1g7kD BV1gi4y13747", "creater" : "", "checker" : "", "cp_id" : []},
 {"id" : "a5", "boss_id" : "A1", "hp" : 100e4, "cfg" : "狗5狼5猫拳5忍3暴4", "group_type" : group_type.dd, "count" : 30, "src" : "cv6894681", "creater" : "小火慢炖_", "checker" : "", "cp_id" : []},
 //二周目一王
@@ -92,7 +94,7 @@ var works_data = [
 
 //一周目五王
 {"id" : "e0", "boss_id" : "A5", "hp" : 98e4, "cfg" : "狗5狼5猫剑4深4栞5", "group_type" : group_type.sy, "count" : 30, "src" : "自动刀95W", "creater" : "", "checker" : ""},
-{"id" : "e3", "boss_id" : "A5", "hp" : 87e4, "cfg" : "狗5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 23, "src" : "BV1ck4y1m7JD", "creater" : "", "checker" : ""},// TODO
+{"id" : "e3", "boss_id" : "A5", "hp" : 90e4, "cfg" : "狗5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 23, "src" : "BV1ck4y1m7JD", "creater" : "", "checker" : ""},// TODO
 {"id" : "e4", "boss_id" : "A5", "hp" : 77e4, "cfg" : "毛4仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "BV1Ps41177Te", "creater" : "", "checker" : ""},
 {"id" : "e5", "boss_id" : "A5", "hp" : 66e4, "cfg" : "姐4仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "私服轴", "creater" : "", "checker" : ""},
 
