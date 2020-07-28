@@ -114,7 +114,7 @@ var main = function(){
 			var server_time = now.getTime();
 			layui.util.countdown(end_time, server_time, function(date, server_time, timer){
 			   	var str = date[0] + '天' + date[1] + '时' +  date[2] + '分' + date[3] + '秒';
-				layui.$('#div_countdown').html('<i class="layui-icon layui-icon-time"></i>' + '  距离今天出刀结束还有：'+ str);
+				layui.$('#div_countdown').html('<i class="layui-icon layui-icon-time"></i>' + '  距离今天出刀结束还有:'+ str);
 			});
 		});
 	};
@@ -139,7 +139,7 @@ var main = function(){
 		}
 	};
 
-	var table = function(title, round, boss_value, _group_type){
+	var table = function(round, title, boss_value, _group_type){
 		title = trim(title);
 		round = round && round == 2 ? 2 : 1;
 		boss_value = boss_value && boss_value > 0 ? boss_value : 0;
@@ -213,7 +213,7 @@ var main = function(){
 		  	form.render();
 			form.on('submit(form_query)', function(data){
 				let query = JSON.parse(JSON.stringify(data.field));
-				table(query.title, query.round, query.boss_value, query.group_type);
+				table(query.round, query.title, query.boss_value, query.group_type);
 				return false;
 			});
 		});
@@ -223,8 +223,8 @@ var main = function(){
 		load_bosses();
 		axis_obj_translater();
 		check_works(works_data);
-		// title, round, boss_value, _group_type
-		table();
+		// round,title, boss_value, _group_type
+		table(2);
 		countdown();
 		render();
 	};
