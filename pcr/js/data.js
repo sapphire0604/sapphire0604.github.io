@@ -98,9 +98,9 @@ var works_data = [
 {"id" : "c2", "boss_id" : "A3", "hp" : 122e4, "cfg" : "狗5狼5深5傻4暴5", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "少放辣椒", "checker" : ""},
 {"id" : "c3", "boss_id" : "A3", "hp" : 113e4, "cfg" : "狗5狼5猫剑4深5暴5", "group_type" : group_type.sy, "count" : 30, "src" : "", "creater" : "英普洛", "checker" : "司瑛士"},
 //二周目三王
-{"id" : "C0", "boss_id" : "B3", "hp" : 95e4, "cfg" : "纯4狗5狼5深4栞5", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "草莓", "checker" : "英普洛001", "cp_id" : ["D5"]},// TODO
+{"id" : "C0", "boss_id" : "B3", "hp" : 93e4, "cfg" : "纯4狗5狼5深4栞5", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "草莓", "checker" : "英普洛001", "cp_id" : ["D5"]},// TODO
 {"id" : "C4", "boss_id" : "B3", "hp" : 78e4, "cfg" : "纯4狗5狼5妈4深4", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "", "checker" : "", "cp_id" : ["D5"]},// TODO
-{"id" : "C5", "boss_id" : "B3", "hp" : 95e4, "cfg" : "纯4狗5狼5深4傻4", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "", "creater" : "草莓", "checker" : "大花裤衩"},
+{"id" : "C5", "boss_id" : "B3", "hp" : 94e4, "cfg" : "纯4狗5狼5深4傻4", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "", "creater" : "草莓", "checker" : "大花裤衩"},
 //{"id" : "C6", "boss_id" : "B3", "hp" : 72e4, "cfg" : "布4狗5狼5猫剑4深4", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "", "checker" : ""},// TODO
 //一周目四王
 {"id" : "d0", "boss_id" : "A4", "hp" : 110e4, "cfg" : "狗5狼5深4傻4栞5", "group_type" : group_type.sy, "count" : 30, "src" : "私服轴", "creater" : "私服轴", "checker" : "参考轴"},
