@@ -41,7 +41,7 @@ var main = function(){
 				if(!work_id || !axis_text){
 					return true;
 				}
-				var axis_array = axis_text.split(/[；;。.]/);
+				var axis_array = axis_text.split(/[；;。]/);
 				if(axis_array && axis_array.length > 0){
 					work_text_map[work_id] = [];
 					axis_array.forEach(function(axis_work) {
