@@ -107,7 +107,7 @@ var works_data = [
 {"id" : "D2", "boss_id" : "B4", "hp" : 101e4, "cfg" : "狗5望5狼5妈4深4", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "", "checker" : ""},// TODO
 {"id" : "D1", "boss_id" : "B4", "hp" : 100e4, "cfg" : "纯5狗5狼5猫剑5猫拳5", "group_type" : group_type.hq, "count" : 5, "src" : "私服轴", "creater" : "私服轴", "checker" : "参考轴"},
 {"id" : "D3", "boss_id" : "B4", "hp" : 95e4, "cfg" : "空5狗5狼4妈4深4", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "", "checker" : ""},// TODO
-{"id" : "D4", "boss_id" : "B4", "hp" : 98e4, "cfg" : "狗5望5狼5妈4傻4", "group_type" : group_type.dd, "count" : 30, "src" : "BV1qs41177oB", "creater" : "ttsp", "checker" : "草莓"},
+{"id" : "D4", "boss_id" : "B4", "hp" : 98e4, "cfg" : "狗5望5狼4妈4傻4", "group_type" : group_type.dd, "count" : 30, "src" : "BV1qs41177oB", "creater" : "ttsp", "checker" : "草莓"},
 //一周目五王
 {"id" : "e0", "boss_id" : "A5", "hp" : 98e4, "cfg" : "狗5狼5猫剑4深4栞5", "group_type" : group_type.sy, "count" : 30, "src" : "自动刀95W", "creater" : "", "checker" : ""},
 {"id" : "e3", "boss_id" : "A5", "hp" : 90e4, "cfg" : "狗5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 23, "src" : "BV1ck4y1m7JD", "creater" : "李维特安", "checker" : "草莓"},
