@@ -10,7 +10,7 @@ var main = function(){
 	};
 	var msg = function(msg){
 		layui.use('layer', function(){
-		  	layui.layer.msg(msg);
+		 	layui.layer.msg(msg);
 		});
 	};
 	var check_works = function(works){
@@ -64,9 +64,9 @@ var main = function(){
 		var work_row = $(obj).parent().parent();
 		var work_id = work_row.attr("id");
 		layui.use('layer', function(){
-		  	layui.layer.open({
-			  	title: work_id + "参考网址（BV号）",
-			  	content: $(obj).attr('id').split(' ').join('<br/>')
+		 	layui.layer.open({
+			 	title: work_id + "参考网址（BV号）",
+			 	content: $(obj).attr('id').split(' ').join('<br/>')
 			});
 		});
 	};
@@ -95,10 +95,10 @@ var main = function(){
 				text = work_text_map[work_id];
 			}
 			layui.use('layer', function(){
-			  	layui.layer.open({
-				  	title: work_id + "轴",
-				  	area: '800px',
-				  	content: text
+			 	layui.layer.open({
+				 	title: work_id + "轴",
+				 	area: '800px',
+				 	content: text
 				});
 			});
 		}
@@ -113,8 +113,8 @@ var main = function(){
 				new Date(now_time + 5 * 60 * 60 * 1000 - 1).getTime(); // 翌日5点
 			var server_time = now.getTime();
 			layui.util.countdown(end_time, server_time, function(date, server_time, timer){
-			   	var str = date[0] + '天' + date[1] + '时' +  date[2] + '分' + date[3] + '秒';
-				layui.$('#div_countdown').html('<i class="layui-icon layui-icon-time"></i>' + '  距离今天出刀结束还有:'+ str);
+			  	var str = date[0] + '天' + date[1] + '时' + date[2] + '分' + date[3] + '秒';
+				layui.$('#div_countdown').html('<i class="layui-icon layui-icon-time"></i>' + ' 距离今天出刀结束还有:'+ str);
 			});
 		});
 	};
@@ -205,12 +205,12 @@ var main = function(){
 	var render = function(){
 		// 鼠标悬浮时的字体颜色改变
 		$('body').on("mouseenter",".layui-table-body tr",function () {
-		    $(this).siblings().find("div").css("color","#666");
-		    $(this).find("div").css("color","#009688");
+		  $(this).siblings().find("div").css("color","#666");
+		  $(this).find("div").css("color","#009688");
 		})
 		layui.use('form', function(){
-		  	var form = layui.form;
-		  	form.render();
+		 	var form = layui.form;
+		 	form.render();
 			form.on('submit(form_query)', function(data){
 				let query = JSON.parse(JSON.stringify(data.field));
 				table(query.round, query.title, query.boss_value, query.group_type);
