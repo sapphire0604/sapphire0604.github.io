@@ -45,6 +45,9 @@ var main = function(){
 				if(axis_array && axis_array.length > 0){
 					work_text_map[work_id] = [];
 					axis_array.forEach(function(axis_work) {
+						if(!axis_work){
+							return true;
+						}
 						let work_item = axis_work.split(" ");
 						work_text_map[work_id].push({
 							"time" : trim(work_item[0]),
