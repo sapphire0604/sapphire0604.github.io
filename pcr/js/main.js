@@ -81,8 +81,7 @@ var main = function(){
 		var work_boss_id = work_row.find('td:eq(1)').text();
 		var work_cfg = work_row.find('td:eq(3)').text();
 		var work_hp = work_row.find('td:eq(4)').text();
-		var text = "<h2>" + work_round + " " + work_boss_id +
-			"</h2><br/>" + work_cfg + " " + work_hp;
+		var text = "";
 		if(layui && work_text_map){
 			if(typeof work_text_map[work_id] == "object"){//数组格式的数据以表格显示
 				text += "<table id='works_table' class='layui-table'>";
@@ -99,7 +98,8 @@ var main = function(){
 			}
 			layui.use('layer', function(){
 			 	layui.layer.open({
-				 	title: work_id + "轴",
+				 	title: "<h2>" + work_id + " 轴 " + work_round + " " + work_boss_id +
+			" " + work_cfg + " " + work_hp +  "</h2>",
 				 	area: '800px',
 				 	content: text
 				});

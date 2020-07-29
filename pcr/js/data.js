@@ -71,6 +71,7 @@ var work_text_map = {
 	"D1" : "二周目 四王 马<br/>纯5狗5狼5猫拳5猫剑5 100w<br/>1:06 狼UB、狗UB、猫拳UB<br/>1:02 猫剑UB<br/>0:58 黑骑UB<br/>0:49 猫拳UB、狗UB、<br/>0:47 狼UB<br/>0:41 猫剑UB<br/>0:32 狗UB<br/>0:31 黑骑UB<br/>0:30 猫拳UB<br/>0:27 狼UB<br/>0:17 狗UB<br/>0:16 猫剑UB、猫拳UB<br/>0:06 狼UB",
 	"E4" : "二周目 五王 蟹<br/>圣2仓5伊5黑5妹5 54w<br/>1:07 YLYUB<br/>0:51 YLYUB<br/>0:45 妹法UB、凯露UB、XCWUB<br/>0:36 YLYUB<br/>0:29 圣母UB<br/>0:20 YLYUB<br/>0:14 妹法UB<br/>0:11 凯露UB<br/>0:10 XCWUB<br/>0:07 YLYUB",
 	"F3" : "二周目 五王 狂暴蟹<br/>咲5仓5伊5黑5妹5巨蟹座狂暴法刀 50w<br/>1:14 ylyUB<br/>1:02 ylyUB<br/>0:56 充电宝UB<br/>0:52 妹法UB<br/>0:44 ylyUB、xcwUB<br/>0:43 凯露UB<br/>0:30 ylyUB、充电宝UB<br/>0:21 妹法UB<br/>0:16 ylyUB<br/>0:10 凯露UB<br/>0:09 xcwUB<br/>0:07 ylyUB<br/>0:04 充电宝UB",
+	"F4" : "1:05 YLY连点ub <br/>猫剑1:05前有ub直接开 没有ub等到吸到boss蓝再开 不吸猫剑后面很可能就要死了<br/>45  妹法破甲命中后开ub  xcw，黑猫，YLYUB，连点猫剑   猫剑如果吸到血了就稳了<br/>之后猫剑ub好了就开 概率去世 不影响大局<br/>24 yly ub<br/>15 妹法 技能命中后ub<br/>12 黑猫 球命中ub<br/>10 xcw 出自充文字ub<br/>auto<br/>特别说一下 如果1:08前 YLY自爆暴击了一次 1:07-1:08UB好，YLY第二个ub必须连点 不能等妹法<br/>等了会死",
 	"" : ""
 };
 //作业数据
@@ -84,7 +85,7 @@ var works_data = [
 //二周目一王
 {"id" : "A3", "boss_id" : "B1", "hp" : 110e4, "cfg" : "狗5狼5妈4深4傻4", "group_type" : group_type.sy, "count" : 4, "src" : "私服轴 BV1Vs411j7Ut", "creater" : "私服轴", "checker" : "参考轴"},
 {"id" : "A0", "boss_id" : "B1", "hp" : 107e4, "cfg" : "狗5狼5妈4深4暴4", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "大花裤衩", "checker" : "草莓"},
-{"id" : "A1", "boss_id" : "B1", "hp" : 106e4, "cfg" : "纯4狗5狼4咲5栞5", "group_type" : group_type.hq, "count" : 30, "src" : "BV1T5411a7NB", "creater" : "HelloWorld", "checker" : "英普洛001"},//TODO
+{"id" : "A1", "boss_id" : "B1", "hp" : 106e4, "cfg" : "纯4狗5狼4咲5栞5", "group_type" : group_type.hq, "count" : 30, "src" : "BV1T5411a7NB", "creater" : "HelloWorld", "checker" : "英普洛001"},
 {"id" : "A2", "boss_id" : "B1", "hp" : 100e4, "cfg" : "狗5狼5猫拳5妈4深4", "group_type" : group_type.sy, "count" : 11, "src" : "BV1ik4y1q7vB", "creater" : "头头猫丶", "checker" : "参考轴"},
 //一周目二王
 {"id" : "b0", "boss_id" : "A2", "hp" : 115e4, "cfg" : "狗5狼5猫拳5妈4深4", "group_type" : group_type.sy, "count" : 4, "src" : "cv6894681", "creater" : "小火慢炖_", "checker" : "参考轴"},
@@ -100,8 +101,7 @@ var works_data = [
 {"id" : "c2", "boss_id" : "A3", "hp" : 122e4, "cfg" : "狗5狼5深5傻4暴5", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "少放辣椒", "checker" : ""},
 {"id" : "c3", "boss_id" : "A3", "hp" : 113e4, "cfg" : "狗5狼5猫剑4深5暴5", "group_type" : group_type.sy, "count" : 30, "src" : "", "creater" : "英普洛", "checker" : "司瑛士"},
 //二周目三王
-{"id" : "C0", "boss_id" : "B3", "hp" : 93e4, "cfg" : "纯4狗5狼5深4栞5", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "草莓", "checker" : "英普洛001", "cp_id" : ["D5"]},// TODO
-{"id" : "C4", "boss_id" : "B3", "hp" : 78e4, "cfg" : "纯4狗5狼5妈4深4", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "", "checker" : "", "cp_id" : ["D5"]},// TODO
+{"id" : "C0", "boss_id" : "B3", "hp" : 93e4, "cfg" : "纯4狗5狼5深4栞5", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "草莓", "checker" : "英普洛001", "cp_id" : []},
 {"id" : "C5", "boss_id" : "B3", "hp" : 94e4, "cfg" : "纯4狗5狼5深4傻4", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "", "creater" : "草莓", "checker" : "大花裤衩"},
 //一周目四王
 {"id" : "d0", "boss_id" : "A4", "hp" : 110e4, "cfg" : "狗5狼5深4傻4栞5", "group_type" : group_type.sy, "count" : 30, "src" : "私服轴", "creater" : "私服轴", "checker" : "参考轴"},
@@ -120,9 +120,9 @@ var works_data = [
 //一周目五王狂暴
 {"id" : "f6", "boss_id" : "A6", "hp" : 90e4, "cfg" : "狗5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "BV12T4y1j734", "creater" : "草莓味の狸猫", "checker" : ""},
 //二周目五王狂暴
-{"id" : "F2", "boss_id" : "B6", "hp" : 73e4, "cfg" : "狼5黄5深4暴5栞5", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "草莓", "checker" : "李维特安", "cp_id" : []},// TODO
+{"id" : "F2", "boss_id" : "B6", "hp" : 73e4, "cfg" : "狼5黄5深4暴5栞5", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "草莓", "checker" : "李维特安", "cp_id" : []},
 {"id" : "F3", "boss_id" : "B6", "hp" : 54e4, "cfg" : "咲5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "私服轴", "creater" : "私服轴", "checker" : "参考轴"},
-{"id" : "F4", "boss_id" : "B6", "hp" : 56e4, "cfg" : "猫剑5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 24, "src" : "BV1ck4y1m7JD", "creater" : "", "checker" : ""}// TODO
+{"id" : "F4", "boss_id" : "B6", "hp" : 56e4, "cfg" : "猫剑5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 24, "src" : "BV1ck4y1m7JD", "creater" : "夏冰", "checker" : ""}
 ];
 
 function Boss (name, id, hp) {
