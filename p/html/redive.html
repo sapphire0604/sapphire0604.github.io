@@ -17,11 +17,11 @@
 		<div id="div_form_query" >
 			<form class="layui-form">
 				<div class="layui-form-item">
-		  	  <div class="layui-input-inline" style="width: 200px;">
-   					<input type="text" name="title" placeholder="请输入英雄/作业名称" autocomplete="off" class="layui-input">
-  				</div>
-  				<div class="layui-input-inline">
-  					<input type="radio" name="round" value="1" title="一周目">
+		 	 <div class="layui-input-inline" style="width: 200px;">
+ 					<input type="text" name="title" placeholder="请输入英雄/作业名称" autocomplete="off" class="layui-input">
+ 				</div>
+ 				<div class="layui-input-inline">
+ 					<input type="radio" name="round" value="1" title="一周目">
 						<input type="radio" name="round" value="2" title="二周目" checked>
 					</div>
 					<div class="layui-input-inline" style="width: 200px;">
@@ -51,33 +51,33 @@
 			</form>
 		</div>
  		<div id="table_div" class="layui-inline">
-      <table id="works_table" class="layui-table" lay-even lay-skin="nob">
+ <table id="works_table" class="layui-table" lay-even lay-skin="nob">
 			 	<colgroup>
-				  <col width="100">
-				  <col width="100">
-				  <col width="60">
-				  <col width="200">
-				  <col width="100">
-				  <col width="60">
-				  <col width="100">
-				  <col width="100">
-				  <col width="100">
-				  <col>
-				  <col>
+				 <col width="100">
+				 <col width="100">
+				 <col width="60">
+				 <col width="200">
+				 <col width="100">
+				 <col width="60">
+				 <col width="100">
+				 <col width="100">
+				 <col width="100">
+				 <col>
+				 <col>
 			 	</colgroup>
 			 	<thead>
-		  		<tr>
-			   		<th><strong>周目</strong></th>
-				   	<th><strong>BOSS</strong></th>
-				   	<th><strong>编号</strong></th>
-				   	<th><strong>作业配置</strong></th>
-				   	<th><strong>均害</strong></th>
-				   	<th><strong>数量</strong></th>
-				   	<th><strong>类型</strong></th>
-				   	<th><strong>摸轴</strong></th>
-				   	<th><strong>审查</strong></th>
-				   	<th><strong>操作</strong></th>
-			  	</tr>
+		 		<tr>
+			 		<th><strong>周目</strong></th>
+				 	<th><strong>BOSS</strong></th>
+				 	<th><strong>编号</strong></th>
+				 	<th><strong>作业配置</strong></th>
+				 	<th><strong>均害</strong></th>
+				 	<th><strong>数量</strong></th>
+				 	<th><strong>类型</strong></th>
+				 	<th><strong>摸轴</strong></th>
+				 	<th><strong>审查</strong></th>
+				 	<th><strong>操作</strong></th>
+			 	</tr>
 			 	</thead>
 		 		<tbody class="layui-table-body"></tbody>
 			</table>
@@ -216,7 +216,7 @@
 					" 刀," + mark + count + " " + get_group_name(group_type) +
 					", 现有 " + rest + "刀");
 				work.count = rest;
-	   	}
+	 	}
 		};
 
 		var go_next_round = function(){
@@ -549,11 +549,11 @@
 			}
 			// 记录尾刀
 			if(!tail_map[current_boss_round]){
-		  	tail_map[current_boss_round] = [];
-		  }
+		 	tail_map[current_boss_round] = [];
+		 }
 			tail_map[current_boss_round][current_boss_id] = tail_hp;
 
-		  result.count = _count;
+		 result.count = _count;
 
 			print("[WORK] work : " + best.id + " 排刀 boss : " + current_boss_id + " " + _count + " 刀, 平均伤害 : " + best.hp + ", 尾刀血量 : " + tail_hp + ", 剩余刀数 : " + (total_count - current_count));
 
@@ -572,7 +572,7 @@
 				RS.go_next_round();
 				return result;
 			} else{//预期需要刀数大于实际剩余刀数，作业刀不够，先砍一部分，换作业刀砍
-			  RS.update_count_by_type(_count, best.group_type);
+			 RS.update_count_by_type(_count, best.group_type);
 				RS.current_boss_hp = current_boss_hp - _count * best.hp;
 				return order();
 			}
@@ -711,7 +711,7 @@
 				print("[WORK] work " + old_last.id + " 排刀 boss " + old_last.boss_id + " 共 " + _count + " 刀, 平均伤害 : " + old_last.hp + "尾刀血量 : " + _hp + ", 剩余刀数 : " + (total_count - current_count));
 
 				let old_best_result = {// 替换的作业
-				  "work_id" : old_best.id,
+				 "work_id" : old_best.id,
 					"boss_id" : old_best.boss_id,
 					"count" : _count,
 					"last_hp" : _hp,
@@ -729,7 +729,7 @@
 
 					let _old_count = old_best.count - _count;
 					let old_last_result = {// 要替换的作业
-					  "work_id" : old_best.id,
+					 "work_id" : old_best.id,
 						"boss_id" : old_best.boss_id,
 						"count" : _old_count,
 						"last_hp" : 0,

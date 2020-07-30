@@ -99,7 +99,7 @@ var main = function(){
 			layui.use('layer', function(){
 			 	layui.layer.open({
 				 	title: "<h2>" + work_id + " 轴 " + work_round + " " + work_boss_id +
-			" " + work_cfg + " " + work_hp +  "</h2>",
+			" " + work_cfg + " " + work_hp + "</h2>",
 				 	area: '800px',
 				 	content: text
 				});
@@ -116,7 +116,7 @@ var main = function(){
 				new Date(now_time + 5 * 60 * 60 * 1000 - 1).getTime(); // 翌日5点
 			var server_time = now.getTime();
 			layui.util.countdown(end_time, server_time, function(date, server_time, timer){
-			  	var str = date[0] + '天' + date[1] + '时' + date[2] + '分' + date[3] + '秒';
+			 	var str = date[0] + '天' + date[1] + '时' + date[2] + '分' + date[3] + '秒';
 				layui.$('#div_countdown').html('<i class="layui-icon layui-icon-time"></i>' + ' 距离今天出刀结束还有:'+ str);
 			});
 		});
@@ -208,8 +208,8 @@ var main = function(){
 	var render = function(){
 		// 鼠标悬浮时的字体颜色改变
 		$('body').on("mouseenter",".layui-table-body tr",function () {
-		  $(this).siblings().find("div").css("color","#666");
-		  $(this).find("div").css("color","#009688");
+		 $(this).siblings().find("div").css("color","#666");
+		 $(this).find("div").css("color","#009688");
 		})
 		layui.use('form', function(){
 		 	var form = layui.form;
