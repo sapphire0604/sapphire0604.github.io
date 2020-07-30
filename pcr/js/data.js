@@ -70,10 +70,9 @@ var work_text_map = {
 	"B0" : "二周目 二王 鸟<br/>纯4狗5狼4傻4栞5 123w<br/>1:12 亚里沙ub<br/>1:05 狼ub、狗ub、栞ub<br/>0:58 亚里沙ub<br/>0:45 狼ub、狗ub、栞ub、亚里沙ub <br/>0:33 亚里沙ub<br/>0:24 狼ub、狗ub、栞ub<br/>0:17 亚里沙ub<br/>0:01 狼ub、狗ub、亚里沙ub、栞ub",
 	"C1" : "二周目 三王 猪<br/>布4狗5狼5妈4深4 80w<br/>1:02 狼ub、狗ub<br/>0:55 深月ub<br/>0:47 布丁ub<br/>0:45 妈ub、狗ub<br/>0:44 狼ub<br/>0:28 狗ub<br/>0:24 狼ub<br/>0:19 深月ub<br/>0:13 布丁ub<br/>0:05 狼ub<br/>0:03 妈ub<br/>0:02 狗ub",
 	"D1" : "二周目 四王 马<br/>纯5狗5狼5猫拳5猫剑5 100w<br/>1:06 狼ub、狗ub、猫拳ub<br/>1:02 猫剑ub<br/>0:58 黑骑ub<br/>0:49 猫拳ub、狗ub、<br/>0:47 狼ub<br/>0:41 猫剑ub<br/>0:32 狗ub<br/>0:31 黑骑ub<br/>0:30 猫拳ub<br/>0:27 狼ub<br/>0:17 狗ub<br/>0:16 猫剑ub、猫拳ub<br/>0:06 狼ub",
-	"E4" : "二周目 五王 蟹<br/>圣2仓5伊5黑5妹5 54w<br/>1:07 YLYub<br/>0:51 YLYub<br/>0:45 妹法ub、凯露ub、XCWub<br/>0:36 YLYub<br/>0:29 圣母ub<br/>0:20 YLYub<br/>0:14 妹法ub<br/>0:11 凯露ub<br/>0:10 XCWub<br/>0:07 YLYub",
+	"E4" : "世界线1:猫剑没有MISS 106满TP<br/>105 连点ylyUB卡掉自残<br/>105 猫剑UB<br/>045 妹法破甲到以后UB,然后顺序点击XCW 黑猫 猫剑UB<br/>043 yly小技能以后UB<br/>026 猫剑UB<br/>023 yly小技能以后UB<br/>015 妹法小技能伤害到以后UB<br/>010 xcwBUFF以后UB.黑猫UB<br/>004 yly小技能以后UB<br/>001 猫剑UB<br/>世界线2:猫剑MISS导致105不能UB 此UB压后到045<br/>105 连点ylyUB卡掉自残<br/>045 妹法破甲到以后UB,然后顺序点击XCW 黑猫 猫剑UB<br/>043 yly小技能以后UB<br/>026 猫剑UB<br/>023 yly小技能以后UB<br/>015 妹法小技能伤害到以后UB<br/>010 xcwBUFF以后UB.黑猫UB<br/>004 yly小技能以后UB<br/>001 猫剑UB<br/>世界线3:026猫剑放不出UB(压后)<br/>023 yly小技能以后UB<br/>015 妹法小技能伤害到以后UB<br/>015 猫剑UB<br/>010 xcwBUFF以后UB.黑猫UB<br/>004 yly小技能以后UB<br/>世界线4:yly暴击提前满TP,该世界线就是随机应变放yly的UB.其他人不变",
 	"F0" : "（第一次没被晕）<br/>107 狼、玲奈、栞 （110狼没被晕）连点 ub；<br/>058 黄骑 充玲奈后 ub；<br/>055 深月 连点 ub；<br/>051 狼、玲奈、栞 连点 ub；<br/>028 狼、玲奈、栞 连点 ub；<br/>023 黄骑 冲狼后 ub；<br/>013 栞 连点 ub；<br/>001 玲奈、深月、栞 深月红圈后 ub；（60w）<br/>（第二次没被晕）<br/>103 狼、玲奈、栞 狼吼叫后 ub；<br/>058 黄骑 充玲奈后 ub；<br/>055 深月 连点 ub；<br/>049 玲奈 加攻后 ub；<br/>046 狼、栞 连点 ub；<br/>035 狼 连点 ub；<br/>023 黄骑 充狼后 ub；<br/>023 狼、玲奈 连点 ub；（boss ub前）<br/>022 栞 连点 ub；<br/>（之后基本自由发挥）<br/>001 栞、深月 深月红圈后 ub；（63w）<br/>（全部被晕）<br/>103 狼、玲奈、栞 狼吼叫后 ub；<br/>058 黄骑 充玲奈后 ub；<br/>055 深月 连点 ub；<br/>049 玲奈 加攻后 ub；<br/>044 狼、栞 连点 ub；<br/>035/031 狼 连点 ub；<br/>023 黄骑 充狼后 ub；<br/>022 狼 连点 ub；（随后被一钳子拍死）<br/>016 玲奈 加攻后 ub；<br/>013 栞 三只箭连点 ub；<br/>001 栞、深月 深月红圈后 ub；（60w）",
 	"F3" : "二周目 五王 狂暴蟹<br/>咲5仓5伊5黑5妹5巨蟹座狂暴法刀 50w<br/>1:14 ylyub<br/>1:02 ylyub<br/>0:56 充电宝ub<br/>0:52 妹法ub<br/>0:44 ylyub、xcwub<br/>0:43 凯露ub<br/>0:30 ylyub、充电宝ub<br/>0:21 妹法ub<br/>0:16 ylyub<br/>0:10 凯露ub<br/>0:09 xcwub<br/>0:07 ylyub<br/>0:04 充电宝ub",
-	"F4" : "1:05 YLY连点ub <br/>猫剑1:05前有ub直接开 没有ub等到吸到boss蓝再开 不吸猫剑后面很可能就要死了<br/>45  妹法破甲命中后开ub  xcw，黑猫，YLYub，连点猫剑   猫剑如果吸到血了就稳了<br/>之后猫剑ub好了就开 概率去世 不影响大局<br/>24 yly ub<br/>15 妹法 技能命中后ub<br/>12 黑猫 球命中ub<br/>10 xcw 出自充文字ub<br/>auto<br/>特别说一下 如果1:08前 YLY自爆暴击了一次 1:07-1:08ub好，YLY第二个ub必须连点 不能等妹法<br/>等了会死",
 	"" : ""
 };
 //作业数据
@@ -120,13 +119,14 @@ var works_data = [
 {"id" : "e5", "boss_id" : "A5", "hp" : 66e4, "cfg" : "姐4仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "私服轴", "creater" : "私服轴", "checker" : ""},
 //二周目五王
 {"id" : "E3", "boss_id" : "B5", "hp" : 56e4, "cfg" : "圣2仓3伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "", "creater" : "李维特安", "checker" : "草莓"},
+{"id" : "E4", "boss_id" : "B6", "hp" : 58e4, "cfg" : "猫剑5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 24, "src" : "BV1ck4y1m7JD", "creater" : "夏冰", "checker" : "草莓"},
+
 //一周目五王狂暴
 {"id" : "f6", "boss_id" : "A6", "hp" : 90e4, "cfg" : "狗5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "BV12T4y1j734", "creater" : "草莓味の狸猫", "checker" : ""},
 //二周目五王狂暴
 {"id" : "F0", "boss_id" : "B6", "hp" : 60e4, "cfg" : "狼5黄5深4暴5栞5", "group_type" : group_type.sy, "count" : 30, "src" : "", "creater" : "草莓", "checker" : ""},
 {"id" : "F2", "boss_id" : "B6", "hp" : 74e4, "cfg" : "狼5黄5深4暴5栞5", "group_type" : group_type.sy, "count" : 30, "src" : "", "creater" : "草莓、李维特安", "checker" : "大光裤衩"},
-{"id" : "F3", "boss_id" : "B6", "hp" : 54e4, "cfg" : "咲5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "私服轴", "creater" : "私服轴", "checker" : "参考轴"},
-{"id" : "F4", "boss_id" : "B6", "hp" : 56e4, "cfg" : "猫剑5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 24, "src" : "BV1ck4y1m7JD", "creater" : "夏冰", "checker" : ""}
+{"id" : "F3", "boss_id" : "B6", "hp" : 54e4, "cfg" : "咲5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "私服轴", "creater" : "私服轴", "checker" : "参考轴"}
 ];
 
 function Boss (name, id, hp) {
