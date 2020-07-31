@@ -35,7 +35,7 @@ var task = function(){
 				+ '<div class="layui-progress layui-progress-big"lay-showPercent="yes"><div id="' + prefix_pro_checker + i
 				+ '"class="layui-progress-bar layui-bg-blue"lay-percent="0%"></div></div><br/>'
 				+ '<table id="'+ prefix_table + i + '"class="layui-table"lay-even lay-skin="nob"><colgroup><col width="60"><col width="60"><col width="180">'
-				+ '<col width="75"><col width="220"><col width="90"><col width="90"><col width="90"><col width="90"><col width="90"></colgroup>'
+				+ '<col width="75"><col width="300"><col width="90"><col width="90"><col width="90"><col width="90"><col width="90"></colgroup>'
 				+ '<thead><tr><th><strong>目标</strong></th><th><strong>编号</strong></th><th><strong>作业基础模板</strong></th><th><strong>优先级</strong></th>'
 				+ '<th><strong>说明</strong></th><th><strong>预排刀数</strong></th><th><strong>目标伤害</strong></th><th><strong>摸轴</strong></th><th><strong>审查</strong></th>'
 				+ '<th><strong>实际伤害</strong></th></tr></thead><tbody id="' + prefix_tbody + i + '" class="layui-table-body"></tbody></table></div></div>';

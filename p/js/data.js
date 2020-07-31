@@ -117,7 +117,7 @@ var works_data = [
 {"id" : "D1", "boss_id" : "B4", "hp" : 121e4, "cfg" : "纯5狗5狼5猫拳5兔剑5", "group_type" : group_type.hq, "count" : 14, "src" : "BV1pp4y1q7fc", "creater" : "次氏体", "checker" : "草莓"},
 {"id" : "D4", "boss_id" : "B4", "hp" : 98e4, "cfg" : "狗5望5狼4妈4傻4", "group_type" : group_type.dd, "count" : 30, "src" : "BV1qs41177oB", "creater" : "ttsp", "checker" : "草莓、夏冰"},
 {"id" : "D5", "boss_id" : "B4", "hp" : 108e4, "cfg" : "狗5望5（9-3）狼5（9-4）深5傻3", "group_type" : group_type.sy, "count" : 30, "src" : "BV1cK4y1v7qf", "creater" : "爱智敏真是太好了", "checker" : "格子衬衫"},
-{"id" : "D6", "boss_id" : "B4", "hp" : 108e4, "cfg" : "狗5望5狼4深5病4", "group_type" : group_type.sy, "count" : 30, "src" : "", "creater" : "英普洛", "checker" : ""},
+{"id" : "D6", "boss_id" : "B4", "hp" : 108e4, "cfg" : "狗5望5狼4深5病4", "group_type" : group_type.sy, "count" : 30, "src" : "", "creater" : "英普洛", "checker" : "裤衩"},
 //一周目五王
 {"id" : "e0", "boss_id" : "A5", "hp" : 98e4, "cfg" : "狗5狼5猫剑4深4栞5", "group_type" : group_type.sy, "count" : 30, "src" : "自动刀95W", "creater" : "", "checker" : ""},
 {"id" : "e3", "boss_id" : "A5", "hp" : 90e4, "cfg" : "狗5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 23, "src" : "BV1ck4y1m7JD", "creater" : "李维特安", "checker" : "草莓"},
@@ -127,7 +127,7 @@ var works_data = [
 {"id" : "E2", "boss_id" : "B6", "hp" : 60e4, "cfg" : "狼5黄5深4暴5栞5", "group_type" : group_type.sy, "count" : 30, "src" : "", "creater" : "草莓", "checker" : ""},
 {"id" : "E3", "boss_id" : "B5", "hp" : 56e4, "cfg" : "圣2仓3伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "", "creater" : "李维特安", "checker" : "草莓"},
 {"id" : "E4", "boss_id" : "B5", "hp" : 58e4, "cfg" : "猫剑5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 24, "src" : "BV1ck4y1m7JD", "creater" : "夏冰", "checker" : "草莓"},
-{"id" : "E5", "boss_id" : "B5", "hp" : 57e4, "cfg" : "怜5/兔5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "英普洛", "checker" : ""},
+{"id" : "E5", "boss_id" : "B5", "hp" : 57e4, "cfg" : "怜5/兔5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "英普洛", "checker" : "神月、李维、裤衩"},
 
 //一周目五王狂暴
 {"id" : "f6", "boss_id" : "A6", "hp" : 90e4, "cfg" : "狗5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "BV12T4y1j734", "creater" : "草莓味の狸猫", "checker" : ""},
