@@ -28,7 +28,7 @@ var task = function(){
 		let html_ul = "";
 		let html_div = "";
 		for(let i = 1; i <= tab_count; i ++){
-			html_ul += " <li id=" + prefix_div + i + ">第" + i + "天任务</li>";
+			html_ul += " <li id=" + prefix_tab_li + i + ">第" + i + "天任务</li>";
 			html_div += '<div id="' + prefix_div + i + '" class="layui-tab-item"><div class="layui-inline"><span class="layui-badge-dot layui-bg-orange"></span>&nbsp;摸轴进度'
 				+ '<div class="layui-progress layui-progress-big"lay-showPercent="yes"><div id="' + prefix_pro_creater + i
 				+ '"class="layui-progress-bar layui-bg-green"lay-percent="0%"></div></div><br/><span class="layui-badge-dot layui-bg-orange"></span>&nbsp;审查进度'
@@ -58,8 +58,8 @@ var task = function(){
 	};
 
 	var show = function(target){
-		$("#" + prefix_tab_li + target).addClass('layui-show');
-	 	$("#" + prefix_div + target).addClass('layui-this');
+		$("#" + prefix_tab_li + target).addClass('layui-this');
+	 	$("#" + prefix_div + target).addClass('layui-show');
 	};
 
 	return {
