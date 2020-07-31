@@ -88,12 +88,12 @@
 <script src="../layui/layui.js"></script>
 <script src="../js/prototype.js"></script>
 <script src="../js/data.js"></script>
-<script src="../js/main.js"></script>
+<script src="../js/work.js"></script>
 <script type="text/javascript">
 	layui.use('element', function(){
-	 var element = layui.element;
+		var element = layui.element;
 	});
-	main.init();
+	work.init();
 
 	// 公主连接排刀工具
 	var rediveSchedule = function(){
@@ -213,7 +213,7 @@
 
 				count < 0 ? (work.count + count) : (count > work.count ? 0 : work.count - count);
 				console.log("[DUPL] " + work.id + "作业原有 " + work.count +
-					" 刀," + mark + count + " " + get_group_name(group_type) +
+					" 刀," + mark + count + " " + data.get_group_name(group_type) +
 					", 现有 " + rest + "刀");
 				work.count = rest;
 	 	}

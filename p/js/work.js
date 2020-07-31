@@ -1,18 +1,13 @@
 var boss_id_map = [];
 
-var main = function(){
-	var trim= function(str){
-		if(str){
-			return typeof str == "string" ? str.trim() : str;
-		}else{
-			return "";
-		}
-	};
+var work = function(){
+
 	var msg = function(msg){
 		layui.use('layer', function(){
 		 	layui.layer.msg(msg);
 		});
 	};
+
 	var check_works = function(works){
 		works.forEach(function(work) {
 			if(!work.id || !work.boss_id || !work.hp ||!work.cfg){
@@ -50,12 +45,12 @@ var main = function(){
 						}
 						let work_item = axis_work.split(" ");
 						work_text_map[work_id].push({
-							"time" : trim(work_item[0]),
-							"name" : trim(work_item[1]),
-							"action" : trim(work_item[2]),
-							"work" : trim(work_item[3]),
-							"damage" :trim(work_item[4]),
-							"axis" : trim(work_item[5])
+							"time" : $.trim(work_item[0]),
+							"name" : $.trim(work_item[1]),
+							"action" : $.trim(work_item[2]),
+							"work" : $.trim(work_item[3]),
+							"damage" :$.trim(work_item[4]),
+							"axis" : $.trim(work_item[5])
 						});
 					});
 				}
@@ -88,9 +83,9 @@ var main = function(){
 				text += "<thead><tr><th width='40'>时间</th><th>人物</th><th width='270'>目押动作</th>" +
 					"<th>行动</th><th>伤害</th><th>破甲轴</th></tr></thead><tbody>";
 				work_text_map[work_id].forEach(function(item) {
-					text += "<tr><td>" + trim(item.time) + "</td><td>" + trim(item.name) + "</td><td>" +
-					trim(item.action) + "</td><td>" + trim(item.work) + "</td><td>" +
-					trim(item.damage) + "</td><th>" + trim(item.axis) + "</th></tr>";
+					text += "<tr><td>" + $.trim(item.time) + "</td><td>" + $.trim(item.name) + "</td><td>" +
+					$.trim(item.action) + "</td><td>" + $.trim(item.work) + "</td><td>" +
+					$.trim(item.damage) + "</td><th>" + $.trim(item.axis) + "</th></tr>";
 				});
 				text += "</tbody></table>";
 			}else if(typeof work_text_map[work_id] == "string"){
@@ -122,18 +117,6 @@ var main = function(){
 		});
 	};
 
-	var load_bosses = function(){
-		if(boss_data && boss_data.length > 0){
-			boss_data.forEach(function(boss) {
-				boss_id_map[boss.id] = new Boss(boss.name, boss.id, boss.hp);
-			});
-		}
-	};
-
-	var get_boss_by_id = function(boss_id){
-		return boss_id_map[boss_id];
-	};
-
 	var get_boss_id = function(round, boss_value){
 		if(boss_value && boss_value > 0){
 			return (round == 1 ? "A" : "B") + boss_value;
@@ -143,7 +126,7 @@ var main = function(){
 	};
 
 	var table = function(round, title, boss_value, _group_type){
-		title = trim(title);
+		title = $.trim(title);
 		round = round && round == 2 ? 2 : 1;
 		boss_value = boss_value && boss_value > 0 ? boss_value : 0;
 		_group_type = _group_type && _group_type < 4 ? _group_type : 4;
@@ -165,13 +148,13 @@ var main = function(){
 		works_data.forEach(function(work) {
 			let is_round_1 = work.boss_id.indexOf('A') > -1;
 			let round_text = is_round_1 ? "一周目":"二周目";
-			let boss = get_boss_by_id(work.boss_id);
+			let boss = data.get_boss_by_id(work.boss_id);
 			var tr_row = "<tr id='" + work.id + "'><td><div>" + round_text + "</div></td><td><div>" +
-				boss.name + "</div></td><td><div>" + work.id + "</div></td><td><div>" + trim(work.cfg) + "</div></td><td><div>"+
-				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + get_group_name(work.group_type) +
-				"</div></td><td><div>" + trim(work.creater) + "</div></td><td><div>" + trim(work.checker) +
+				boss.name + "</div></td><td><div>" + work.id + "</div></td><td><div>" + $.trim(work.cfg) + "</div></td><td><div>"+
+				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + data.get_group_name(work.group_type) +
+				"</div></td><td><div>" + $.trim(work.creater) + "</div></td><td><div>" + $.trim(work.checker) +
 				"</div></td><td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button><button id='" +
-				trim(work.src) + "'type='button' onclick='main.src(this);' class='layui-btn layui-btn-warm'>来源</button></td>";
+				$.trim(work.src) + "'type='button' onclick='main.src(this);' class='layui-btn layui-btn-warm'>来源</button></td>";
 				//"<button type='button' onclick='main.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
 				//"<button type='button' onclick='main.remove(this);' class='layui-btn layui-btn-danger'>删除</button></td>";
 			let is_show = true;
@@ -223,7 +206,7 @@ var main = function(){
 	};
 
 	var init = function(){
-		load_bosses();
+		data.load();
 		axis_obj_translater();
 		check_works(works_data);
 		// round,title, boss_value, _group_type

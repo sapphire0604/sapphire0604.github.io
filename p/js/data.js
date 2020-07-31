@@ -155,15 +155,8 @@ Boss.prototype = {
 		}
 	}
 }
-function Work(id, boss_id, hp, cfg, group_type, count, cp_id) {
-	this.status = !id ? false: true;
-	//是否启用作业，默认不启用
-	this.id = id
-	this.boss_id = boss_id, this.hp = hp ? hp: 0;
-	this.cfg = cfg;
-	this.group_type = group_type;
-	this.count = count && count >= 0 && count < 30 ? count: 30;
-	this.cp_id = cp_id;
+function Work(data) {
+	$.extend(this, data);
 }
 // Work原型
 // 默认对于每一个boss，都有至少四份缺省作业（深月、黑骑、弟弟、法）。缺省的作业伤害为0
@@ -187,31 +180,69 @@ Work.prototype = {
 	}
 }
 
-// 作业通俗名称
-function get_group_name(_group_type){
-	if(typeof _group_type == "object" &&_group_type.indexOf(group_type.sy) > -1 && _group_type.indexOf(group_type.hq) > -1){
-		return "三破甲刀";
+// 全局Boss数据
+var boss_id_map = [];
+// 全局Work数据
+var work_id_map = [];
+// bridge 解决时间复杂度问题
+var boss_work_by_id_map = [];
+var boss_work_by_type_map = [];
+
+var data = function(){
+	// 作业通俗名称
+	var get_group_name = function(_group_type){
+		if(typeof _group_type == "object" &&_group_type.indexOf(group_type.sy) > -1 && _group_type.indexOf(group_type.hq) > -1){
+			return "三破甲刀";
+		}
+		switch(_group_type) {
+			case 0 : return "深月刀";
+			case 1 : return "黑骑刀";
+			case 2 : return "弟弟刀";
+			default :
+			return "错误类型";
+		}
+	};
+
+	var add_work = function(work) {
+		if(work && work.id && work.boss_id && work.cfg &&
+			typeof work.hp === 'number' && work.hp > 0 &&
+			typeof work.count === 'number') {
+			work_id_map[work.id] = new Work(work);
+			if(!boss_work_by_id_map[work.boss_id]){
+				boss_work_by_id_map[work.boss_id] = [];
+			}
+			boss_work_by_id_map[work.boss_id].push(work_id_map[work.id]);
+			if(!boss_work_by_type_map[work.group_type]){
+				boss_work_by_type_map[work.group_type] = [];
+			}
+			boss_work_by_type_map[work.group_type].push(work_id_map[work.id]);
+		}
+	};
+
+	var load = function(){
+		boss_data.forEach(function(boss) {
+			boss_id_map[boss.id] = new Boss(boss.name, boss.id, boss.hp);
+		});
+		works_data.forEach(function(work) {
+			add_work(work);
+		});
+	};
+
+	var get_work_by_id = function(work_id){
+		return work_id_map[work_id];
+	};
+
+	var get_boss_by_id = function(boss_id){
+		return boss_id_map[boss_id];
+	};
+
+	return {
+		get_group_name : get_group_name,
+		load : load,
+		get_work_by_id, get_work_by_id,
+		get_boss_by_id : get_boss_by_id
 	}
-	switch(_group_type) {
-		case 0 : return "深月刀";
-		case 1 : return "黑骑刀";
-		case 2 : return "弟弟刀";
-		default :
-		return "错误类型";
-	}
-}
-/*
+}();
 
-1 6 shen
-2 7 hei
-3 11 shen hei
-4 10 hei
-5 17 di
-5 7 shen
+data.load();
 
-1 6 shen
-17
-28
-17
-
- */
