@@ -37,14 +37,17 @@ var axis = [
 	{"work_id" : "A0", "text" : "102 狼、狗 连点 ub 17958、41379 狼吼、深月圈、狼ub;050 狗 冲拳后 ub 41379 狼吼、深月圈、狼ub;051 暴击弓 加攻后 ub 64254 狼吼、深月圈、狼ub;047 妈、深月 换t、卡掉诅咒 ub 11943 狼吼、深月圈、狼ub;037 狼 深月圈亮 ub 19021 狼吼、深月圈、狼ub;031 狗 平a后 ub 43520 狼吼、深月圈、狼ub;021 妈 无 ub；019 狼、狗 斩击后 ub 28722、43520 狼吼、深月圈、狼ub;017 暴击弓 加攻后 ub 67822 狼吼、深月圈、狼ub;015 深月 卡掉小技能 ub 11943 狼吼、深月圈、狼ub;001 狼、狗 平a后 ub 17958、41379 狼吼、深月圈、狼ub;"},
 	{"work_id" : "A2", "text" : "1:08 狗 普攻后 ub 24000 狼吼、深月红圈；1:02 狼、猫拳 狼劈砍后 ub 16000 35000 狼吼；0:52 狗 深月红圈后 ub 42000 狼ub、狼吼、深月红圈；0:51 猫拳 普攻后 ub 26000 狼ub、狼吼、深月红圈；0；0:47 深、妈 诅咒抬手时 卡毒、换T 11000、2800*3 狼ub、深月红圈；0:43 狼 劈砍后 ub 7000 狼吼；0:37 狗 深月红圈后 ub 41000 狼ub、狼吼、深月红圈；0:33 猫拳 重击后 ub 30000 狼ub、狼吼、深月红圈；0:24 妈 连点 ub 0:21 狼、狗 深月红圈后 ub 17000、41000 狼ub、狼吼、深月红圈；0:15 猫拳、深月 普攻后 ub 28000、11000 狼ub、深月红圈;0:03 狼、狗、猫拳 连点 ub 16000、27000、39000 狼ub、狼吼、深月红圈；"},
 	{"work_id" : "B1", "text" : "1:13 狼 斩击后 ub 16691;1:07 栞 3连箭命中后 ub 16998;1:05 狗 连点 ub 40832;1:02 狼 连点 ub 26706;0:46 黑骑 断奶 ub;0:46 狼、狗 斩击后连点 ub(在bossub之前) 26706、40832;0:45 咲恋、栞 连点 ub 9909、22335;0:31 狗 攻击后 ub 40832;0:30 狼 斩击后连点 ub 26706;0:24 栞 技能命中 ub(bossub后) 21294;0:17 狗 攻击后 ub 40832;0:15 黑骑 断奶 ub;0:13 狼 斩击后连点 ub 26706;0:12 咲恋 打断动画 ub;0:01 栞、狗 攻击后 ub 26706、40832"},
-	{"work_id" : "B2", "text" : "1:07 栞 3连箭命中后 ub 1w;1:05 狼、狗 连点 ub 1.6w、4w;1:02 猫拳 普攻后 ub 2.8w;0:55 黑骑 ub;0:46 狗 正中突后 ub 2.5w;0:45 狼、栞 连点 ub 1.6w 、2.2w;0:43 猫拳 普攻后 ub 2.8w;0:32 狗 普攻后 ub 4w;0:29 黑骑 断奶 ub；0:24 狼、栞、猫拳 连点（栞顿 一下） ub 1.6w，2.7w，2.8w;0:18 狗 攻击后 ub 4w ;0:01 狼、栞、狗、猫拳 狼吼叫后 ub 1.6w、3.3w、2.8w、4w"},
-	{"work_id" : "C0", "text" : "107 栞 三支箭后 ub 1.5w；103 狗 正中突后 ub 3.6w；101 狼，纯 连点（被晕059） ub 2.3w；050 狗 深月红圈后 ub 4w；046 深月，栞 卡毒，连点 ub 1w，2.2w；037 黑骑 尝试 ub；034 狼，狗，黑骑 深月红圈后 ub 2.3w，4w；026 栞 连点 ub 2.7w；014 狗 普攻后 ub 3.6w；012 纯，深月 连点，卡毒 ub；011 狼 连点 ub 2.3w；001 狗，栞 纯破甲后 ub 2.9w，2.3w；"},
-	{"work_id" : "C5", "text" : "112 yls 连点 ub 1.2w；104 狗 正中突后 ub 3.6w；101 狼 连点 ub 2.3w；058 纯 普攻后 ub；058 yls 连点 ub 3w；051 狗 深月红圈后 ub 4w；047 yls 连点 ub 4.3w；046 深月 卡毒 ub 1w；037 黑骑 尝试 ub；034 狼，狗，yls，黑骑 深月红圈后 ub 2.3w，4w，4.3w；018 yls 深月红圈后 ub 4.2w；014 狗 普攻后 ub 3.6w；012 纯，深月 连点，卡毒 ub；011 狼，yls 连点 ub 2.3w，4.2w；001 狗，yls（若011没有）纯破甲后 ub 2.9w；"},
-	{"work_id" : "D0", "text" : "112 yls 连点 ub 1.7w；107 狼（不穿衣服） 连点 ub 1.6w；106 狗 普攻后 ub 4w；105 猫拳 普攻后 ub 3w；058 yls 连点 ub 4.2w；048 狼（穿衣045）、yls、猫拳 劈砍后 ub 1.6w、4.2w、2.8w；036 狗，yls 黑骑撞破甲后 ub 4w，4.4w；032 猫拳 普攻后 ub 3w；029 狼（穿衣026） 连点 ub 1.6w；020 yls 黑骑破甲，yls普攻后 ub 4w；019 狗 普攻后 ub 4w；013 yls 连点 ub 4.2w；008 狼 连点 ub 9k；002 猫拳，狗 普攻后 ub 2.8w，4w；"},
+	{"work_id" : "B2", "text" : "1:07 栞 3连箭命中后 ub 1w;1:05 狼、狗 连点 ub 1.6w、4w;1:02 猫拳 普攻后 ub 2.8w;0:55 黑骑 ub;0:46 狗 正中突后 ub 2.5w;0:45 狼、栞 连点 ub 1.6w、2.2w;0:43 猫拳 普攻后 ub 2.8w;0:32 狗 普攻后 ub 4w;0:29 黑骑 断奶 ub；0:24 狼、栞、猫拳 连点（栞顿 一下） ub 1.6w，2.7w，2.8w;0:18 狗 攻击后 ub 4w ;0:01 狼、栞、狗、猫拳 狼吼叫后 ub 1.6w、3.3w、2.8w、4w"},
+	{"work_id" : "C0", "text" : "107 栞 三支箭后 ub 1.5w；103 狗 正中突后 ub 3.6w；101 狼，纯 连点（被晕059） ub 1.4w；050 狗、 深月红圈后 ub 4w；046 深月，栞 卡毒，连点 ub 1w，2.2w；037 黑骑 尝试 ub；034 狼，狗，黑骑 深月红圈后 ub 2.3w，4w；026 栞 连点 ub 2.7w；014 狗 普攻后 ub 3.6w；012 纯，深月 连点，卡毒 ub；011 狼 连点 ub 2.3w；001 狗，栞 纯破甲后 ub 2.9w，2.3w；"},
+	{"work_id" : "C2", "text" : "106 狗 连点（卡掉正中突） ub 2.3w；102 狼 连点 ub 1.4w；051 狗 连点 ub 4.1w；049 布丁 普攻后 ub 1.2w；046 深月 卡毒 ub 1w；045 妈 回到原位后（不换T） ub；040 狼 吼叫后 ub 9k；037 狗 连点（没有034，极小概率030） ub 4.3w；021 狼 深月红圈后 ub 1.4w；018 狗 连点（没有015，极小概率013） ub 4.2w；009 妈 普攻后 ub；005 狼、深月、布丁、狗 深月红圈后（狼被晕001） ub 2.5w、1.1w、1.4w、4.3w；"},
+	{"work_id" : "C5", "text" : "112 yls 连点 ub 1.2w；104 狗 正中突后 ub 3.6w；101 狼，纯 连点（被晕059） ub 1.4w；058 yls 连点 ub 3w；051 狗 深月红圈后 ub 4w；047 yls 连点 ub 4.3w；046 深月 卡毒 ub 1w；037 黑骑 尝试 ub；034 狼，狗，yls，黑骑 深月红圈后 ub 2.3w，4w，4.3w；018 yls 深月红圈后 ub 4.2w；014 狗 普攻后 ub 3.6w；012 纯，深月 连点，卡毒 ub；011 狼，yls 连点 ub 2.3w，4.2w；001 狗，yls（若011没有）纯破甲后 ub 2.9w；"},
+	
+	{"work_id" : "D0", "text" : "112 yls 连点 ub 1.7w；107 狼（不穿衣服，穿衣106） 连点 ub 1.6w；106 狗 普攻后 ub 4w；105 猫拳 普攻后 ub 3w；058 yls 连点 ub 4.2w；048 狼（穿衣045）、yls、猫拳 劈砍后 ub 1.6w、4.2w、2.8w；036 狗，yls 黑骑撞破甲后 ub 4w，4.4w；032 猫拳 普攻后 ub 3w；029 狼（穿衣026） 连点 ub 1.6w；020 yls 黑骑破甲，yls普攻后 ub 4w；019 狗 普攻后 ub 4w；013 yls 连点 ub 4.2w；008 狼 连点 ub 9k；002 猫拳，狗 普攻后 ub 2.8w，4w；"},
 	{"work_id" : "D1", "text" : "107 狼（不穿衣服） 连点 ub 1.6w；106 狗 普攻后 ub 4w；105 猫拳 普攻后 ub 3w；058 兔剑 连点 ub 3.6w；048 狼（穿衣045）、猫拳 劈砍后 ub 1.6w、2.8w；036 狗 黑骑撞破甲后 ub 4w ；032 兔剑、猫拳 普攻后 ub 3.6w、3w；029 狼（穿衣026） 连点 ub 1.6w；019 狗 普攻后 ub 4w；008 狼 连点 ub 9k；002 兔剑，猫拳，狗 普攻后 ub 3.6w、2.8w、4w；"},
-	{"work_id" : "D4", "text" : "112 yls 连点 ub 1.2w；110 狗 连点 ub 1.8w；108 狼 连点 ub 1.1w；059 yls 连点 ub 3.3w；059 望 连点 ub；056 妈 连点 ub；055 狗 破甲后 ub 3.4w；051 狼 劈砍后 ub 2.1w；049 yls 连点 ub 3.7w；040 狗 破甲后 ub 3.3w；037 yls 连点 ub 3.2w；033 狼 普攻后 ub 1.9w；030 望 连点 ub；027 妈 连点 ub；025 狗 破甲后 ub 3.5w；024 yls 连点 ub 3.7w；017 yls 连点 ub 3.7w；014 狼 普攻后 ub 1.2w；010 狗 冲拳后 ub 3.3w；004 yls 连点 ub 3.3w；"},
+	{"work_id" : "D4", "text" : "112 yls 连点 ub 1.2w；110 狗 连点 ub 1.8w；108 狼 连点（5x狼107） ub 1.1w；059 yls 连点 ub 3.3w；059 望 连点 ub；056 妈 连点 ub；055 狗 破甲后（5x狼054） ub 3.4w；051 狼 劈砍后（5x狼050） ub 2.1w；049 yls 连点 ub 3.7w；040 狗 破甲后（5x狼039） ub 3.3w；037 yls 连点 ub 3.2w；033 狼 普攻后（5x狼031连点） ub 1.9w；030 望 连点 ub；027 妈 连点 ub；025 狗 破甲后 ub 3.5w；024 yls 连点 ub 3.7w；017 yls 连点 ub 3.7w；014 狼 普攻后 ub 1.2w；010 狗 冲拳后 ub 3.3w；004 yls 连点 ub 3.3w；"},
 	{"work_id" : "D5", "text" : "112 yls 连点 ub 1.2w；108 狗 深月圈到后 ub 3.9w；106 狼 平a后 ub 2.6w ；058 亚里沙、望 连点 ub 3.1w；051 狗 深月圈到后 ub 4.2w；047 狼、yls 狼斩击后 ub 2.8w、4.3w；045 深月 断诅咒 ub 1.1w；034 狗、亚里沙 深月圈到后（狗平a后） ub 4w、4w ；030 望 平a后 ub；026 狼 平a后 ub 1.2w；017 狗、亚里沙 深月圈到后 ub 4.2w、4.3w；012 深月 断诅咒 ub 1.1w；001 狼、狗、亚里沙 深月圈到后 ub 2.6w、4w、4w"},
 	{"work_id" : "E3", "text" : "110 yly 连点 ub 11700 黑猫、妹法减甲；053 yly 连点 ub 6300；050 圣母 普攻后 ub；049 妹法 ub 普攻后 ub；044 xcw 妹法减甲后 ub 36000 黑猫、妹法减甲、圣母buff；043 黑猫 小技能命中后 ub 5400 黑猫、妹法减甲；038 yly 连点/yly半血可以等小技能 ub 13800 黑猫、妹法减甲；022 圣母 连点ub；021 yly 连点/yly半血可以等小技能 ub 13000（11700） 黑猫（等小技能会吃不到）、妹法减甲；018 妹法 普攻后 ub；010 xcw 加攻后 ub 30000 黑猫、妹法减甲；010 开启auto；007 黑猫 小技能后 ub 3300 黑猫减甲；003 yly 普攻后 ub 8000 黑猫减甲；"},
+	{"work_id" : "E5", "text" : "105 yly 小技能气泡冒出后（不断则伊莉雅死，挂树） ub 1.17w；049 妹法、剑圣 妹法平A后（伊莉雅暴毙点，在此前伊莉雅暴击过自己，则阵亡，之后伊莉雅如果会死，则是你自己菜） ub 9.8k；044 xcw、yly 妹法爱心命中后（此时需打断小技能，随后伊莉雅满血，非满血则30左右暴毙） ub 1.2W;043 黑猫 技能命中后 ub 5k;022 yly 自残后（如果血量低于15%，打断小技能，反之，练习一下无影爪） ub 7.6k;018 妹法、剑圣 妹法平A后 ub 8.3k;010 xcw 翅膀出现时 ub 3.2w;007 黑猫 闪电球命中后 ub 3k;004 yly 自残后（此时如果血量低于15%，则打断自残） ub;"},
 	{"work_id" : "F2", "text" : "1:07 狼 boss1晕miss圈到后 ub 1.3w 狼吼、深月红圈；1:03 狼、玲奈、栞 连点 ub 1.3w、6.2w、1.6w 狼ub、狼吼、深月红圈；0:58 黄骑 充玲奈后 ub；0:55 深月 连点 ub；0:50 暴击弓 连点 ub 2.8w；0:49 栞 1根箭伤害后 ub 1.2w 狼ub、深月红圈；0:45 狼 连点 ub 9k；0:30 狼、栞 连点（狼ub时不能出现强力斩击气泡） ub 2.6w、2.7w；0:27 暴弓 连点（卡掉飞镖） ub 6.2w 狼ub、深月红圈；0:23 黄骑 充玲奈后 ub；0:16 狼（0:20boss不晕狼） 深月红圈后 ub；0:12 狼、玲奈→栞 狼三闪后/小螃蟹路过黄骑深月中间/玲奈变红 ub 1.4w、6.2w、3.2w 狼ub、狼吼、深月红圈；0:01 栞、深月 深月红圈后 ub 2.7w、1w；"},
 	{"work_id" : "F4", "text" : "105 yly 卡掉小技能 ub 11754 妹法破、黑猫破 打断慢一点，不要连点;053 妹法、病娇 慢速连点妹法、连点病娇 ub 10182;045 黑猫、镜华 妹法破防后 ub 5060、32200 妹法破、黑猫破;044 yly 卡掉小技能 ub 12352 妹法破、黑猫破 打断慢一点，不要连点;026 妹法 连点 ub;024 病娇 加攻 ub 11287 黑猫破;022 yly 妹法破防后 ub 12352 妹法破、黑猫破;011 黑猫 平a命中 ub 5060 妹法破、黑猫破;010 镜华 连点 ub 32200 妹法破、黑猫破;006 病娇 加攻 ub 11287 黑猫破;004 yly 连点 ub 7278 黑猫破;"},
 	{}
@@ -71,7 +74,7 @@ var work_text_map = {
 	"A3" : "二周目 一王 龙<br/>狗5狼5妈4深4傻4 110w<br/>1:13 亚里沙连点ub<br/>1:02 狼普攻后ub，狗普攻后ub<br/>1:00 亚里沙连点ub<br/>0:51 狗深月阵后ub（miss 0:50）<br/>0:49 亚里沙连点ub<br/>0:47深月卡毒ub，妈换T ub<br/>0:44 狼普攻伤害出来瞬间ub（1w）<br/>0:37 亚里沙深月阵后ub、狗ub<br/>0:25 狼吼叫后ub<br/>0:22 亚里沙深月阵后ub，狗普攻后ub（没有不开）<br/>0:18 妈ub<br/>0:15 亚里沙连点ub<br/>0:03 狼bossub时连点ub<br/>0:02 深月ub 狗正中突后ub、亚里沙连点ub",
 	"B0" : "二周目 二王 鸟<br/>纯4狗5狼4傻4栞5 123w<br/>1:12 亚里沙ub<br/>1:05 狼ub、狗ub、栞ub<br/>0:58 亚里沙ub<br/>0:45 狼ub、狗ub、栞ub、亚里沙ub <br/>0:33 亚里沙ub<br/>0:24 狼ub、狗ub、栞ub<br/>0:17 亚里沙ub<br/>0:01 狼ub、狗ub、亚里沙ub、栞ub",
 	"C1" : "二周目 三王 猪<br/>布4狗5狼5妈4深4 80w<br/>1:02 狼ub、狗ub<br/>0:55 深月ub<br/>0:47 布丁ub<br/>0:45 妈ub、狗ub<br/>0:44 狼ub<br/>0:28 狗ub<br/>0:24 狼ub<br/>0:19 深月ub<br/>0:13 布丁ub<br/>0:05 狼ub<br/>0:03 妈ub<br/>0:02 狗ub",
-	"E4" : "世界线1:猫剑没有MISS 106满TP<br/>105 连点ylyUB卡掉自残<br/>105 猫剑UB<br/>045 妹法破甲到以后UB,然后顺序点击XCW 黑猫 猫剑UB<br/>043 yly小技能以后UB<br/>026 猫剑UB<br/>023 yly小技能以后UB<br/>015 妹法小技能伤害到以后UB<br/>010 xcwBUFF以后UB.黑猫UB<br/>004 yly小技能以后UB<br/>001 猫剑UB<br/>世界线2:猫剑MISS导致105不能UB 此UB压后到045<br/>105 连点ylyUB卡掉自残<br/>045 妹法破甲到以后UB,然后顺序点击XCW 黑猫 猫剑UB<br/>043 yly小技能以后UB<br/>026 猫剑UB<br/>023 yly小技能以后UB<br/>015 妹法小技能伤害到以后UB<br/>010 xcwBUFF以后UB.黑猫UB<br/>004 yly小技能以后UB<br/>001 猫剑UB<br/>世界线3:026猫剑放不出UB(压后)<br/>023 yly小技能以后UB<br/>015 妹法小技能伤害到以后UB<br/>015 猫剑UB<br/>010 xcwBUFF以后UB.黑猫UB<br/>004 yly小技能以后UB<br/>世界线4:yly暴击提前满TP,该世界线就是随机应变放yly的UB.其他人不变",
+	"E4" : "世界线1:猫剑没有MISS 106满TP<br/>105 连点ylyub卡掉自残<br/>105 猫剑ub<br/>045 妹法破甲到以后ub,然后顺序点击XCW 黑猫 猫剑ub<br/>043 yly小技能以后ub<br/>026 猫剑ub<br/>023 yly小技能以后ub<br/>015 妹法小技能伤害到以后ub<br/>010 xcwBUFF以后ub.黑猫ub<br/>004 yly小技能以后ub<br/>001 猫剑ub<br/>世界线2:猫剑MISS导致105不能ub 此ub压后到045<br/>105 连点ylyub卡掉自残<br/>045 妹法破甲到以后ub,然后顺序点击XCW 黑猫 猫剑ub<br/>043 yly小技能以后ub<br/>026 猫剑ub<br/>023 yly小技能以后ub<br/>015 妹法小技能伤害到以后ub<br/>010 xcwBUFF以后ub.黑猫ub<br/>004 yly小技能以后ub<br/>001 猫剑ub<br/>世界线3:026猫剑放不出ub(压后)<br/>023 yly小技能以后ub<br/>015 妹法小技能伤害到以后ub<br/>015 猫剑ub<br/>010 xcwBUFF以后ub.黑猫ub<br/>004 yly小技能以后ub<br/>世界线4:yly暴击提前满TP,该世界线就是随机应变放yly的ub.其他人不变",
 	"F0" : "（第一次没被晕）<br/>107 狼、玲奈、栞 （110狼没被晕）连点 ub；<br/>058 黄骑 充玲奈后 ub；<br/>055 深月 连点 ub；<br/>051 狼、玲奈、栞 连点 ub；<br/>028 狼、玲奈、栞 连点 ub；<br/>023 黄骑 冲狼后 ub；<br/>013 栞 连点 ub；<br/>001 玲奈、深月、栞 深月红圈后 ub；（60w）<br/>（第二次没被晕）<br/>103 狼、玲奈、栞 狼吼叫后 ub；<br/>058 黄骑 充玲奈后 ub；<br/>055 深月 连点 ub；<br/>049 玲奈 加攻后 ub；<br/>046 狼、栞 连点 ub；<br/>035 狼 连点 ub；<br/>023 黄骑 充狼后 ub；<br/>023 狼、玲奈 连点 ub；（boss ub前）<br/>022 栞 连点 ub；<br/>（之后基本自由发挥）<br/>001 栞、深月 深月红圈后 ub；（63w）<br/>（全部被晕）<br/>103 狼、玲奈、栞 狼吼叫后 ub；<br/>058 黄骑 充玲奈后 ub；<br/>055 深月 连点 ub；<br/>049 玲奈 加攻后 ub；<br/>044 狼、栞 连点 ub；<br/>035/031 狼 连点 ub；<br/>023 黄骑 充狼后 ub；<br/>022 狼 连点 ub；（随后被一钳子拍死）<br/>016 玲奈 加攻后 ub；<br/>013 栞 三只箭连点 ub；<br/>001 栞、深月 深月红圈后 ub；（60w）",
 	"F3" : "二周目 五王 狂暴蟹<br/>咲5仓5伊5黑5妹5巨蟹座狂暴法刀 50w<br/>1:14 ylyub<br/>1:02 ylyub<br/>0:56 充电宝ub<br/>0:52 妹法ub<br/>0:44 ylyub、xcwub<br/>0:43 凯露ub<br/>0:30 ylyub、充电宝ub<br/>0:21 妹法ub<br/>0:16 ylyub<br/>0:10 凯露ub<br/>0:09 xcwub<br/>0:07 ylyub<br/>0:04 充电宝ub",
 	"" : ""
@@ -87,7 +90,7 @@ var works_data = [
 //二周目一王
 {"id" : "A3", "boss_id" : "B1", "hp" : 110e4, "cfg" : "狗5狼5妈4深4傻4", "group_type" : group_type.sy, "count" : 4, "src" : "BV1MV411z7ve", "creater" : "席巴鸽", "checker" : "可用参考轴"},
 {"id" : "A0", "boss_id" : "B1", "hp" : 107e4, "cfg" : "狗5狼5妈4深4暴4", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "大花裤衩", "checker" : "草莓"},
-{"id" : "A1", "boss_id" : "B1", "hp" : 106e4, "cfg" : "纯4狗5狼4咲5栞5", "group_type" : group_type.hq, "count" : 30, "src" : "BV1T5411a7NB", "creater" : "HelloWorld", "checker" : "英普洛001"},
+{"id" : "A1", "boss_id" : "B1", "hp" : 106e4, "cfg" : "纯4狗5狼4咲5栞5", "group_type" : group_type.hq, "count" : 30, "src" : "BV1T5411a7NB", "creater" : "HelloWorld", "checker" : "英普洛"},
 {"id" : "A2", "boss_id" : "B1", "hp" : 100e4, "cfg" : "狗5狼5猫拳5妈4深4", "group_type" : group_type.sy, "count" : 11, "src" : "BV1ik4y1q7vB", "creater" : "头头猫丶", "checker" : "参考轴"},
 //一周目二王
 {"id" : "b0", "boss_id" : "A2", "hp" : 115e4, "cfg" : "狗5狼5猫拳5妈4深4", "group_type" : group_type.sy, "count" : 4, "src" : "cv6894681", "creater" : "小火慢炖_", "checker" : "参考轴"},
@@ -96,7 +99,7 @@ var works_data = [
 {"id" : "b4", "boss_id" : "A2", "hp" : 118e4, "cfg" : "狗5狼5咲5黑猫5栞5", "group_type" : group_type.dd, "count" : 30, "src" : "", "creater" : "草莓", "checker" : ""},
 //二周目二王
 {"id" : "B0", "boss_id" : "B2", "hp" : 123e4, "cfg" : "纯4狗5狼4傻4栞5", "group_type" : group_type.hq, "count" : 23, "src" : "私服轴 BV1Ls411j7DC", "creater" : "私服轴", "checker" : "参考轴", "cp_id" : ""},
-{"id" : "B1", "boss_id" : "B2", "hp" : 122e4, "cfg" : "纯4狗5狼5咲5栞5", "group_type" : group_type.hq, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "Tsukasa", "checker" : "英普洛001"},
+{"id" : "B1", "boss_id" : "B2", "hp" : 122e4, "cfg" : "纯4狗5狼5咲5栞5", "group_type" : group_type.hq, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "Tsukasa", "checker" : "英普洛"},
 {"id" : "B2", "boss_id" : "B2", "hp" : 125e4, "cfg" : "纯4狗5狼5猫拳5栞5", "group_type" : group_type.hq, "count" : 30, "src" : "BV1MV411z7ve", "creater" : "席巴鸽", "checker" : "可用参考轴"},
 //一周目三王
 {"id" : "c0", "boss_id" : "A3", "hp" : 121e4, "cfg" : "狗5狼5猫拳5深5傻4", "group_type" : group_type.sy, "count" : 30, "src" : "BV1wi4y1G74n", "creater" : "小火慢炖_", "checker" : "草莓"},
@@ -104,7 +107,8 @@ var works_data = [
 {"id" : "c2", "boss_id" : "A3", "hp" : 122e4, "cfg" : "狗5狼5深5傻4暴5", "group_type" : group_type.sy, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "少放辣椒", "checker" : ""},
 {"id" : "c3", "boss_id" : "A3", "hp" : 113e4, "cfg" : "狗5狼5猫剑4深5暴5", "group_type" : group_type.sy, "count" : 30, "src" : "", "creater" : "英普洛", "checker" : "司瑛士"},
 //二周目三王
-{"id" : "C0", "boss_id" : "B3", "hp" : 93e4, "cfg" : "纯4狗5狼5深4栞5", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "草莓", "checker" : "英普洛001", "cp_id" : []},
+{"id" : "C0", "boss_id" : "B3", "hp" : 93e4, "cfg" : "纯4狗5狼5深4栞5", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "草莓", "checker" : "英普洛", "cp_id" : []},
+{"id" : "C2", "boss_id" : "B3", "hp" : 81e4, "cfg" : "布4狗5狼4/5妈4深4", "group_type" : group_type.sy, "count" : 30, "src" : "", "creater" : "草莓", "checker" : ""},
 {"id" : "C5", "boss_id" : "B3", "hp" : 94e4, "cfg" : "纯4狗5狼5深4傻4", "group_type" : [group_type.sy, group_type.hq], "count" : 30, "src" : "", "creater" : "草莓", "checker" : "大花裤衩"},
 //一周目四王
 {"id" : "d0", "boss_id" : "A4", "hp" : 110e4, "cfg" : "狗5狼5深4傻4栞5", "group_type" : group_type.sy, "count" : 30, "src" : "私服轴", "creater" : "私服轴", "checker" : "参考轴"},
@@ -112,7 +116,7 @@ var works_data = [
 //二周目四王
 {"id" : "D0", "boss_id" : "B4", "hp" : 124e4, "cfg" : "纯4狗5狼5猫拳5傻4", "group_type" : group_type.hq, "count" : 14, "src" : "BV1Qi4y137Rb", "creater" : "随翼随翼", "checker" : "草莓"},
 {"id" : "D1", "boss_id" : "B4", "hp" : 121e4, "cfg" : "纯5狗5狼5猫拳5兔剑5", "group_type" : group_type.hq, "count" : 14, "src" : "BV1pp4y1q7fc", "creater" : "次氏体", "checker" : "草莓"},
-{"id" : "D4", "boss_id" : "B4", "hp" : 98e4, "cfg" : "狗5望5狼4妈4傻4", "group_type" : group_type.dd, "count" : 30, "src" : "BV1qs41177oB", "creater" : "ttsp", "checker" : "草莓"},
+{"id" : "D4", "boss_id" : "B4", "hp" : 98e4, "cfg" : "狗5望5狼4妈4傻4", "group_type" : group_type.dd, "count" : 30, "src" : "BV1qs41177oB", "creater" : "ttsp", "checker" : "草莓、夏冰"},
 {"id" : "D5", "boss_id" : "B4", "hp" : 108e4, "cfg" : "狗5望5（9-3）狼5（9-4）深5傻3", "group_type" : group_type.sy, "count" : 30, "src" : "BV1cK4y1v7qf", "creater" : "爱智敏真是太好了", "checker" : "格子衬衫"},
 //一周目五王
 {"id" : "e0", "boss_id" : "A5", "hp" : 98e4, "cfg" : "狗5狼5猫剑4深4栞5", "group_type" : group_type.sy, "count" : 30, "src" : "自动刀95W", "creater" : "", "checker" : ""},
@@ -121,7 +125,8 @@ var works_data = [
 {"id" : "e5", "boss_id" : "A5", "hp" : 66e4, "cfg" : "姐4仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "私服轴", "creater" : "私服轴", "checker" : ""},
 //二周目五王
 {"id" : "E3", "boss_id" : "B5", "hp" : 56e4, "cfg" : "圣2仓3伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "", "creater" : "李维特安", "checker" : "草莓"},
-{"id" : "E4", "boss_id" : "B6", "hp" : 58e4, "cfg" : "猫剑5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 24, "src" : "BV1ck4y1m7JD", "creater" : "夏冰", "checker" : "草莓"},
+{"id" : "E4", "boss_id" : "B5", "hp" : 58e4, "cfg" : "猫剑5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 24, "src" : "BV1ck4y1m7JD", "creater" : "夏冰", "checker" : "草莓"},
+{"id" : "E5", "boss_id" : "B5", "hp" : 57e4, "cfg" : "怜5/兔5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "BV1ck4y1m7JD", "creater" : "英普洛", "checker" : ""},
 
 //一周目五王狂暴
 {"id" : "f6", "boss_id" : "A6", "hp" : 90e4, "cfg" : "狗5仓5伊5黑5妹5", "group_type" : group_type.dd, "count" : 30, "src" : "BV12T4y1j734", "creater" : "草莓味の狸猫", "checker" : ""},
@@ -197,6 +202,16 @@ function get_group_name(_group_type){
 }
 /*
 
+1 6 shen
+2 7 hei
+3 11 shen hei
+4 10 hei
+5 17 di
+5 7 shen
 
+1 6 shen
+17
+28
+17
 
  */

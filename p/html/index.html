@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>公主连接:复仇十字军工会战轴管理</title>
+		<link rel="stylesheet" href="../layui/css/layui.css">
+	</head>
+	<body>
+		<ul class="layui-nav" lay-filter="">
+		 <li class="layui-nav-item layui-this"><a href="redive.html">备用轴表</a></li>
+		 <li class="layui-nav-item"><a href="task.html">摸轴任务表</a></li>
+ 		 <li class="layui-nav-item"><a href="../dist/index.html">排刀表（兰佩鲁奇）</a></li>
+
+		</ul>
+		<h1>巨蟹座备用轴表</h1>
+		<div id="div_countdown"></div>
+		<div id="div_form_query" >
+			<form class="layui-form">
+				<div class="layui-form-item">
+		 	 <div class="layui-input-inline" style="width: 200px;">
+ 					<input type="text" name="title" placeholder="请输入英雄/作业名称" autocomplete="off" class="layui-input">
+ 				</div>
+ 				<div class="layui-input-inline">
+ 					<input type="radio" name="round" value="1" title="一周目">
+						<input type="radio" name="round" value="2" title="二周目" checked>
+					</div>
+					<div class="layui-input-inline" style="width: 200px;">
+						<select name="boss_value">
+							<option value="0" selected>BOSS名称（全部）</option>
+							<option value="1">飞龙</option>
+							<option value="2">狮鹫</option>
+							<option value="3">黑猪</option>
+							<option value="4">独角</option>
+							<option value="5">螃蟹</option>
+							<option value="6">狂暴蟹</option>
+						</select>
+					</div>
+					<div class="layui-input-inline" style="width: 300px;">
+						<select name="group_type">
+							<option value="0">深月刀</option>
+							<option value="1">黑骑刀</option>
+							<option value="2">弟弟刀</option>
+							<option value="3">三破甲</option>
+							<option value="4" selected>作业类型（全部）</option>
+						</select>
+					</div>
+					<div class="layui-input-inline" style="width: 200px;">
+						<button class="layui-btn layui-anim layui-anim-scaleSpring" lay-submit lay-filter="form_query">查询</button>
+					</div>
+				</div>
+			</form>
+		</div>
+ 		<div id="table_div" class="layui-inline">
+ <table id="works_table" class="layui-table" lay-even lay-skin="nob">
+			 	<colgroup>
+				 <col width="100">
+				 <col width="100">
+				 <col width="60">
+				 <col width="200">
+				 <col width="100">
+				 <col width="60">
+				 <col width="100">
+				 <col width="100">
+				 <col width="100">
+				 <col>
+				 <col>
+			 	</colgroup>
+			 	<thead>
+		 		<tr>
+			 		<th><strong>周目</strong></th>
+				 	<th><strong>BOSS</strong></th>
+				 	<th><strong>编号</strong></th>
+				 	<th><strong>作业配置</strong></th>
+				 	<th><strong>均害</strong></th>
+				 	<th><strong>数量</strong></th>
+				 	<th><strong>类型</strong></th>
+				 	<th><strong>摸轴</strong></th>
+				 	<th><strong>审查</strong></th>
+				 	<th><strong>操作</strong></th>
+			 	</tr>
+			 	</thead>
+		 		<tbody class="layui-table-body"></tbody>
+			</table>
+		</div>
+	</body>
+</html>
+<script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+<script src="../layui/layui.js"></script>
+<script src="../js/prototype.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script type="text/javascript">
+	layui.use('element', function(){
+	 var element = layui.element;
+	});
+	main.init();
+
+	// 公主连接排刀工具
+	var rediveSchedule = function(){
+		// Boss基础数据
+		var boss_chain = [];
+		// 全局Boss数据
+		var boss_map = [];
+		// 全局Work数据
+		var works_set = [];
+		// bridge 解决时间复杂度问题
+		var boss_work_by_id_map = [];
+		var boss_work_by_type_map = [];
+
+		//当前boss的 id 血量 轮次
+		var current_boss_id;
+		var current_boss_hp;
+		var current_boss_round;
+
+		var get_bosses = function(){
+			return boss_chain;
+		};
+
+		// 获取Boss
+		var get_boss_by_id = function(boss_id){
+			return boss_map[boss_id];
+		};
+
+		// 获取当前Boss
+		var get_current_boss = function(){
+			return boss_map[RS.current_boss_id];
+		};
+
+		// 获取Boss的作业
+		var get_works_by_boss_id = function(boss_id){
+			return boss_id ? boss_work_by_id_map[boss_id] : boss_work_by_id_map;
+		};
+
+		// 获取全部作业
+		var get_works = function(){
+			return Object.values(works_set);
+		};
+
+		// Boss数据预置
+		var add_boss = function(name, boss_id, hp){
+			let pot = boss_chain.length;
+			boss_chain[pot] = new Boss(name, boss_id, hp);
+			boss_map[boss_id] = boss_chain[pot];
+		};
+		// 作业数据预置
+		var add_work = function(id, boss_id, hp, cfg, group_type, count) {
+			if(id && boss_id && cfg &&
+				typeof hp === 'number' && hp > 0 &&
+				typeof group_type === 'number' && group_type >= 0 &&
+				typeof count === 'number') {
+				works_set[id] = new Work(id, boss_id, hp, cfg, group_type, count);
+				if(!boss_work_by_id_map[boss_id]){
+					boss_work_by_id_map[boss_id] = [];
+				}
+				boss_work_by_id_map[boss_id].push(works_set[id]);
+				if(!boss_work_by_type_map[group_type]){
+					boss_work_by_type_map[group_type] = [];
+				}
+				boss_work_by_type_map[group_type].push(works_set[id]);
+			}
+		};
+		// 初始化作业
+		var add_works = function(works){
+			works.forEach(function(item) {
+				add_work(item.id, item.boss_id, item.hp, item.cfg, item.group_type, item.count);
+			});
+		};
+		// 初始化排刀初始信息
+		var init = function(boss_id, boss_hp, boss_round){
+			RS.current_boss_id = boss_id;
+			RS.current_boss_hp = boss_hp;
+			RS.current_boss_round = boss_round ? boss_round : 1;
+		};
+		// 获取下一个boss数据
+		var get_next_boss = function(boss_id) {
+			let curr_boss_id = boss_id ? boss_id : RS.current_boss_id;
+			let next_boss_id;
+			switch(curr_boss_id) {
+				case "A1" : next_boss_id = "A2"; break;
+				case "A2" : next_boss_id = "A3"; break;
+				case "A3" : next_boss_id = "A4"; break;
+				case "A4" : next_boss_id = "A5"; break;
+				case "A5" : next_boss_id = "A6"; break;
+				case "A6" : next_boss_id = "B1"; break;
+				case "B1" : next_boss_id = "B2"; break;
+				case "B2" : next_boss_id = "B3"; break;
+				case "B3" : next_boss_id = "B4"; break;
+				case "B4" : next_boss_id = "B5"; break;
+				case "B5" : next_boss_id = "B6"; break;
+				case "B6" : next_boss_id = "B1"; break;
+				default : next_boss_id = "A1";
+			}
+			let boss = boss_map[next_boss_id];
+			return boss;
+		};
+
+		var get_works_by_type = function(group_type){
+			return boss_work_by_type_map[group_type];
+		};
+
+		// 更新全局作业剩余刀数
+		// count > 0 减少 count < 0 增加
+		var update_count_by_type = function(count, group_type){
+			let works = get_works_by_type(group_type);
+			for (var work of works){
+				if(work.count == 0){ // 没有剩余的刀过滤
+					continue;
+				}
+				let mark = count > 0 ? " 减少 " : " 增加 ";
+				let rest = work.count - count;
+				rest = rest > 30 ? 30 : rest;
+				rest = rest < 0 ? 0 : rest;
+
+				count < 0 ? (work.count + count) : (count > work.count ? 0 : work.count - count);
+				console.log("[DUPL] " + work.id + "作业原有 " + work.count +
+					" 刀," + mark + count + " " + get_group_name(group_type) +
+					", 现有 " + rest + "刀");
+				work.count = rest;
+	 	}
+		};
+
+		var go_next_round = function(){
+			let boss = get_next_boss();
+			if(boss.id == "B1"){
+				RS.current_boss_round ++;
+			}
+			RS.current_boss_id = boss.id;
+			RS.current_boss_hp = boss.hp;
+		};
+
+		return {
+			get_works_by_type : get_works_by_type,
+			// 获取Boss
+			get_boss_by_id : get_boss_by_id,
+			// 获取当前Boss
+			get_current_boss : get_current_boss,
+			// 获取所有作业
+			get_works : get_works,
+			// 获取当前Boss作业
+			get_works_by_boss_id : get_works_by_boss_id,
+			// Boss数据预置
+			add_boss : add_boss,
+			// 作业数据预置
+			add_work : add_work,
+			// 初始化作业
+			add_works : add_works,
+			// 初始化排刀初始信息
+			init : init,
+			// 获取下一个boss数据
+			get_next_boss : get_next_boss,
+			// 更新全局作业剩余刀数
+			update_count_by_type : update_count_by_type,
+			go_next_round : go_next_round
+		};
+	}();
+
+	var doWork = function(){
+		//排刀工作表
+		var result_list = [];
+		var result_type_list = [];
+		// 每个boss的尾刀 tail_map[round][boss_id]表示第round轮boss_id的尾刀
+		var tail_map = [];
+		// 停止loop标志
+		var isFinished = false;
+		// 总刀数
+		var total_count = 90;
+		// 当前出刀数
+		var current_count = 0;
+
+		// 查询排刀结果
+		var get_result = function(){
+			return result_list;
+		};
+
+		var get_result_by_type = function(group_type){
+			return result_type_list[group_type];
+		}
+
+		var finish = function(){
+			isFinished = true;
+		};
+
+		// 获取当前排刀数
+		var get_current_count = function(){
+			return current_count;
+		};
+
+		var print = function(msg){
+			console.log(msg);
+		};
+
+		var get_better_work = function(work1, work2){
+			let work;
+			if(work1){
+				work = work1;
+			}
+			if(!work1 && work2){
+				work = work2;
+			}
+			if(work1 && work2){// 再按伤害
+				work = work1.hp < work2.hp ? work2 : work1;
+			}
+			return work;
+		}
+
+		// 从works中找到是否能替换优化已排刀的作业
+		// works 当前刀集合
+		var find_replaceable_result = function(boss_id, works){
+			let i = 1; // 置换系数 当前刀 / 新置换刀 > 老置换刀 / 已排刀, 则可置换
+			let i_map = [];
+			let force_replace_flag = false;
+			let result;
+			if(!works){
+				return result;
+			}
+			// 当前刀集合
+			Object.values(works).forEach(function(cur_work) {// 当前boss的作业
+				console.log(cur_work);
+				if(!cur_work || cur_work.boss_id != boss_id){
+					return true;
+				}
+				if(cur_work.count == 0){
+					force_replace_flag = true;
+				}
+				// 新置换刀集合
+				let new_works = RS.get_works_by_boss_id(cur_work.boss_id);
+				for(let new_work of new_works){
+					if(new_work.count > 0){
+						i_map[cur_work.group_type] = cur_work.hp / new_work.hp;
+						i_map[cur_work.group_type]["new_work"] = new_work;
+						i_map[cur_work.group_type]["cur_work"] = cur_work;
+					}
+				}
+				// 已排刀集合
+				let pas_works = get_result_by_type(cur_work.group_type);
+				for(let pas_work of pas_works){
+					if(pas_work.lock){// 最优刀跳过
+						continue;
+					}
+					if(pas_work.round < RS.current_boss_round - 1 || (pas_work.round == RS.current_boss_round - 1 && pas_work.boss_id < cur_work.boss_id)){
+						continue;// 只优化一轮以内
+					}
+					// 旧置换刀集合
+					let old_works = RS.get_works_by_boss_id(pas_work.boss_id);
+					for(let old_work of old_works){
+						if(cur_work.count > 0){ // 集合匹配
+							if(i_map[cur_work.group_type]){
+								let temp_i = i_map[cur_work.group_type] / (old_work.hp / pas_work.hp);
+								console.log(temp_i);
+								if(temp_i > i || force_replace_flag){
+									i = temp_i;
+									result = {
+										"cur_work" : i_map[cur_work.group_type]["cur_work"],// 当前刀
+										"new_work" : i_map[cur_work.group_type]["new_work"], // 新置换刀
+										"old_work" : old_work, // 老置换刀
+										"pas_work" : pas_work, // 已排刀
+										"i" : i // 置换系数
+									};
+								}
+							}
+						}
+					}
+				}
+			});
+			// 已排刀尾刀血量
+			console.log(result);
+			let pas_tail_hp = tail_map[result.pas_work.round][result.pas_work.boss_id];
+			let count = Math.ceil(RS.current_boss_hp / result.cur_work.hp);
+			// 期望需要已排刀的数量
+			let exp_pas_need_count = count >= result.pas_work.count ? result.pas_work.count : count;
+			// 实际需要已排刀的数量
+			let act_pas_need_count = Math.ceil((exp_pas_need_count * result.pas_work.hp - pas_tail_hp) / (result.old_work.hp));
+			if(act_pas_need_count <= result.new_work.count){// 全部置换
+				// 置换后，已排刀的数量
+				result.pas_count = 0;
+				// 置换后，老置换刀的数量
+				result.old_count = act_count;
+			}else{// 砍不完，置换一部分
+				// 需要置换已排刀的数量
+				result.pas_count = need_count;
+				// 置换后，老置换刀的数量
+				result.old_count = act_count;
+			}
+			return result;
+		};
+
+		// 第一步、使用贪婪算法，优先解决当前作业问题，获取初始结果集
+		var order = function(boss_id, boss_hp) {
+			let current_boss_id = boss_id ? boss_id : RS.current_boss_id;
+			let current_boss_hp = boss_hp ? boss_hp : RS.current_boss_hp;
+			let current_boss_round = RS.current_boss_round;
+			// 初始化结果
+			let result = {
+				"boss_id" : current_boss_id,
+				"count" : 0,
+				"hp" : 0,
+				"round" : current_boss_round
+			};
+
+			if(isFinished){
+				return result;
+			}
+			if(current_count >= total_count){
+				print("[END] 出刀完毕, 当前boss : " + current_boss_id + "，共出刀 : " + current_count);
+				finish();
+				return result;
+			}
+			var current_boss = RS.get_current_boss();
+			if(!current_boss){// 没BOSS
+				print("[BOSS] 空boss信息 : " + current_boss_id);
+				finish();
+				return result;
+			}
+			// 排刀boss
+			current_boss.sayhello();
+
+			let best = null;
+			// 作业集合
+			let _works = RS.get_works_by_boss_id(RS.current_boss_id);
+			if(!_works || _works.length == 0){ // BOSS没作业
+				print("[BOSS] 空work信息 : " + current_boss_id);
+				finish();
+				return result;
+			}
+
+			// 当前boss的三刀理论、实际最优解
+			let mgt_sy_work, mgt_hq_work, mgt_dd_work;
+			let act_sy_work, act_hq_work, act_dd_work;
+			// 当前boss理论、实际最优作业
+			let mgt_work, act_work;
+
+			_works.forEach(function(_work) {
+				// 初始刀
+				if(!mgt_work){
+					best = _work;
+				}
+				switch(_work.group_type) {
+					case group_type.sy :
+						if(_work.count > 0){
+							act_sy_work = get_better_work(act_sy_work, _work);
+							act_work = get_better_work(act_work, _work);
+						}
+						mgt_sy_work = get_better_work(mgt_sy_work, _work);
+						mgt_work = get_better_work(mgt_work, _work);
+						break;
+					case group_type.hq :
+						if(_work.count > 0){
+							act_hq_work = get_better_work(act_hq_work, _work);
+							act_work = get_better_work(act_work, _work);
+						}
+						mgt_hq_work = get_better_work(mgt_hq_work, _work);
+						mgt_work = get_better_work(mgt_work, _work);
+						break;
+					case group_type.dd :
+						if(_work.count > 0){
+							act_dd_work = get_better_work(act_dd_work, _work);
+							act_work = get_better_work(act_work, _work);
+						}
+						mgt_dd_work = get_better_work(mgt_dd_work, _work);
+						mgt_work = get_better_work(mgt_work, _work);
+						break;
+				}
+			});
+
+			// 理论最优作业就是实际最优作业
+			if(act_work && mgt_work && mgt_work.id == act_work.id){
+				if(!best){
+					best = act_work;
+					//result.lock = true;// 最佳刀没必要置换
+				}
+			}else{
+				let todo_map = find_replaceable_result(current_boss_id, {act_sy_work, act_hq_work, act_dd_work});
+				if(!todo_map){
+					todo_map = find_replaceable_result(current_boss_id, {mgt_sy_work, mgt_hq_work, mgt_dd_work});
+				}
+				if(todo_map){// cur_work new_work old_work pas_work i pas_count old_count
+					let pas_work = todo_map.pas_work;
+				 	let old_work = todo_map.old_work;
+				 	let best = todo_map.cur_work;// 置换出的最佳刀
+				 	let old_tail_hp = tail_map[todo_map.pas_work.round][todo_map.pas_work.boss_id];
+				 	print("[REPL SUCC] 作业优化成功! 原作业: " + pas_work.work_id + " 共 " + todo_map.pas_count + " 刀 置换为作业: " + old_work.work_id + " 共 " + old_count + " 刀, 置换系数: " + todo_map.i);
+				 	// 设置尾刀血量
+				 	let tail_hp = old_tail_hp + old_work.hp * todo_map.old_count - pas_work.hp * todo_map.pas_count;
+				 	tail_map[todo_map.pas_work.round][todo_map.old_work.boss_id] = tail_hp;
+
+				 	let old_result = {
+				 		"work_id" : old_work.id,
+				 		"group_type" : old_work.group_type,
+				 		"boss_id" : old_work.boss_id,
+						"count" : todo_map.old_count,
+						"hp" : old_work.hp,
+						"round" : pas_work.round
+				 	}
+				 	console.log(result_list);
+				 	result_list.insert(pas_work, old_result);
+				 	print("[WORK] work : " + old_result.work_id + " 排刀 boss : " + old_result.boss_id + " " + old_result.count + " 刀, 平均伤害 : " + old_result.hp + ", 尾刀血量 : " + tail_hp + ", 剩余刀数 : " + (total_count + old_result.count));
+				 	RS.update_count_by_type(old_result.count, old_result.group_type);
+
+				 	let pas_result = {
+				 		"work_id" : pas_work.work_id,
+				 		"group_type" : pas_work.group_type,
+				 		"boss_id" : pas_work.boss_id,
+						"count" : pas_work.count - todo_map.pas_count,
+						"hp" : pas_work.hp,
+						"round" : pas_work.round
+				 	}
+
+				 	result_list.replace(pas_work, pas_result);
+				 	print("[WORK] 更新 work : " + pas_result.work_id + " 排刀 boss : " + pas_result.boss_id + " " + pas_result.count + " 刀, 平均伤害 : " + pas_result.hp + ", 尾刀血量 : " + tail_hp + ", 剩余刀数 : " + (total_count + todo_map.pas_count));
+				 	RS.update_count_by_type(-todo_map.pas_count, pas_work.group_type);
+				 	console.log(result_list);
+				 }
+			}
+
+			best = best && best.count == 0 ? act_work : best;
+
+			if(!best){
+				print("[MATCH FAIL] boss " + current_boss_id + ", 当前出刀数 : " + current_count);
+				finish();
+				return result;
+			}
+
+			print("[MATCH SUCC] boss " + current_boss_id + " work " + best.id);
+
+			// 更新结果
+			result.work_id = best.id;
+			result.hp = best.hp;
+			result.group_type = best.group_type;
+
+			// 取整，最后考虑尾刀问题
+			let need_count = Math.ceil(current_boss_hp / best.hp);
+
+			if(best.count == 0) { // 没刀
+				print("[BOSS] 空刀信息 : boss " + current_boss_id +
+					" work " + best.id);
+				print("[WORK] work " + best.id + " 没刀, 不能排刀 boss " + current_boss_id + ", 当前出刀数 : " + current_count);
+				finish();
+				return result;
+			}
+			// 实际出刀数
+			let _count = need_count < best.count ? need_count : best.count;
+			// 尾刀血量
+			let tail_hp = RS.current_boss_hp - _count * best.hp;
+
+			current_count += _count;
+			if(current_count >= total_count){ // 处理总刀数
+				_count = _count + total_count - current_count;
+				current_count = 90;
+			}
+			// 记录尾刀
+			if(!tail_map[current_boss_round]){
+		 	tail_map[current_boss_round] = [];
+		 }
+			tail_map[current_boss_round][current_boss_id] = tail_hp;
+
+		 result.count = _count;
+
+			print("[WORK] work : " + best.id + " 排刀 boss : " + current_boss_id + " " + _count + " 刀, 平均伤害 : " + best.hp + ", 尾刀血量 : " + tail_hp + ", 剩余刀数 : " + (total_count - current_count));
+
+			console.log(result);
+
+			result_list.push(result);
+			if(!result_type_list[best.group_type]){
+				result_type_list[best.group_type] = [];
+			}
+			result_type_list[best.group_type].push(result);
+
+			if(need_count < best.count) {// 先判断大小在更新数据
+				RS.update_count_by_type(_count, best.group_type);
+				//预期需要刀数小于实际剩余刀数，刀够了，全砍
+				// 进入下一个boss，更新数据
+				RS.go_next_round();
+				return result;
+			} else{//预期需要刀数大于实际剩余刀数，作业刀不够，先砍一部分，换作业刀砍
+			 RS.update_count_by_type(_count, best.group_type);
+				RS.current_boss_hp = current_boss_hp - _count * best.hp;
+				return order();
+			}
+		};
+
+		var init_count = function(count){
+			this.total_count = count;
+		};
+
+		// 第二步、置换作业，完成所有刀数，完善结果集
+		var replace = function(boss_id){
+			if(current_count >= total_count){// 出完刀
+				return;
+			}
+			boss_id = boss_id ? boss_id : RS.current_boss_id;
+			// 当前boss作业，先看需要什么刀
+			let _works = RS.get_works_by_boss_id(boss_id);
+			let old_best;// 旧王预替刀
+			let old_last;// 旧王已排刀
+			let new_best;// 新王预排刀
+
+			// 获取剩余刀
+			let _useful_works = [];
+			let _all_works = RS.get_works();
+			_all_works.forEach(function(_work) {
+				if(_work.count > 0){
+					if(!_useful_works[_work.boss_id]){
+						_useful_works[_work.boss_id] = [];
+					}
+					if(!_useful_works[_work.boss_id][_work.group_type]){
+						_useful_works[_work.boss_id][_work.group_type] = [];
+					}
+					_useful_works[_work.boss_id][_work.group_type][_work.hp] = _work;
+				}
+			});
+
+			// 当前boss作业，先看需要什么刀
+			// let _works = RS.get_works_by_boss_id(boss_id);
+
+			let might_sy_work;
+			let might_hq_work;
+			let might_dd_work;
+
+			// 找到最佳三刀
+			let _get_might_work = function(new_work, old_work){
+				if(!new_work){
+					new_work = old_work;
+				}else if(new_work.hp < old_work.hp){
+					new_work = _work;
+				}
+				return new_work;
+			}
+
+			_works.forEach(function(_work) {
+				if(old_work.group_type == group_type.sy){
+					might_sy_work = _get_might_work(might_sy_work, _work);
+				}else if(old_work.group_type == group_type.hq){
+					might_hq_work = _get_might_work(might_hq_work, _work );
+				}else if(old_work.group_type == group_type.dd){
+					might_dd_work = _get_might_work(might_dd_work, _work);
+				}
+			});
+
+
+			// 对于当前boss的每一份可能出的作业，都计算权重
+			_works.forEach(function(_work) {
+				if(_work.group_type == group_type.sy){
+					might_sy_work = _work;
+				}
+				if(_work.group_type == group_type.hq){
+					might_sy_work = _work;
+				}
+				if(_work.group_type == group_type.dd){
+					might_sy_work = _work;
+				}
+				// 查询当前作业同类型的作业在哪出刀
+				let _works_info = get_result_by_type(_work.group_type);
+				for(let _work_info of _works_info){
+					// 查看该同类型作业出刀的boss有没有其他作业
+					let __works = RS.get_works_by_boss_id(_work_info.boss_id);
+					for(let __work of __works){
+						let temp = _useful_works[_work.boss_id][_work.group_type];
+						if(temp && temp[_work.hp]){// 找到作业
+
+						}
+					}
+				}
+			});
+
+			_works.forEach(function(_work) {
+				if(!old_best){
+					old_best = _work;
+				}
+				// 查询当前作业同类型的作业在哪出刀
+				let _works_info = get_result_by_type(_work.group_type);
+				for(let _work_info of _works_info){
+					// 查看该同类型作业出刀的boss有没有其他作业
+					let __works = RS.get_works_by_boss_id(_work_info.boss_id);
+					for(let __work of __works){
+						if(__work.id == old_best.id){
+							continue;
+						}
+						if(__work.hp > old_best.hp && _work.count > 0) {// 再选择伤害高的作业
+							print("[MATCH] 废弃排刀 : boss " + old_last.boss_id + " work " + old_last.id + " 替换为 : boss" + old_best.boss_id + " work " + old_best.id);
+							old_best = __work;
+							old_last = _work_info;
+							new_best = _work;
+						}else{
+							print("[RECORD] boss : " + _work.boss_id + ", 所需要作业 : " + _work.work_id + " 与同类型的作业 : " + __work.work_id + "[已经排刀 第 " + __work.round + " 轮 " + __work.boss_id + " 王]" + "" + "");
+						}
+					}
+				}
+			});
+
+			if(old_best && old_last){
+				let need_damage = old_last.count * old_last.hp;
+				let need_count = Math.ceil(need_damage / old_best.count);
+				// 期望出刀数
+				let _act_count = need_count >= old_best.count ? old_best.count : need_count;
+				// 实际出刀数
+				let _count = Math.ceil(_act_count * old_best.hp / old_last.hp);
+				// 实际尾刀前剩余血量
+				let _hp = old_last.hp - old_best.count * old_best.hp + old_last.count * old_last.hp;
+
+				// 替换出多少刀，砍新王多少伤害
+				_new_count = Math.ceil(((_count + 1) * old_last.hp - old_best.hp) / old_best.hp);
+				_new_hp = RS.current_boss_hp - _new_count * new_best.hp;
+
+				if(_hp < 0){// 少砍一刀
+					_count --;
+					_hp += old_last.hp;
+				}
+				current_count = current_count + old_last.count - _count;
+
+				// 更新老作业
+				print("[WORK] work " + old_last.id + " 排刀 boss " + old_last.boss_id + " 共 " + _count + " 刀, 平均伤害 : " + old_last.hp + "尾刀血量 : " + _hp + ", 剩余刀数 : " + (total_count - current_count));
+
+				let old_best_result = {// 替换的作业
+				 "work_id" : old_best.id,
+					"boss_id" : old_best.boss_id,
+					"count" : _count,
+					"last_hp" : _hp,
+					"hp" : 0,
+					"round" : old_last.round
+				};
+
+				RS.update_count_by_type(_count, old_last.group_type);
+
+				result_list[old_last.round][old_last.boss_id][old_last.id] = old_best_result;
+				result_list[old_last.round][old_last.group_type].insert(old_last, old_best_result);
+
+				if(need_count >= old_best.count){// 刀不够，先砍 old_best.count 刀
+					print("[WORK] undo work " + old_best.id + " 排刀 boss " + old_best.boss_id + " 共 " + old_best.count + " 刀, 现在取消 " + _count + "刀, 平均伤害 : " + old_best.hp);
+
+					let _old_count = old_best.count - _count;
+					let old_last_result = {// 要替换的作业
+					 "work_id" : old_best.id,
+						"boss_id" : old_best.boss_id,
+						"count" : _old_count,
+						"last_hp" : 0,
+						"hp" : old_best.hp,
+						"round" : old_best.round
+					};
+
+					RS.update_count_by_type(-_old_count, old_last.group_type);
+
+					result_list[old_last.round][_old_last.boss_id][old_last.id] = old_last_result;
+					result_list[old_last.round][old_last.group_type].replace(old_last, old_last_result);
+				}else{// 刀够了，砍 need_count 刀
+					print("[WORK] undo work " + old_best.id + " 排刀 boss " + old_best.boss_id + " 共 " + old_best.count + " 刀, 现在取消 " + old_best.count + " 刀, 平均伤害 : " + old_best.hp);
+
+					let _old_count = old_last.count - _count;
+
+					delete person[result_list[old_last.round][_old_last.boss_id][_old_last.id]];
+					result_list[old_last.round][old_last.group_type].remove(old_last);
+					RS.update_count_by_type(-_old_count, old_last.group_type);
+				}
+				// 更新新作业
+				print("[WORK] work " + new_best.id + " 排刀 boss " + new_best.boss_id + " " + _count + " 刀, 平均伤害 : " + new_best.hp + "尾刀血量 : " + _boss_hp + ", 剩余刀数 : " + (total_count - current_count));
+
+				let new_best_result = {// 新的作业
+					"work_id" : new_best.id,
+					"boss_id" : new_best.boss_id,
+					"count" : _new_count,
+					"last_hp" : _new_hp,
+					"hp" : new_best.hp,
+					"round" : RS.current_boss_round
+				};
+
+				result_list[RS.current_boss_round][new_best.boss_id][new_best.id] = new_best_result;
+				result_list[new_best.round][new_best.group_type].push(new_best_result);
+				RS.update_count_by_type(_new_count, new_best.group_type);
+			}
+
+		}
+
+		return {
+			get_result : get_result,
+			get_current_count : get_current_count,
+			// 第一步、使用贪婪算法，优先解决当前作业问题，获取初始结果集
+			order : order,
+			// 第二步、置换作业，完成所有刀数，完善结果集
+			replace : replace,
+			isFinished : isFinished,
+			init_count : init_count,
+			get_result_by_type : get_result_by_type
+
+		};
+	}();
+
+	// 初始化数据
+	var RS = rediveSchedule;
+	RS.add_boss("飞龙", "A1", 600e4);
+	RS.add_boss("狮鹫", "A2", 800e4);
+	RS.add_boss("黑猪", "A3", 1000e4);
+	RS.add_boss("独角兽", "A4", 1200e4);
+	RS.add_boss("螃蟹", "A5", 1000e4);
+	RS.add_boss("狂暴螃蟹", "A6", 1000e4);
+	RS.add_boss("飞龙", "B1", 600e4);
+	RS.add_boss("狮鹫", "B2", 800e4);
+	RS.add_boss("黑猪", "B3", 1000e4);
+	RS.add_boss("独角兽", "B4", 1200e4);
+	RS.add_boss("螃蟹", "B5", 100e4);
+	RS.add_boss("狂暴螃蟹", "B6", 1000e4);
+
+	var boss_id = "A1";
+	var boss_hp = 600e4;
+	var total_count = 90;
+	RS.add_works(works_data);
+	RS.init(boss_id, boss_hp);
+
+	// 简单排刀算法，先使用贪心算法解决当前问题，最后将剩余刀通过伤害比例调优。
+	// doWork.init_count(total_count);
+
+	// console.log("[START] 开始排刀，当前boss :" + RS.current_boss_id + "，剩余血量:" + RS.current_boss_hp);
+	// console.log("[STEP 1] 贪婪算法，获取初始结果集！");
+
+	// var work_result = doWork.order(boss_id, boss_hp);
+	// let max_loop_times = 20; // 防止死循环
+	// while (!doWork.isFinished && max_loop_times > 0) {
+	// 	max_loop_times--;
+	// 	work_result = doWork.order();
+	// }
+
+	// console.log("[STEP 2] 权重置换，完善结果集！");
+	// //doWork.replace();
+
+	// console.log("[STEP 3] 动态规划，交叉验证结果集！");
+	// console.log(doWork.get_result());
+	// console.log(RS.get_works());
+	// console.log("[END] 结束排刀，当前boss :" + RS.current_boss_id + "，剩余血量:" + RS.current_boss_hp);
+</script>

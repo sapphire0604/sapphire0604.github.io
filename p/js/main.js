@@ -85,7 +85,7 @@ var main = function(){
 		if(layui && work_text_map){
 			if(typeof work_text_map[work_id] == "object"){//数组格式的数据以表格显示
 				text += "<table id='works_table' class='layui-table'>";
-				text += "<thead><tr><th width='40'>时间</th><th>人物</th><th>目押动作</th>" +
+				text += "<thead><tr><th width='40'>时间</th><th>人物</th><th width='270'>目押动作</th>" +
 					"<th>行动</th><th>伤害</th><th>破甲轴</th></tr></thead><tbody>";
 				work_text_map[work_id].forEach(function(item) {
 					text += "<tr><td>" + trim(item.time) + "</td><td>" + trim(item.name) + "</td><td>" +
