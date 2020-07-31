@@ -153,10 +153,10 @@ var work = function(){
 				boss.name + "</div></td><td><div>" + work.id + "</div></td><td><div>" + $.trim(work.cfg) + "</div></td><td><div>"+
 				work.hp / 1e4 + " W<div></td><td><div>" + work.count + "</div></td><td><div>" + data.get_group_name(work.group_type) +
 				"</div></td><td><div>" + $.trim(work.creater) + "</div></td><td><div>" + $.trim(work.checker) +
-				"</div></td><td><button type='button' onclick='main.detall_work_text(this);' class='layui-btn'>查看轴</button><button id='" +
-				$.trim(work.src) + "'type='button' onclick='main.src(this);' class='layui-btn layui-btn-warm'>来源</button></td>";
-				//"<button type='button' onclick='main.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
-				//"<button type='button' onclick='main.remove(this);' class='layui-btn layui-btn-danger'>删除</button></td>";
+				"</div></td><td><button type='button' onclick='work.detall_work_text(this);' class='layui-btn'>查看轴</button><button id='" +
+				$.trim(work.src) + "'type='button' onclick='work.src(this);' class='layui-btn layui-btn-warm'>来源</button></td>";
+				//"<button type='button' onclick='work.detall_member(this);' class='layui-btn layui-btn-normal'>查看成员</button>" +
+				//"<button type='button' onclick='work.remove(this);' class='layui-btn layui-btn-danger'>删除</button></td>";
 			let is_show = true;
 			is_show = round == 1 ? is_round_1 : !is_round_1;
 			if(title != ""){
