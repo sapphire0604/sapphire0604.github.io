@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta charset="UTF-8">
+ <title>公主连接:复仇十字军工会战轴管理</title>
+ <link rel="stylesheet"href="../layui/css/layui.css">
+ </head>
+ <body>
+	<ul class="layui-nav"lay-filter="">
+		<li class="layui-nav-item"><a href="work.html">备用轴表</a></li>
+		<li class="layui-nav-item layui-this"><a href="task.html">摸轴任务表</a></li>
+		<li class="layui-nav-item"><a href="../dist/index.html">排刀表（兰佩鲁奇）</a></li>
+	</ul>
+ 	<h1>摸轴任务分配表</h1>
+	<div class="layui-tab">
+		<ul id="task_ul" class="layui-tab-title">
+			<li id="tab-1">第一天任务</li>
+			<li id="tab-2">第二天任务</li>
+			<li id="tab-3">第三天任务</li>
+			<li id="tab-4">第四天任务</li>
+			<li id="tab-5">第五天任务</li>
+			<li id="tab-6">第六天任务</li>
+		</ul>
+		<div id="task_tab" class="layui-tab-content">
+		</div>
+	</div>
+</body>
+</html>
+<script src="https://cdn.staticfile.org/jquery/2.0.0/jquery.min.js"></script>
+<script src="../layui/layui.js"></script>
+<script src="../js/data.js"></script>
+<script src="../js/task.js"></script>
+<script type="text/javascript">
+
+	$(function(){
+		task.add_tab(6);
+	//task.add_task(day_number, work_id, priority, tips, count, act_hp)
+	task.add_task(1, "a0", 1, "病娇4、美美5、妈4、猫拳4	", 6, 115e4);
+	task.add_task(1, "a3", 1, "增量", "无", "98w");
+	task.add_task(1, "b2", 1, "", "无", "120w");
+	task.add_task(1, "b3", "增量", "", "无", 111e4);
+	task.add_task(1, "b4", "增量", "", "无", 118e4);
+	task.add_task(1, "c0", "增量", "", "无", 121e4);
+	task.add_task(1, "c1", 2, "无", 2, 112e4);
+	task.add_task(1, "c2", 1, "无", 7);
+	task.add_task(1, "c3", "增量", "", "无");
+	task.add_task(1, "d1", "增量", "", 9, "111w");
+	task.add_task(1, "e3", 1, "只能租狗5", 24, 90e4);
+	task.add_task(1, "f6", "增量", "", "无", 90e4);
+	task.add_task(1, "A1", 3, "", 6, 106e4);
+	task.add_task(1, "B0", 3, "", 6, 123e4);
+	task.add_task(1, "B1", 3, "", 6, 122e4);
+	task.add_task(1, "C0", 3, "", 6, 93e4);
+	task.add_task(1, "C5", 3, "", 6, 94e4);
+	task.add_task(1, "D4", 3, "只能用4星狼", 6, 98e4);
+	task.add_task(2, "E3", 1, "猫剑5", 18, 56e4);
+	task.add_task(2, "F2", 2, "", 13, "74w");
+	task.add_task(2, "A0", 2, "轴优化", 13, "107w");
+	task.add_task(2, "B0", 2, "轴优化", 7, "124w");
+	task.add_task(2, "B1", 2, "轴优化", 7, "122w");
+	task.add_task(2, "C0", 2, "轴优化", 6, 93e4);
+	task.add_task(2, "C5", 2, "轴优化", 6, 94e4);
+	task.add_task(2, "D0", 1, "轴优化", 6, 124e4);
+	task.add_task(3, "A2", "增量", "搬运头头喵", "", 100e4);
+	task.add_task(3, "A3", "增量", "搬运席巴鸽", 6, 107e4);
+	task.add_task(3, "B2", "增量", "搬运席巴鸽", 7, 121e4);
+	task.add_task(3, "D1", "增量", "搬运次氏体", "", 121e4);
+	task.add_task(3, "D5", "增量", "搬运爱智敏真是太好了", "", 108e4);
+	task.add_task(3, "E2", 1, "黄骑双弓轴", 3, 56e4);
+	task.add_task(3, "E4", "增量", "猫剑轴", "", 56e4);
+	task.add_task(3, "F4", 1, "病娇", "", 61e4);
+	task.add_task(4, "C2", 1, "布丁妈刀", 3, 81e4);
+	task.add_task(4, "D6", 1, "病娇", 6, 108e4);
+	task.add_task(4, "E5", 1, "剑圣兔剑轴", 30, 57e4);
+
+	task.progress_tab(6);
+		task.show(4);
+	layui.use('element',function(){
+			var element = layui.element
+		});
+	});
+</script>
