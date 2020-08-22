@@ -112,7 +112,7 @@ bkg.style.background = left_url + "no-repeat top center";
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">全部
     			<!--文章统计-->
 				
-    				[ 18 ]
+    				[ 19 ]
     			
     			<!--文章统计-->
     			</a>
@@ -216,6 +216,103 @@ bkg.style.background = left_url + "no-repeat top center";
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-reflection" class="article article-type-post
+   article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/reflection/">反射 reflection</a>
+    </h1>
+  
+
+      
+    </header>
+    
+
+    <div class="article-entry" itemprop="articleBody">
+      
+      <p><img src="//galaxias-sapphi-ren.github.io/2018/03/reflection/cover.jpeg" alt></p>
+<blockquote>
+<p>Reflection enables Java code to discover information about the fields, methods and constructors of loaded classes, and to use reflected fields, methods, and constructors to operate on their underlying counterparts, within security restrictions.<br>The API accommodates applications that need access to either the public members of a target object (based on its runtime class) or the members declared by a given class. It also allows programs to suppress default reflective access control.</p>
+<p>—— <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/reflection/index.html" target="_blank" rel="noopener">oracle</a></p>
+</blockquote>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><hr>
+<blockquote>
+<p>反射是一个抽象概念，在 Java中由 <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/reflect/package-summary.html" target="_blank" rel="noopener"><code>java.lang.reflect</code></a>包和<a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html" target="_blank" rel="noopener"><code>java.lang.Class</code></a>类支持。</p>
+<p>Java 反射机制在程序运行时，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性。这种 <strong>动态的获取信息</strong> 以及 <strong>动态调用对象的方法</strong> 的功能称为 java 的反射机制。</p>
+<p>这里动态指Java 程序可以加载一个运行时才得知名称的 <code>.class</code> 文件，然后获悉其完整构造，并生成对象实体、或对 fields（变量）设值、或调用 methods（方法）。运行时确定类型，绑定对象。</p>
+<p>应用在动态代理、RPC框架、ORM框架、依赖注入、克隆工具类（BeanUtils、ObjectMapper等）、注解式编程（权限认证、日志、Restful）。增加代码的灵活性，获取类的变量，调用私有方法。</p>
+</blockquote>
+      
+      
+      
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">reflection</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Blog//" class="article-tag-list-link color5">Blog</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+      <p class="article-more-link">
+        <a class="article-more-a" href="/2018/03/reflection/">Know More >></a>
+      </p>
+      
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-jmh" class="article article-type-post
    article-index" itemscope itemprop="blogPost">
@@ -609,97 +706,6 @@ bkg.style.background = left_url + "no-repeat top center";
 
 
   
-    <article id="post-recsysGuide" class="article article-type-post
-   article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/recsysGuide/">Machine Learning | 推荐系统</a>
-    </h1>
-  
-
-      
-    </header>
-    
-
-    <div class="article-entry" itemprop="articleBody">
-      
-      <p> <img src="//galaxias-sapphi-ren.github.io/2017/03/recsysGuide/cover.jpg" alt></p>
-<p>2017年03月08日 - rensifei @Copyright Smart Home &amp; Roobo</p>
-<blockquote>
-<p><code>推荐系统</code>是一种信息过滤系统，用于预测用户对物品的“评分”或“偏好”。</p>
-<p><code>推荐系统</code>是一种有效代替 <strong>搜索算法</strong> 的方式，用于解决在 <strong>信息过载</strong> 环境下，根据用户的特征，为用户提供有用信息。</p>
-</blockquote>
-      
-      
-      
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Blog//" class="article-tag-list-link color5">Blog</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Blog/Artificial-Intelligence//" class="article-tag-list-link color4">Artificial Intelligence</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-      <p class="article-more-link">
-        <a class="article-more-a" href="/2017/03/recsysGuide/">Know More >></a>
-      </p>
-      
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -948,6 +954,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcr</a>
               </li>
             
             <div class="clearfix"></div>
