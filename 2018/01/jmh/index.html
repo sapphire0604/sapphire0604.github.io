@@ -5,24 +5,24 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="https://galaxias-sapphi-ren.github.io">
+  <link rel="dns-prefetch" href="rensifei.site">
   <title>jmh - 微秒级方法层微基准测试 | Ren&#39;s Time Overflow Skyline ^_^</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM. —— JMH If you cannot measure it, you cannot impro">
-<meta name="keywords" content="java,Microbenchmark,jmh">
+<meta name="keywords" content="Microbenchmark,jmh,java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jmh - 微秒级方法层微基准测试">
-<meta property="og:url" content="https://galaxias-sapphi-ren.github.io/2018/01/jmh/index.html">
+<meta property="og:url" content="rensifei.site/2018/01/jmh/index.html">
 <meta property="og:site_name" content="Ren&#39;s Time Overflow Skyline ^_^">
 <meta property="og:description" content="JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM. —— JMH If you cannot measure it, you cannot impro">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2018/01/jmh/2_warmup.png">
+<meta property="og:image" content="/2018/01/jmh/cover.jpeg">
+<meta property="og:image" content="/2018/01/jmh/2_warmup.png">
 <meta property="og:updated_time" content="2019-12-04T22:02:26.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jmh - 微秒级方法层微基准测试">
 <meta name="twitter:description" content="JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM. —— JMH If you cannot measure it, you cannot impro">
-<meta name="twitter:image" content="https://galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg">
+<meta name="twitter:image" content="/2018/01/jmh/cover.jpeg">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -273,7 +273,7 @@ bkg.style.background = left_url + "no-repeat top center";
 
     <div class="article-entry" itemprop="articleBody">
       
-      <p><img src="//galaxias-sapphi-ren.github.io/2018/01/jmh/cover.jpeg" alt></p>
+      <p><img src="/2018/01/jmh/cover.jpeg" alt></p>
 <blockquote>
 <p>JMH is a Java harness for building, running, and analysing nano/micro/milli/macro benchmarks written in Java and other languages targetting the JVM.</p>
 <p>—— <a href="http://openjdk.java.net/projects/code-tools/jmh/" target="_blank" rel="noopener">JMH</a></p>
@@ -359,7 +359,7 @@ FirstBenchmark.sleepAWhile     400  avgt    5  402.859 ± 3.396  ms/op
 FirstBenchmark.sleepAWhile     500  avgt    5  502.924 ± 2.269  ms/op
 FirstBenchmark.sleepAWhile     600  avgt    5  603.117 ± 2.877  ms/op</code></pre>
 <h1 id="2-trap"><a href="#2-trap" class="headerlink" title="2 trap"></a>2 <a href="https://www.cnkirito.moe/java-jmh/" target="_blank" rel="noopener">trap</a></h1><p>测评程序随着迭代次数增多执行耗时变化的曲线，测评程序 <strong>预热</strong> warmup 若干次后，性能最终趋于稳定。（JVM 初始化时的一些准备工作以及 JIT 优化是主要原因，但不是唯一原因）</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2018/01/jmh/2_warmup.png" alt></p>
+<p><img src="/2018/01/jmh/2_warmup.png" alt></p>
 <h1 id="3-examples"><a href="#3-examples" class="headerlink" title="3 examples"></a>3 examples</h1><h2 id="3-1-比较-joda-DateTime-与-Calendar-性能"><a href="#3-1-比较-joda-DateTime-与-Calendar-性能" class="headerlink" title="3.1 比较 joda.DateTime 与 Calendar 性能"></a>3.1 比较 joda.DateTime 与 Calendar 性能</h2><pre><code class="bash">Benchmark                  Mode  Cnt    Score    Error  Units
 DateBenchMark.runCalendar  avgt    3  196.022 ± 65.980  ns/op
 DateBenchMark.runJoda      avgt    3   52.651 ± 62.046  ns/op
@@ -428,7 +428,7 @@ public void jugTime(Blackhole bh) {
         
         <br>
         <strong>本文链接：</strong>
-        https://galaxias-sapphi-ren.github.io/2018/01/jmh/
+        https:rensifei.site/2018/01/jmh/
         <br>
         <strong>版权声明：</strong>
         转载请注明出处！
@@ -471,15 +471,15 @@ public void jugTime(Blackhole bh) {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Microbenchmark</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">jmh</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -545,7 +545,7 @@ public void jugTime(Blackhole bh) {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://galaxias-sapphi-ren.github.io/2018/01/jmh/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:rensifei.site/2018/01/jmh/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -795,6 +795,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">scrum</a>
               </li>
              
@@ -804,10 +808,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">agile development</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -827,7 +827,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
+                <a href="javascript:void(0)" class="js-tag color4">nvm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -843,14 +851,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
@@ -863,11 +863,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -879,6 +879,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IDE</a>
               </li>
              
@@ -887,23 +895,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Neural Networks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">nvm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcr</a>
               </li>
             
             <div class="clearfix"></div>

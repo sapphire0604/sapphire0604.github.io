@@ -5,35 +5,35 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="https://galaxias-sapphi-ren.github.io">
+  <link rel="dns-prefetch" href="rensifei.site">
   <title>javac源码笔记与简单的编译原理 | Ren&#39;s Time Overflow Skyline ^_^</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8 - javac  前言  java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的技术细节，深入理解 javac、编译等相关概念。">
 <meta name="keywords" content="Javac,ToolKits">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javac源码笔记与简单的编译原理">
-<meta property="og:url" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/index.html">
+<meta property="og:url" content="rensifei.site/2017/03/javac/index.html">
 <meta property="og:site_name" content="Ren&#39;s Time Overflow Skyline ^_^">
 <meta property="og:description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8 - javac  前言  java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的技术细节，深入理解 javac、编译等相关概念。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/cover.jpg">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/1_%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/1_%E5%90%8E%E7%AB%AF%E7%BC%96%E8%AF%91%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_javac%E9%98%B6%E6%AE%B5.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_javac%E5%8E%9F%E7%90%86.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_token.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_token%E8%AF%BB%E5%8F%96%E6%B5%81%E7%A8%8B.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_tree.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_symbol.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/2_%E6%B3%A8%E8%A7%A3.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/3_api.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/4_debug.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/4_idea.png">
+<meta property="og:image" content="/2017/03/javac/cover.jpg">
+<meta property="og:image" content="/2017/03/javac/1_%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="/2017/03/javac/1_%E5%90%8E%E7%AB%AF%E7%BC%96%E8%AF%91%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="/2017/03/javac/2_javac%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="/2017/03/javac/2_javac%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="/2017/03/javac/2_token.png">
+<meta property="og:image" content="/2017/03/javac/2_token%E8%AF%BB%E5%8F%96%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="/2017/03/javac/2_tree.png">
+<meta property="og:image" content="/2017/03/javac/2_symbol.png">
+<meta property="og:image" content="/2017/03/javac/2_%E6%B3%A8%E8%A7%A3.png">
+<meta property="og:image" content="/2017/03/javac/3_api.png">
+<meta property="og:image" content="/2017/03/javac/4_debug.png">
+<meta property="og:image" content="/2017/03/javac/4_idea.png">
 <meta property="og:updated_time" content="2019-12-25T09:42:08.257Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javac源码笔记与简单的编译原理">
 <meta name="twitter:description" content="Reads Java class and interface definitions and compiles them into bytecode and class files. —— java8 - javac  前言  java 程序的编译工作通常使用 IDE 或 Maven，Gradle 等工具完成，开发过程容易忽视java编译期隐藏的技术细节，深入理解 javac、编译等相关概念。">
-<meta name="twitter:image" content="https://galaxias-sapphi-ren.github.io/2017/03/javac/cover.jpg">
+<meta name="twitter:image" content="/2017/03/javac/cover.jpg">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -284,7 +284,7 @@ bkg.style.background = left_url + "no-repeat top center";
 
     <div class="article-entry" itemprop="articleBody">
       
-      <p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/cover.jpg" alt></p>
+      <p><img src="/2017/03/javac/cover.jpg" alt></p>
 <blockquote>
 <p>Reads Java class and interface definitions and compiles them into bytecode and class files.</p>
 <p>—— <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/javac.html" target="_blank" rel="noopener">java8 - javac</a></p>
@@ -369,7 +369,7 @@ rm -rf $PROJECT_DIR/target/options.txt $PROJECT_DIR/target/files.txt</code></pre
 </tr>
 </tbody></table>
 <p>编译原理中，根据编译任务不同：</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/1_%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" alt></p>
+<p><img src="/2017/03/javac/1_%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" alt></p>
 <p>字节码不是机器能识别的语言，还需要 JVM 再将字节码转换成机器码。</p>
 <table>
 <thead>
@@ -421,7 +421,7 @@ rm -rf $PROJECT_DIR/target/options.txt $PROJECT_DIR/target/files.txt</code></pre
 <li><strong>编译优化</strong>，如<a href="https://blog.csdn.net/baichoufei90/article/details/85180478" target="_blank" rel="noopener">逃逸分析</a>、 <a href="https://blog.csdn.net/baichoufei90/article/details/85004307#lockelision" target="_blank" rel="noopener">锁消除</a>、 锁膨胀、 方法内联、 空值检查消除、 类型检测消除、 公共子表达式消除。</li>
 </ol>
 <p>JVM 实际采用解释器和JIT混用模式 Java HotSpot(TM) 64-Bit Server VM (build 13+33, mixed mode, sharing)</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/1_%E5%90%8E%E7%AB%AF%E7%BC%96%E8%AF%91%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F.png" alt></p>
+<p><img src="/2017/03/javac/1_%E5%90%8E%E7%AB%AF%E7%BC%96%E8%AF%91%E6%B7%B7%E5%90%88%E6%A8%A1%E5%BC%8F.png" alt></p>
 <h1 id="2-javac-编译过程源码分析"><a href="#2-javac-编译过程源码分析" class="headerlink" title="2 javac 编译过程源码分析"></a>2 javac 编译过程源码分析</h1><p>从 Sun Javac 的源码来看，编译main方法位于<code>com.sun.tools.javac.Main</code></p>
 <pre><code class="java">// my code
 public static void main(String[] args) {
@@ -465,9 +465,9 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
       // 3.语义分析及字节码class文件生成
         delegateCompiler.compile2();</code></pre>
 <p>编译过程大致可以分为3个过程</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_javac%E9%98%B6%E6%AE%B5.png" alt></p>
+<p><img src="/2017/03/javac/2_javac%E9%98%B6%E6%AE%B5.png" alt></p>
 <p>分别对应Token流，语法树，注解语法树，字节码输出。</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_javac%E5%8E%9F%E7%90%86.png" alt></p>
+<p><img src="/2017/03/javac/2_javac%E5%8E%9F%E7%90%86.png" alt></p>
 <h2 id="2-1-Parse-and-Enter"><a href="#2-1-Parse-and-Enter" class="headerlink" title="2.1 Parse and Enter"></a>2.1 Parse and Enter</h2><p>两个重要的接口与实现</p>
 <table>
 <thead>
@@ -520,7 +520,7 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 <td>关键字、变量名、字面量、运算符</td>
 </tr>
 </tbody></table>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_token.png" alt></p>
+<p><img src="/2017/03/javac/2_token.png" alt></p>
 <p>字符char是程序编写过程中的的最小元素，标记Token是编译过程的最小元素。</p>
 <table>
 <thead>
@@ -562,7 +562,7 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 <li>关键代码nextToken的主要逻辑：处理特殊字符、标识符、16进制、数字、分隔符、斜杠开头、反斜杠开头、双引号开头、默认处理。</li>
 </ol>
 <p>例：package的Token读取流程</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_token%E8%AF%BB%E5%8F%96%E6%B5%81%E7%A8%8B.png" alt></p>
+<p><img src="/2017/03/javac/2_token%E8%AF%BB%E5%8F%96%E6%B5%81%E7%A8%8B.png" alt></p>
 <h3 id="2-1-2-语法分析"><a href="#2-1-2-语法分析" class="headerlink" title="2.1.2 语法分析"></a>2.1.2 语法分析</h3><table>
 <thead>
 <tr>
@@ -578,7 +578,7 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 </tr>
 </tbody></table>
 <p>将Token流组装成更结构化的<strong>语法树</strong>，描述程序代码语法结构，检查是否符合Java语言规范。每个语法树上的节点都是<code>com.sun.tools.javac.tree.JCTree</code>的一个实例，继承自<code>com.sun.source.tree.Tree</code>接口，代表着程序代码中的一个语法结构（Construct），如包、类型、修饰符、运算符、接口、返回值甚至代码注释。</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_tree.png" alt></p>
+<p><img src="/2017/03/javac/2_tree.png" alt></p>
 <table>
 <thead>
 <tr>
@@ -622,7 +622,7 @@ public void compile(List&lt;JavaFileObject&gt; sourceFileObjects,
 <li>将所有类中出现的符号输入到自身的符号表，并将类符号、类的参数类型符号(泛型参数类型)、超类符号，继承类型符号和继承的接口类型符号都存储到一个未处理列表中。</li>
 <li>将这个未处理列表中的所有类都解析到各自的符号列表中。</li>
 </ol>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_symbol.png" alt></p>
+<p><img src="/2017/03/javac/2_symbol.png" alt></p>
 <table>
 <thead>
 <tr>
@@ -840,7 +840,7 @@ public class testCHECK {
 <h4 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h4><p>将项目打成jar包使用</p>
 <pre><code class="bash">javac -cp /.../javac/target/javac.jar testCHECK.java
 </code></pre>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/2_%E6%B3%A8%E8%A7%A3.png" alt></p>
+<p><img src="/2017/03/javac/2_%E6%B3%A8%E8%A7%A3.png" alt></p>
 <p>🗣 <strong>Tips</strong> :</p>
 <ol>
 <li><a href="https://xuqiang.me/JSR269%E6%8F%92%E4%BB%B6%E5%8C%96%E6%B3%A8%E8%A7%A3API.html" target="_blank" rel="noopener">模拟Lombok实现get set方法</a>，依赖 <code>com.sun.tools.javac.*</code> 包</li>
@@ -980,7 +980,7 @@ public class testCHECK {
 }</code></pre>
 <h1 id="3-javac-API"><a href="#3-javac-API" class="headerlink" title="3 javac API"></a>3 javac API</h1><hr>
 <p>JDK 6 增加了规范 <a href="https://jcp.org/en/jsr/detail?id=199" target="_blank" rel="noopener">JSR-199</a> 和 <a href="https://jcp.org/en/jsr/detail?id=269" target="_blank" rel="noopener">JSR-296</a>，提供相关的 API</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/3_api.png" alt></p>
+<p><img src="/2017/03/javac/3_api.png" alt></p>
 <p>绿色标注的包是官方 API（Official API）， JSR-199 和 JSR-296.</p>
 <p>黄色标注的包为（Supported API）.</p>
 <p>紫色标注的包代码全部在 <code>com.sun.tools.javac.*</code> 包下，为内部 API（Internal API）和编译器的实现类。</p>
@@ -1025,10 +1025,10 @@ public class testCHECK {
 </tr>
 </tbody></table>
 <h1 id="4-javac-调试"><a href="#4-javac-调试" class="headerlink" title="4 javac 调试"></a>4 javac 调试</h1><h2 id="4-1-修改-idea-vmoptions"><a href="#4-1-修改-idea-vmoptions" class="headerlink" title="4.1 修改 idea.vmoptions"></a>4.1 修改 idea.vmoptions</h2><pre><code class="properties">-Dcompiler.process.debug.port=12346</code></pre>
-<h2 id="4-2-配置远程debug"><a href="#4-2-配置远程debug" class="headerlink" title="4.2 配置远程debug"></a>4.2 配置远程debug</h2><p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/4_debug.png" alt></p>
+<h2 id="4-2-配置远程debug"><a href="#4-2-配置远程debug" class="headerlink" title="4.2 配置远程debug"></a>4.2 配置远程debug</h2><p><img src="/2017/03/javac/4_debug.png" alt></p>
 <h2 id="4-3-启用idea编译调试"><a href="#4-3-启用idea编译调试" class="headerlink" title="4.3 启用idea编译调试"></a>4.3 启用idea编译调试</h2><p>IDEA默认会禁用编译调试，这里需要开启一个开关，以此让IDEA在编译之前等待调试程序的链接。并且，<strong>这个配置在IDEA重启后会失效</strong>。</p>
 <p>双击<code>Shift</code>，打开平常搜索类的界面，输入<code>debug build process</code></p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/03/javac/4_idea.png" alt></p>
+<p><img src="/2017/03/javac/4_idea.png" alt></p>
 
       
       
@@ -1041,7 +1041,7 @@ public class testCHECK {
         
         <br>
         <strong>本文链接：</strong>
-        https://galaxias-sapphi-ren.github.io/2017/03/javac/
+        https:rensifei.site/2017/03/javac/
         <br>
         <strong>版权声明：</strong>
         转载请注明出处！
@@ -1154,7 +1154,7 @@ public class testCHECK {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://galaxias-sapphi-ren.github.io/2017/03/javac/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:rensifei.site/2017/03/javac/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -1404,6 +1404,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">scrum</a>
               </li>
              
@@ -1413,10 +1417,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">agile development</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1436,7 +1436,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
+                <a href="javascript:void(0)" class="js-tag color4">nvm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1452,14 +1460,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
@@ -1472,11 +1472,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1488,6 +1488,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IDE</a>
               </li>
              
@@ -1496,23 +1504,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Neural Networks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">nvm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcr</a>
               </li>
             
             <div class="clearfix"></div>

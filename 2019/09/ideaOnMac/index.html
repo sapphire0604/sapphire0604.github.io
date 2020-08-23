@@ -5,39 +5,39 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="https://galaxias-sapphi-ren.github.io">
+  <link rel="dns-prefetch" href="rensifei.site">
   <title>Mac 上使用 IntelliJ IDEA | Ren&#39;s Time Overflow Skyline ^_^</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="the most intelligent java IDE IntelliJ Idea  前言  IntelliJ IDEA 是如今最好用的 java IDE 工具。这里比较系统的总结了 Idea IDE 的主要优势，模块化概念的转变，以及如何安装、新建工程、操作。便于学习 Java 项目。 介绍了IDE的组成，如个性化推荐配置、参数调优、修改热键、调试流程、常用视图（使用习惯）、常用命令、使">
 <meta name="keywords" content="Java,IDE,Mac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mac 上使用 IntelliJ IDEA">
-<meta property="og:url" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/index.html">
+<meta property="og:url" content="rensifei.site/2019/09/ideaOnMac/index.html">
 <meta property="og:site_name" content="Ren&#39;s Time Overflow Skyline ^_^">
 <meta property="og:description" content="the most intelligent java IDE IntelliJ Idea  前言  IntelliJ IDEA 是如今最好用的 java IDE 工具。这里比较系统的总结了 Idea IDE 的主要优势，模块化概念的转变，以及如何安装、新建工程、操作。便于学习 Java 项目。 介绍了IDE的组成，如个性化推荐配置、参数调优、修改热键、调试流程、常用视图（使用习惯）、常用命令、使">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/cover.jpg">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/3_install_structure.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_1_first_idea_project.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_2_settings.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_2_searcheverywhere.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_2_hotkeysetting.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/5_1_debugthread.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_1_toolwindows.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_2_edit.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_2_find.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_3_navigate.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_4_surroundwith.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_5_refactor.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/7_1_tomcatconf.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/8_1_databaseconf.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/9_1_githubconf.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/10_1_installplugin.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/cover.jpg">
+<meta property="og:image" content="/2019/09/ideaOnMac/3_install_structure.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/4_1_first_idea_project.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/4_2_settings.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/4_2_searcheverywhere.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/4_2_hotkeysetting.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/5_1_debugthread.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/6_1_toolwindows.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/6_2_edit.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/6_2_find.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/6_3_navigate.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/6_4_surroundwith.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/6_5_refactor.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/7_1_tomcatconf.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/8_1_databaseconf.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/9_1_githubconf.png">
+<meta property="og:image" content="/2019/09/ideaOnMac/10_1_installplugin.png">
 <meta property="og:updated_time" content="2019-12-04T22:52:25.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mac 上使用 IntelliJ IDEA">
 <meta name="twitter:description" content="the most intelligent java IDE IntelliJ Idea  前言  IntelliJ IDEA 是如今最好用的 java IDE 工具。这里比较系统的总结了 Idea IDE 的主要优势，模块化概念的转变，以及如何安装、新建工程、操作。便于学习 Java 项目。 介绍了IDE的组成，如个性化推荐配置、参数调优、修改热键、调试流程、常用视图（使用习惯）、常用命令、使">
-<meta name="twitter:image" content="https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/cover.jpg">
+<meta name="twitter:image" content="/2019/09/ideaOnMac/cover.jpg">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -288,7 +288,7 @@ bkg.style.background = left_url + "no-repeat top center";
 
     <div class="article-entry" itemprop="articleBody">
       
-      <p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/cover.jpg" alt></p>
+      <p><img src="/2019/09/ideaOnMac/cover.jpg" alt></p>
 <blockquote>
 <p>the most intelligent java IDE</p>
 <p><a href="https://www.jetbrains.com" target="_blank" rel="noopener">IntelliJ Idea</a></p>
@@ -501,7 +501,7 @@ bkg.style.background = left_url + "no-repeat top center";
 <li><p>末行添加jar文件的绝对路径</p>
 <pre><code>-javaagent:/Applications/IntelliJ IDEA.app/Contents/bin/JetbrainsCrack.jar</code></pre></li>
 </ol>
-<p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/3_install_structure.png" alt></p>
+<p><img src="/2019/09/ideaOnMac/3_install_structure.png" alt></p>
 <table>
 <thead>
 <tr>
@@ -551,7 +551,7 @@ bkg.style.background = left_url + "no-repeat top center";
 &quot;⌘ N&quot; -&gt; &quot;Module&quot; -&gt; &quot;SDK...&quot; #创建Module
 &quot;⌘ ;&quot; #查看Module依赖关系，删除目录前先移除Module
 &quot;⌘ N&quot; -&gt; &quot;Java Class&quot; -&gt; &quot;per.rsf.HelloIdea.java&quot; #创建.java
-&quot;psvm&quot; -&gt; &quot;ctr + sft + R&quot; #运行</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_1_first_idea_project.png" alt></p>
+&quot;psvm&quot; -&gt; &quot;ctr + sft + R&quot; #运行</code></pre><p><img src="/2019/09/ideaOnMac/4_1_first_idea_project.png" alt></p>
 <p>👉<strong>项目配置说明</strong></p>
 <ul>
 <li>.iml 模块module配置文件</li>
@@ -560,7 +560,7 @@ bkg.style.background = left_url + "no-repeat top center";
 <p>IDEA是没有 ⌘ S （保存）的 IDE，每次修改完代码直接运行或调试，无需担心保存或者丢失代码问题。对于代码的错误检查是实时的，无需担心代码编译问题。</p>
 <p>如果需要整体编译项目，则需要手动build一下。</p>
 <h2 id="4-2-commons-Preferences-Configure"><a href="#4-2-commons-Preferences-Configure" class="headerlink" title="4.2 commons Preferences Configure"></a>4.2 commons Preferences Configure</h2><pre><code>&quot;⌘ ,&quot; #settings 设置 = 偏好设置，独立于项目设置
-#或点击Toorbar小扳手图标</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_2_settings.png" alt></p>
+#或点击Toorbar小扳手图标</code></pre><p><img src="/2019/09/ideaOnMac/4_2_settings.png" alt></p>
 <h3 id="4-2-1-外观和行为-Appearance-amp-Behavior"><a href="#4-2-1-外观和行为-Appearance-amp-Behavior" class="headerlink" title="4.2.1 外观和行为 Appearance &amp; Behavior"></a>4.2.1 外观和行为 Appearance &amp; Behavior</h3><pre><code>&quot;Appearance | Show memory indicator&quot; #打开内存使用状态
 &quot;System Settings | Updates | Automatically check updates&quot; #取消自动更新
 &quot;System Settings | Reopen last project on startup&quot; #启动时不打开工程`</code></pre><p><a href="http://www.riaway.com/theme.php" target="_blank" rel="noopener">Theme download</a></p>
@@ -601,7 +601,7 @@ bkg.style.background = left_url + "no-repeat top center";
 <td align="center">Recent files popup 最近打开的文件栈</td>
 </tr>
 </tbody></table>
-<p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_2_searcheverywhere.png" alt></p>
+<p><img src="/2019/09/ideaOnMac/4_2_searcheverywhere.png" alt></p>
 <p><strong>自己修改的快捷键</strong></p>
 <table>
 <thead>
@@ -643,7 +643,7 @@ bkg.style.background = left_url + "no-repeat top center";
 <td align="center">常用，强制跳入方法，可查看JDK源码</td>
 </tr>
 </tbody></table>
-<p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/4_2_hotkeysetting.png" alt></p>
+<p><img src="/2019/09/ideaOnMac/4_2_hotkeysetting.png" alt></p>
 <h3 id="4-2-3-编辑器-Editor"><a href="#4-2-3-编辑器-Editor" class="headerlink" title="4.2.3 编辑器 Editor"></a>4.2.3 编辑器 Editor</h3><pre><code>&quot;General | Auto Import | Insert Imports on paste - All&quot; #自动导入
 &quot;General | Limits | Recent files limit — 20&quot; #&quot;⌘ E&quot;弹层文件个数
 &quot;General | Appearance | how method separators&quot; #方法分隔行
@@ -668,7 +668,7 @@ bkg.style.background = left_url + "no-repeat top center";
 ”⇧ F8“ Step out 跳出该方法
 ”F9“ Resume Program  跳到下一个断点
 ”⌥ F9“ Run to cursor 跳到下一个断点或光标处</code></pre><h3 id="5-2-6-Watches"><a href="#5-2-6-Watches" class="headerlink" title="5.2.6 Watches"></a>5.2.6 Watches</h3><pre><code>&quot;⌥ F8&quot; Evaluate expression 执行表达式动态窗口
-跳转至&quot;Debugger | Threads&quot;面板调试多线程</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/5_1_debugthread.png" alt></p>
+跳转至&quot;Debugger | Threads&quot;面板调试多线程</code></pre><p><img src="/2019/09/ideaOnMac/5_1_debugthread.png" alt></p>
 <h1 id="6-View-amp-Actions"><a href="#6-View-amp-Actions" class="headerlink" title="6 View &amp; Actions"></a>6 View &amp; Actions</h1><hr>
 <h2 id="6-1-Tool-Windows-工具窗口"><a href="#6-1-Tool-Windows-工具窗口" class="headerlink" title="6.1 Tool Windows 工具窗口"></a>6.1 Tool Windows 工具窗口</h2><p>使用IntelliJ IDEA，根据编码需求组织一个布局，专注于代码和编辑器，进入 <strong>自由模式</strong> 使编辑器有最多的屏幕空间，因为辅助控件（如工具栏和窗口）是隐藏的。</p>
 <table>
@@ -719,11 +719,11 @@ bkg.style.background = left_url + "no-repeat top center";
 <td align="center">⌘ 9</td>
 </tr>
 </tbody></table>
-<p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_1_toolwindows.png" alt></p>
+<p><img src="/2019/09/ideaOnMac/6_1_toolwindows.png" alt></p>
 <pre><code># 常用
 &quot;⌘ E&quot; #最近打开的文件
 &quot;⇧ ⌘ E&quot; #最近打开的修改的文件
-&quot;⌥ ⇧ C&quot; #最近修改的文件</code></pre><h2 id="6-2-Edit-编辑"><a href="#6-2-Edit-编辑" class="headerlink" title="6.2 Edit 编辑"></a>6.2 Edit 编辑</h2><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_2_edit.png" alt></p>
+&quot;⌥ ⇧ C&quot; #最近修改的文件</code></pre><h2 id="6-2-Edit-编辑"><a href="#6-2-Edit-编辑" class="headerlink" title="6.2 Edit 编辑"></a>6.2 Edit 编辑</h2><p><img src="/2019/09/ideaOnMac/6_2_edit.png" alt></p>
 <pre><code># 常用
 &quot;⌘ Z&quot; #撤销
 &quot;⌘ D&quot; #复制一行
@@ -738,9 +738,9 @@ bkg.style.background = left_url + "no-repeat top center";
 &quot;⌘ F&quot; #在当前文件中查找，出现Find工具窗口
 &quot;⇧ ⌘ F&quot; #在路径中查找
 &quot;⌘ R&quot; #在当前文件中替换
-&quot;⇧ ⌘ R&quot; #在路径中替换</code></pre><p>​<br><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_2_find.png" alt></p>
+&quot;⇧ ⌘ R&quot; #在路径中替换</code></pre><p>​<br><img src="/2019/09/ideaOnMac/6_2_find.png" alt></p>
 <h2 id="6-3-Navigate-导航"><a href="#6-3-Navigate-导航" class="headerlink" title="6.3 Navigate 导航"></a>6.3 Navigate 导航</h2><p>标记</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_3_navigate.png" alt></p>
+<p><img src="/2019/09/ideaOnMac/6_3_navigate.png" alt></p>
 <pre><code># 常用
 &quot;⌘ O&quot; #类导航
 &quot;⇧ ⌘ O&quot; #文件导航
@@ -761,9 +761,9 @@ bkg.style.background = left_url + "no-repeat top center";
 &quot;⌘ /&quot; #单行注释
 &quot;⌥ ⌘ /&quot; #多行注释
 &quot;⌥ ⌘ L&quot; #代码规范
-&quot;⌃ ⌥ O&quot; #优化导入</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_4_surroundwith.png" alt></p>
+&quot;⌃ ⌥ O&quot; #优化导入</code></pre><p><img src="/2019/09/ideaOnMac/6_4_surroundwith.png" alt></p>
 <h2 id="6-5-Refactor-重构"><a href="#6-5-Refactor-重构" class="headerlink" title="6.5 Refactor 重构"></a>6.5 Refactor 重构</h2><p>🗣 <strong>Tips</strong>：要撤消上一次重构，将焦点切换到项目工具窗口，然后 ⌘ Z。</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/6_5_refactor.png" alt></p>
+<p><img src="/2019/09/ideaOnMac/6_5_refactor.png" alt></p>
 <pre><code># 常用
 &quot;⌃ T&quot; #显示可用的重构</code></pre><p><strong>提取</strong> 部分字符串表达式。选择一个字符串片段并应用重构, 将所选的所有片段用法替换为引入的常量或变量。</p>
 <h2 id="6-6-Analyze-检查"><a href="#6-6-Analyze-检查" class="headerlink" title="6.6 Analyze 检查"></a>6.6 Analyze 检查</h2><p>检查是内置静态代码分析工具，寻找可能的错误，查找死代码，检测性能问题及改进整体代码结构。通过 “⌥ ⏎” 快速修复。</p>
@@ -777,18 +777,18 @@ bkg.style.background = left_url + "no-repeat top center";
 <p>如用main代替psvm生成main函数和生成方法注释代码块。</p>
 <h1 id="7-Tomcat"><a href="#7-Tomcat" class="headerlink" title="7 Tomcat"></a>7 Tomcat</h1><hr>
 <h2 id="7-1-Tomcat配置"><a href="#7-1-Tomcat配置" class="headerlink" title="7.1 Tomcat配置"></a>7.1 Tomcat配置</h2><pre><code>&quot;Run&quot; -&gt; &quot;Edit Configurations&quot; -&gt; &quot;+ New Configuration - Tomcat Server&quot;
-&quot;Deployment&quot;</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/7_1_tomcatconf.png" alt></p>
+&quot;Deployment&quot;</code></pre><p><img src="/2019/09/ideaOnMac/7_1_tomcatconf.png" alt></p>
 <h1 id="8-Database"><a href="#8-Database" class="headerlink" title="8 Database"></a>8 Database</h1><hr>
-<h2 id="8-1-Database-Mysql配置"><a href="#8-1-Database-Mysql配置" class="headerlink" title="8.1 Database Mysql配置"></a>8.1 Database Mysql配置</h2><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/8_1_databaseconf.png" alt></p>
+<h2 id="8-1-Database-Mysql配置"><a href="#8-1-Database-Mysql配置" class="headerlink" title="8.1 Database Mysql配置"></a>8.1 Database Mysql配置</h2><p><img src="/2019/09/ideaOnMac/8_1_databaseconf.png" alt></p>
 <h1 id="9-VCS-GitHub"><a href="#9-VCS-GitHub" class="headerlink" title="9 VCS GitHub"></a>9 VCS GitHub</h1><hr>
-<h2 id="9-1-checkout-clone"><a href="#9-1-checkout-clone" class="headerlink" title="9.1 checkout clone"></a>9.1 checkout clone</h2><pre><code>&quot;⌘ , | Version Control | GitHub + &quot; #注册GitHub</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/9_1_githubconf.png" alt></p>
+<h2 id="9-1-checkout-clone"><a href="#9-1-checkout-clone" class="headerlink" title="9.1 checkout clone"></a>9.1 checkout clone</h2><pre><code>&quot;⌘ , | Version Control | GitHub + &quot; #注册GitHub</code></pre><p><img src="/2019/09/ideaOnMac/9_1_githubconf.png" alt></p>
 <pre><code>“VCS” -&gt; &quot;ckeckout from Version Control&quot; -&gt; &quot;git - &lt;URL&gt;&quot; #克隆项目
 &quot;VCS&quot; -&gt; &quot;import into Version Control&quot; -&gt; &quot;share...&quot; #发布项目</code></pre><h1 id="10-Plugins"><a href="#10-Plugins" class="headerlink" title="10 Plugins"></a>10 Plugins</h1><hr>
 <p>关闭不必要的IDEA Plugins，能极大减少内存占用。</p>
 <p><a href="https://blog.csdn.net/tutian2000/article/details/80074643" target="_blank" rel="noopener">插件关闭参考</a></p>
 <h3 id="10-1-install"><a href="#10-1-install" class="headerlink" title="10.1 install"></a>10.1 install</h3><pre><code>Preferences | Plugins | Install - 所需插件
 
-Preferences | Plugins | Install plug from disk - 下载好的插件</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/10_1_installplugin.png" alt></p>
+Preferences | Plugins | Install plug from disk - 下载好的插件</code></pre><p><img src="/2019/09/ideaOnMac/10_1_installplugin.png" alt></p>
 <h3 id="10-2-recommend"><a href="#10-2-recommend" class="headerlink" title="10.2 recommend"></a>10.2 recommend</h3><ul>
 <li><p><strong>Maven Helper</strong></p>
 <p>打开pom文件的Dependency Analyzer视图查看maven的依赖冲突、列表与树。</p>
@@ -835,7 +835,7 @@ Preferences | Plugins | Install plug from disk - 下载好的插件</code></pre>
         
         <br>
         <strong>本文链接：</strong>
-        https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/
+        https:rensifei.site/2019/09/ideaOnMac/
         <br>
         <strong>版权声明：</strong>
         转载请注明出处！
@@ -952,7 +952,7 @@ Preferences | Plugins | Install plug from disk - 下载好的插件</code></pre>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://galaxias-sapphi-ren.github.io/2019/09/ideaOnMac/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:rensifei.site/2019/09/ideaOnMac/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -1202,6 +1202,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">scrum</a>
               </li>
              
@@ -1211,10 +1215,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">agile development</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1234,7 +1234,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
+                <a href="javascript:void(0)" class="js-tag color4">nvm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1250,14 +1258,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
@@ -1270,11 +1270,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1286,6 +1286,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IDE</a>
               </li>
              
@@ -1294,23 +1302,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Neural Networks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">nvm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcr</a>
               </li>
             
             <div class="clearfix"></div>

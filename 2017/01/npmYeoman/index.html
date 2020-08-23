@@ -5,31 +5,31 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="https://galaxias-sapphi-ren.github.io">
+  <link rel="dns-prefetch" href="rensifei.site">
   <title>我曾经跨过 npm 和 yeoman，也穿过人山人海 | Ren&#39;s Time Overflow Skyline ^_^</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="keywords" content="npm,Yeoman">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我曾经跨过 npm 和 yeoman，也穿过人山人海">
-<meta property="og:url" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/index.html">
+<meta property="og:url" content="rensifei.site/2017/01/npmYeoman/index.html">
 <meta property="og:site_name" content="Ren&#39;s Time Overflow Skyline ^_^">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/cover.jpeg">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_permission_error.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_permission_config.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_registry.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_init_dir.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_install_lodash.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_first_package_json.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_init_yes.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_update.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_global.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_version.png">
-<meta property="og:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_yo_tools.png">
+<meta property="og:image" content="/2017/01/npmYeoman/cover.jpeg">
+<meta property="og:image" content="/2017/01/npmYeoman/img_permission_error.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_permission_config.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_registry.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_init_dir.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_install_lodash.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_first_package_json.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_init_yes.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_update.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_global.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_version.png">
+<meta property="og:image" content="/2017/01/npmYeoman/img_yo_tools.png">
 <meta property="og:updated_time" content="2019-10-06T14:33:47.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我曾经跨过 npm 和 yeoman，也穿过人山人海">
-<meta name="twitter:image" content="https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/cover.jpeg">
+<meta name="twitter:image" content="/2017/01/npmYeoman/cover.jpeg">
   
   
     <link rel="icon" href="/img/favicon.ico">
@@ -280,7 +280,7 @@ bkg.style.background = left_url + "no-repeat top center";
 
     <div class="article-entry" itemprop="articleBody">
       
-      <p><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/cover.jpeg" alt="cover"></p>
+      <p><img src="/2017/01/npmYeoman/cover.jpeg" alt="cover"></p>
 <a id="more"></a>
 
 <p><a href="https://docs.npmjs.com" target="_blank" rel="noopener">npm</a></p>
@@ -318,24 +318,24 @@ npm -v</code></pre><p>maybe you’ll want to make sure it’s the latest version
 <pre><code>npm install npm@latest -g</code></pre><p>or sometime <a href="https://registry.npmjs.org/npm/-/npm-{VERSION}.tgz" target="_blank" rel="noopener">Installing npm manually</a></p>
 <blockquote>
 <h2 id="1-6-permission-fixed-👽"><a href="#1-6-permission-fixed-👽" class="headerlink" title="1.6 permission fixed 👽"></a>1.6 permission fixed 👽</h2></blockquote>
-<p>EER when install npm without <code>sudo</code><br><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_permission_error.png" alt="error"></p>
+<p>EER when install npm without <code>sudo</code><br><img src="/2017/01/npmYeoman/img_permission_error.png" alt="error"></p>
 <p>change the permission to npm’s default directory:</p>
 <pre><code>npm config get prefix `// /Users/sapphire/.nvm/versions/node/v6.3.0`
 cd $(npm config get prefix)/
-sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_permission_config.png" alt="like this"></p>
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}</code></pre><p><img src="/2017/01/npmYeoman/img_permission_config.png" alt="like this"></p>
 <p>or change npm’s default dir ( lazy… 👉)</p>
 <blockquote>
 <h2 id="1-7-registry"><a href="#1-7-registry" class="headerlink" title="1.7 registry"></a>1.7 registry</h2></blockquote>
 <p>change npm registry if u have no vpn.</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_registry.png" alt="registry"></p>
+<p><img src="/2017/01/npmYeoman/img_registry.png" alt="registry"></p>
 <hr>
 <h1 id="2-How-to-use-npm-😚"><a href="#2-How-to-use-npm-😚" class="headerlink" title="2 How to use npm? 😚"></a>2 How to use npm? 😚</h1><hr>
 <blockquote>
 <h2 id="2-1-install-packages"><a href="#2-1-install-packages" class="headerlink" title="2.1 install packages"></a>2.1 install packages</h2></blockquote>
-<p>mkdir and init npm :<br><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_init_dir.png" alt="npm init"></p>
+<p>mkdir and init npm :<br><img src="/2017/01/npmYeoman/img_init_dir.png" alt="npm init"></p>
 <p>install and node it :</p>
-<pre><code>npm install/uninstall &lt;package_name&gt; --save //update packege.json</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_install_lodash.png" alt="lodash"></p>
-<p>show package.json<br><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_first_package_json.png" alt="package.json"></p>
+<pre><code>npm install/uninstall &lt;package_name&gt; --save //update packege.json</code></pre><p><img src="/2017/01/npmYeoman/img_install_lodash.png" alt="lodash"></p>
+<p>show package.json<br><img src="/2017/01/npmYeoman/img_first_package_json.png" alt="package.json"></p>
 <p>🗣 <strong>Tips</strong> : add a repository during npm init， otherwise we can see two warnings from package.json file and Readme.md</p>
 <blockquote>
 <h2 id="2-2-package-json"><a href="#2-2-package-json" class="headerlink" title="2.2 package.json"></a>2.2 package.json</h2></blockquote>
@@ -347,7 +347,7 @@ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}</c
 <li><h3 id="2-2-2-quickly-init"><a href="#2-2-2-quickly-init" class="headerlink" title="2.2.2 quickly init"></a>2.2.2 quickly init</h3><p>  npm init –yes</p>
 </li>
 </ul>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_init_yes.png" alt="package.json"></p>
+<p><img src="/2017/01/npmYeoman/img_init_yes.png" alt="package.json"></p>
 <ul>
 <li>name: defaults to author name unless in a git directory, in which case it will be the name of the repository</li>
 <li>version: always 1.0.0</li>
@@ -379,13 +379,13 @@ npm set init.license &quot;MIT&quot;</code></pre><p>🗣 <strong>Tips</strong> :
 <h2 id="2-3-update"><a href="#2-3-update" class="headerlink" title="2.3 update"></a>2.3 update</h2></blockquote>
 <p>update the package u depend on so u can getany changes form code upstream</p>
 <pre><code>npm outdated
-npm update</code></pre><p><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_update.png" alt="update"></p>
+npm update</code></pre><p><img src="/2017/01/npmYeoman/img_update.png" alt="update"></p>
 <blockquote>
 <h2 id="2-4-global"><a href="#2-4-global" class="headerlink" title="2.4 global"></a>2.4 global</h2></blockquote>
 <p>install global or local</p>
 <pre><code>npm ls
 npm ls -g
-npm ls -g --depth=0</code></pre><p> <img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_global.png" alt="global"></p>
+npm ls -g --depth=0</code></pre><p> <img src="/2017/01/npmYeoman/img_global.png" alt="global"></p>
 <blockquote>
 <h2 id="2-5-publish"><a href="#2-5-publish" class="headerlink" title="2.5 publish"></a>2.5 publish</h2></blockquote>
 <p>You can publish any directory that has a package.json file</p>
@@ -393,7 +393,7 @@ npm ls -g --depth=0</code></pre><p> <img src="//galaxias-sapphi-ren.github.io/20
 <blockquote>
 <h2 id="2-6-version"><a href="#2-6-version" class="headerlink" title="2.6 version"></a>2.6 version</h2></blockquote>
 <p>share with other and release at 1.0.0</p>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_version.png" alt="version"></p>
+<p><img src="/2017/01/npmYeoman/img_version.png" alt="version"></p>
 <hr>
 <h1 id="3-How-npm-works-😚"><a href="#3-How-npm-works-😚" class="headerlink" title="3 How npm works? 😚"></a>3 How npm works? 😚</h1><hr>
 <blockquote>
@@ -474,7 +474,7 @@ npm ls -g --depth=0</code></pre><p> <img src="//galaxias-sapphi-ren.github.io/20
 <li>the build tool (Gulp, Grunt etc)</li>
 <li>the package manager (like npm and Bower)</li>
 </ul>
-<p><img src="//galaxias-sapphi-ren.github.io/2017/01/npmYeoman/img_yo_tools.png" alt="tool"></p>
+<p><img src="/2017/01/npmYeoman/img_yo_tools.png" alt="tool"></p>
 <hr>
 <h1 id="5-How-to-use-Yeoman-😚"><a href="#5-How-to-use-Yeoman-😚" class="headerlink" title="5 How to use Yeoman? 😚"></a>5 How to use Yeoman? 😚</h1><hr>
 <p>prepare</p>
@@ -505,7 +505,7 @@ yo doctor</code></pre><blockquote>
         
         <br>
         <strong>本文链接：</strong>
-        https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/
+        https:rensifei.site/2017/01/npmYeoman/
         <br>
         <strong>版权声明：</strong>
         转载请注明出处！
@@ -618,7 +618,7 @@ yo doctor</code></pre><blockquote>
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://galaxias-sapphi-ren.github.io/2017/01/npmYeoman/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:rensifei.site/2017/01/npmYeoman/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -868,6 +868,10 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">scrum</a>
               </li>
              
@@ -877,10 +881,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">agile development</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -900,7 +900,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Poem</a>
+                <a href="javascript:void(0)" class="js-tag color4">nvm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -916,14 +924,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Practice</a>
               </li>
              
@@ -936,11 +936,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+                <a href="javascript:void(0)" class="js-tag color1">reflection</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -952,6 +952,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">JVM</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">IDE</a>
               </li>
              
@@ -960,23 +968,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">pcr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Neural Networks</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">nvm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">pcr</a>
               </li>
             
             <div class="clearfix"></div>

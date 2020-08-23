@@ -68,8 +68,8 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>reflection</tag>
         <tag>java</tag>
+        <tag>reflection</tag>
       </tags>
   </entry>
   <entry>
@@ -80,9 +80,9 @@
         <category>Blog</category>
       </categories>
       <tags>
-        <tag>java</tag>
         <tag>Microbenchmark</tag>
         <tag>jmh</tag>
+        <tag>java</tag>
       </tags>
   </entry>
   <entry>

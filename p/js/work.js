@@ -4,7 +4,7 @@ var work = function(){
 
 	var msg = function(msg){
 		layui.use('layer', function(){
- 	layui.layer.msg(msg);
+		 	layui.layer.msg(msg);
 		});
 	};
 
@@ -62,9 +62,9 @@ var work = function(){
 		var work_row = $(obj).parent().parent();
 		var work_id = work_row.attr("id");
 		layui.use('layer', function(){
- 	layui.layer.open({
-	 	title: work_id + "参考网址（BV号）",
-	 	content: $(obj).attr('id').split(' ').join('<br/>')
+		 	layui.layer.open({
+			 	title: work_id + "参考网址（BV号）",
+			 	content: $(obj).attr('id').split(' ').join('<br/>')
 			});
 		});
 	};
@@ -92,11 +92,11 @@ var work = function(){
 				text = work_text_map[work_id];
 			}
 			layui.use('layer', function(){
-	 	layui.layer.open({
-		 	title: "<h2>" + work_id + " 轴 " + work_round + " " + work_boss_id +
+			 	layui.layer.open({
+				 	title: "<h2>" + work_id + " 轴 " + work_round + " " + work_boss_id +
 			" " + work_cfg + " " + work_hp + "</h2>",
-		 	area: '800px',
-		 	content: text
+				 	area: '800px',
+				 	content: text
 				});
 			});
 		}
@@ -111,7 +111,7 @@ var work = function(){
 				new Date(now_time + 5 * 60 * 60 * 1000 - 1).getTime(); // 翌日5点
 			var server_time = now.getTime();
 			layui.util.countdown(end_time, server_time, function(date, server_time, timer){
-	 	var str = date[0] + '天' + date[1] + '时' + date[2] + '分' + date[3] + '秒';
+			 	var str = date[0] + '天' + date[1] + '时' + date[2] + '分' + date[3] + '秒';
 				layui.$('#div_countdown').html('<i class="layui-icon layui-icon-time"></i>' + ' 距离今天出刀结束还有:'+ str);
 			});
 		});
@@ -199,8 +199,8 @@ var work = function(){
 	 		$(this).find("div").css({"font-size" : "14px","font-weight" : "normal"});
 		});
 		layui.use('form', function(){
- 	var form = layui.form;
- 	form.render();
+		 	var form = layui.form;
+		 	form.render();
 			form.on('submit(form_query)', function(data){
 				let query = JSON.parse(JSON.stringify(data.field));
 				table(query.round, query.title, query.boss_value, query.group_type);
